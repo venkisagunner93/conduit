@@ -1,0 +1,9 @@
+[package]
+name = "conduit_flow"
+version = "0.1.0"
+
+[dependencies]
+conduit_core = "*"
+
+[build]
+type = "cmake"

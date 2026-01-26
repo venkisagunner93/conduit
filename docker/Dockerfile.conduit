@@ -51,8 +51,8 @@ USER ${DOCKER_USER}
 ENV PATH="${PATH}:/home/docker_user/.local/bin"
 
 # Install conduit build tool
-COPY --chown=docker_user:docker_user tools/conduit-build /tmp/conduit-build
-RUN pip3 install --break-system-packages /tmp/conduit-build \
-    && rm -rf /tmp/conduit-build
+COPY --chown=docker_user:docker_user tools/conduit-forge /tmp/conduit-forge
+RUN pip3 install --break-system-packages /tmp/conduit-forge \
+    && rm -rf /tmp/conduit-forge
 
 CMD ["/bin/bash"]

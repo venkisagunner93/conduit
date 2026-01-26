@@ -8,8 +8,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Dependencies
 find_package(conduit_core REQUIRED)
 find_package(conduit_tank REQUIRED)
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(YAMLCPP REQUIRED yaml-cpp)
+find_package(conduit_flow REQUIRED)
 
 # Single conduit binary
 add_executable(conduit
@@ -19,18 +18,17 @@ add_executable(conduit
     src/cmd_echo.cpp
     src/cmd_hz.cpp
     src/cmd_record.cpp
-    src/cmd_launch.cpp
+    src/cmd_flow.cpp
 )
 
 target_include_directories(conduit PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include
-    ${YAMLCPP_INCLUDE_DIRS}
 )
 
 target_link_libraries(conduit
     conduit_core::conduit_core
     conduit_tank::conduit_tank
-    ${YAMLCPP_LIBRARIES}
+    conduit_flow::conduit_flow
 )
 
 install(TARGETS conduit RUNTIME DESTINATION bin)

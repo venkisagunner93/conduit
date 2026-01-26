@@ -6,6 +6,7 @@ description = "Command-line tools for Conduit pub/sub middleware"
 [dependencies]
 conduit_core = "*"
 conduit_tank = "*"
+conduit_flow = "*"
 
 [build]
 type = "cmake"

@@ -60,7 +60,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | conduit_core | Ring buffer, shared memory, futex, pub/sub, node, logging |
 | conduit_tank | MCAP-based recording with Zstd/LZ4 compression |
 | conduit_demo | Example publisher and subscriber applications |
-| conduit_tools | CLI tools (list, info, echo, hz, record, launch) |
+| conduit_flow | Flow execution engine (startup/shutdown sequences) |
+| conduit_tools | CLI tools (topics, info, echo, hz, record, flow) |
 
 ## Development Phases
 
@@ -73,7 +74,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | 5 | Message framing (timestamp, sequence) | Complete |
 | 6 | Node abstraction (thread per subscription, callbacks) | Complete |
 | 7 | Recording / Replay | Complete |
-| 8 | CLI tools (list, info, echo, hz, record, launch) | Complete |
+| 8 | CLI tools (topics, info, echo, hz, record, flow) | Complete |
 
 ## CLI Tools
 
@@ -85,7 +86,32 @@ conduit info <topic>                 # Show topic metadata
 conduit echo <topic>                 # Echo messages with hex dump
 conduit hz <topic>                   # Measure publication rate (Hz)
 conduit record -o <file> <topics...> # Record topics to MCAP file
-conduit launch <config.yaml>         # Launch multiple nodes from YAML
+conduit flow <file.flow.yaml>        # Run a flow file
+```
+
+## Flow File Format
+
+Flow files define startup and shutdown sequences for multi-node systems:
+
+```yaml
+startup:
+  - node_name                    # Simple node (exec = node_name)
+  - name: my_node                # Node with options
+    exec: my_executable
+    args: ["--flag", "value"]
+    env:
+      KEY: value
+    working_dir: /path
+  - wait: 1s                     # Wait duration
+  - wait: topic:my_topic         # Wait for topic
+  - wait: [topic:a, topic:b]     # Wait for multiple topics
+  - group:                       # Start nodes together
+      - node_a
+      - node_b
+
+shutdown:                        # Optional (default: reverse of startup)
+  - node_name
+  - wait: 500ms
 ```
 
 ## Ring Buffer Configuration
@@ -120,6 +146,9 @@ forge build <pkg>    # Build specific package
 forge test           # Run all tests
 forge list           # List packages and build order
 forge clean          # Clean build artifacts
+forge pkg <name>     # Create new package scaffold
+forge pkg <name> --deps conduit_core  # With dependencies
+forge pkg <name> --no-tests           # Without test scaffold
 ```
 
 ### Debugging Tools
@@ -139,7 +168,7 @@ forge clean          # Clean build artifacts
 - **MCAP**: Recording format (v1.4.0, fetched via CMake)
 - **lz4**: Compression (system package)
 - **zstd**: Compression (system package)
-- **yaml-cpp**: YAML parsing for launch tool (system package)
+- **yaml-cpp**: YAML parsing for flow tool (system package)
 
 ## Tests
 
@@ -154,6 +183,7 @@ Test executables:
 - `pubsub_test` - Publisher/Subscriber integration
 - `node_test` - Node threading and callbacks
 - `tank_test` - MCAP recording
+- `flow_test` - Flow file parsing
 
 ## Runtime
 

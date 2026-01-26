@@ -5,6 +5,16 @@ from functools import partial
 from .command import Command
 from ..utils import find_packages, build_order, filter_to_target, build_package, run_in_levels
 
+SETUP_BASH = """\
+# Conduit workspace setup
+# Usage: source install/setup.bash
+
+CONDUIT_INSTALL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+export PATH="${CONDUIT_INSTALL_DIR}/bin:$PATH"
+export LD_LIBRARY_PATH="${CONDUIT_INSTALL_DIR}/lib:$LD_LIBRARY_PATH"
+"""
+
 
 class BuildCommand(Command):
     name = "build"
@@ -32,5 +42,9 @@ class BuildCommand(Command):
 
         if failed:
             raise RuntimeError(f"Build failed for: {', '.join(failed)}")
+
+        # Create setup.bash
+        setup_file = install_dir / "setup.bash"
+        setup_file.write_text(SETUP_BASH)
 
         print("Build complete.")

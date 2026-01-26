@@ -22,8 +22,8 @@ crun              # Run container (interactive)
 
 # Inside container
 cforge            # Install forge build tool
-source install/setup.bash
 forge build       # Build all packages
+source install/setup.bash
 ```
 
 ## Docker Commands
@@ -92,7 +92,7 @@ conduit info <topic>                  # topic details
 conduit echo <topic>                  # print messages
 conduit hz <topic>                    # measure rate
 conduit record -o out.mcap <topics>   # record
-conduit launch config.yaml            # launch nodes
+conduit flow system.flow.yaml         # run flow file
 ```
 
 ## Packages
@@ -101,6 +101,7 @@ conduit launch config.yaml            # launch nodes
 |---------|-------------|
 | conduit_core | pub/sub, node, ring buffer |
 | conduit_tank | MCAP recording |
+| conduit_flow | flow execution engine |
 | conduit_tools | CLI |
 | conduit_demo | examples |
 
