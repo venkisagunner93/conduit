@@ -1,0 +1,58 @@
+FROM ubuntu:24.04
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    DOCKER_USER=docker_user \
+    WORKDIR=/home/docker_user/workspace
+
+WORKDIR ${WORKDIR}
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    cmake \
+    ninja-build \
+    git \
+    gdb \
+    valgrind \
+    libgtest-dev \
+    libgmock-dev \
+    python3-pip \
+    adduser \
+    sudo \
+    vim \
+    wget \
+    curl \
+    ca-certificates \
+    pkg-config \
+    liblz4-dev \
+    libzstd-dev \
+    libyaml-cpp-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js (required for Claude Code)
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Claude Code
+RUN npm install -g @anthropic-ai/claude-code
+
+# Setup user and permissions
+RUN userdel -r ubuntu 2>/dev/null || true \
+    && groupadd -g 1000 docker_user \
+    && useradd -m -u 1000 -g 1000 -s /bin/bash docker_user \
+    && adduser docker_user sudo \
+    && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers \
+    && mkdir -p /home/docker_user/.local \
+    && chown -R docker_user:docker_user /home/docker_user
+
+USER ${DOCKER_USER}
+
+# Add local bin to PATH
+ENV PATH="${PATH}:/home/docker_user/.local/bin"
+
+# Install conduit build tool
+COPY --chown=docker_user:docker_user tools/conduit-build /tmp/conduit-build
+RUN pip3 install --break-system-packages /tmp/conduit-build \
+    && rm -rf /tmp/conduit-build
+
+CMD ["/bin/bash"]

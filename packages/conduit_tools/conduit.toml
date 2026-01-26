@@ -1,0 +1,11 @@
+[package]
+name = "conduit_tools"
+version = "0.1.0"
+description = "Command-line tools for Conduit pub/sub middleware"
+
+[dependencies]
+conduit_core = "*"
+conduit_tank = "*"
+
+[build]
+type = "cmake"

@@ -1,0 +1,10 @@
+[package]
+name = "conduit_tank"
+version = "0.1.0"
+description = "MCAP recording for Conduit pub/sub middleware"
+
+[dependencies]
+conduit_core = "*"
+
+[build]
+type = "cmake"

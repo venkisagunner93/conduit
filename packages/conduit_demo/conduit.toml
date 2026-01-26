@@ -1,0 +1,10 @@
+[package]
+name = "conduit_demo"
+version = "0.1.0"
+description = "Demo publisher and subscriber for Conduit"
+
+[dependencies]
+conduit_core = "*"
+
+[build]
+type = "cmake"

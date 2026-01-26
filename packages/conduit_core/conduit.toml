@@ -1,0 +1,6 @@
+[package]
+name = "conduit_core"
+version = "0.1.0"
+description = "Core library for Conduit pub/sub middleware"
+
+[dependencies]

@@ -1,0 +1,13 @@
+build/
+install/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+.eggs/
+*.egg
+.env
+.venv
+venv/
