@@ -1,6 +1,6 @@
 # Conduit
 
-[![Docs](https://img.shields.io/badge/docs-online-blue?style=flat-square)](https://example.github.io/conduit)
+[![Docs](https://img.shields.io/badge/docs-online-blue?style=flat-square)](https://venkisagunner93.github.io/conduit)
 
 Zero-copy pub/sub middleware for robotics.
 

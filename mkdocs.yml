@@ -21,9 +21,7 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   features:
-    - navigation.tabs
     - navigation.sections
-    - navigation.expand
     - navigation.top
     - search.highlight
     - content.code.copy
@@ -42,18 +40,12 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Getting Started:
-    - Installation: getting-started/installation.md
-    - Quick Start: getting-started/quickstart.md
-  - Concepts:
-    - Architecture: concepts/architecture.md
-    - Shared Memory: concepts/shared-memory.md
-    - Ring Buffer: concepts/ring-buffer.md
+  - Why Conduit: why-conduit.md
+  - Getting Started: getting-started.md
+  - Architecture: architecture.md
   - API Reference:
-    - Node: api/node.md
-    - Publisher: api/publisher.md
-    - Subscriber: api/subscriber.md
-  - CLI Tools:
-    - Overview: cli/overview.md
-    - Flow Files: cli/flow.md
-  - Internals: internals.md
+      - Publisher: api/publisher.md
+      - Subscriber: api/subscriber.md
+      - Loop: api/loop.md
+  - CLI Tools: cli.md
+  - Roadmap: roadmap.md
