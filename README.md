@@ -1,5 +1,7 @@
 # Conduit
 
+[![Docs](https://img.shields.io/badge/docs-online-blue?style=flat-square)](https://example.github.io/conduit)
+
 Zero-copy pub/sub middleware for robotics.
 
 ## Features

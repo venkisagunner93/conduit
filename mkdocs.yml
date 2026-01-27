@@ -1,0 +1,59 @@
+site_name: Conduit
+site_description: Zero-copy pub/sub middleware for robotics
+site_url: https://venkisagunner93.github.io/conduit
+
+repo_name: conduit
+repo_url: https://github.com/venkisagunner93/conduit
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+  - Concepts:
+    - Architecture: concepts/architecture.md
+    - Shared Memory: concepts/shared-memory.md
+    - Ring Buffer: concepts/ring-buffer.md
+  - API Reference:
+    - Node: api/node.md
+    - Publisher: api/publisher.md
+    - Subscriber: api/subscriber.md
+  - CLI Tools:
+    - Overview: cli/overview.md
+    - Flow Files: cli/flow.md
+  - Internals: internals.md
