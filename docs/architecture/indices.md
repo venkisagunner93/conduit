@@ -1,141 +1,140 @@
 # Write Index and Read Index
 
-## The simple version
-
-Think of it like a ticket counter at a deli:
-
-- **write_idx** = "Now serving ticket #X" (updated by publisher)
-- **read_idx** = "I have ticket #Y" (each subscriber has their own)
-
-If your ticket number equals the "now serving" number, you're caught up. Wait for the next ticket.
-
-If your ticket number is less than "now serving", you missed some — go get served!
-
-## What the numbers mean
+## All three numbers use the same scale
 
 ```
-write_idx = 5
-```
-This means: "The publisher has written 5 messages total (messages 0, 1, 2, 3, 4)."
+write_idx, read_idx, and sequence are ALL message numbers.
 
-The NEXT message will be message #5.
+Message #0, Message #1, Message #2, ...
+```
+
+They all start at 0 and count up together:
+
+| Message | sequence (in slot) | write_idx (after write) | read_idx (after read) |
+|---------|-------------------|------------------------|----------------------|
+| #0 | 0 | 0 | 0 |
+| #1 | 1 | 1 | 1 |
+| #2 | 2 | 2 | 2 |
+| #3 | 3 | 3 | 3 |
+
+## What each number means
 
 ```
-read_idx = 3
+write_idx = 3    →  "Publisher is about to write message #3"
+                    (Messages #0, #1, #2 already exist)
+
+read_idx = 1     →  "Subscriber wants to read message #1 next"
+                    (Already read message #0)
+
+sequence = 2     →  "This slot contains message #2"
+                    (Stored inside the slot header)
 ```
-This means: "This subscriber has read up to message 2. It wants message #3 next."
 
 ## How they work together
 
 ```
-Is there new data?
+New data available?
 
-    read_idx < write_idx  →  YES, new data available
-    read_idx == write_idx →  NO, caught up, wait
-```
-
-**Example:**
-```
-write_idx = 5 (messages 0-4 exist)
-read_idx = 3 (subscriber has read 0, 1, 2)
-
-3 < 5 → New data! Subscriber reads message 3.
-After reading: read_idx = 4
-
-4 < 5 → More data! Subscriber reads message 4.
-After reading: read_idx = 5
-
-5 < 5? NO (5 == 5) → Caught up. Wait.
+    read_idx < write_idx   →  YES
+    read_idx == write_idx  →  NO, wait
 ```
 
 ## Step-by-step example
 
-Let's trace from the beginning:
-
-### 1. Publisher starts (no messages yet)
+### Initial state
 
 ```
-write_idx = 0    "Zero messages written"
+write_idx = 0     (no messages yet)
 ```
 
-### 2. Publisher sends message
+### Publisher writes message #0
 
 ```
-Publisher writes message #0 to slot 0
-write_idx = 1    "One message written (message 0)"
+1. write_idx is 0
+2. Write to slot 0 with sequence = 0
+3. Increment: write_idx = 1
 ```
 
-### 3. Publisher sends another
+```
+AFTER:
+  write_idx = 1
+  Slot 0: sequence = 0, data = "Hello"
+```
+
+### Publisher writes message #1
 
 ```
-Publisher writes message #1 to slot 1
-write_idx = 2    "Two messages written (messages 0, 1)"
+1. write_idx is 1
+2. Write to slot 1 with sequence = 1
+3. Increment: write_idx = 2
 ```
 
-### 4. Subscriber joins
+```
+AFTER:
+  write_idx = 2
+  Slot 0: sequence = 0, data = "Hello"
+  Slot 1: sequence = 1, data = "World"
+```
+
+### Subscriber joins
 
 ```
 Subscriber sees write_idx = 2
-Subscriber sets read_idx = 2    "I'll start from the next one"
+Subscriber sets read_idx = 2   (start fresh, don't read old messages)
 
-Check: read_idx (2) < write_idx (2)? NO
-Subscriber waits...
+Check: read_idx (2) < write_idx (2)?  NO → wait
 ```
 
-### 5. Publisher sends another
+### Publisher writes message #2
 
 ```
-Publisher writes message #2 to slot 2
-write_idx = 3    "Three messages written"
-
-Subscriber wakes up!
-Check: read_idx (2) < write_idx (3)? YES!
-Subscriber reads message #2
-read_idx = 3
-
-Check: read_idx (3) < write_idx (3)? NO
-Subscriber waits...
+1. write_idx is 2
+2. Write to slot 2 with sequence = 2
+3. Increment: write_idx = 3
 ```
 
-## Where does the sequence number fit in?
-
-The **sequence number** is stored INSIDE each message slot. It's a copy of write_idx at the time of writing.
-
 ```
-When publisher writes message #2:
-  - write_idx is currently 2
-  - Publisher writes to slot (2 % 4 = slot 2)
-  - Slot 2 header: sequence = 2
-  - Then: write_idx = 3
+AFTER:
+  write_idx = 3
+  Slot 0: sequence = 0
+  Slot 1: sequence = 1
+  Slot 2: sequence = 2, data = "!"
 ```
 
-**Why do we need it?**
-
-The sequence number detects if a slot was overwritten. Here's when it matters:
+### Subscriber reads
 
 ```
-4 slots, publisher has written 10 messages:
+Check: read_idx (2) < write_idx (3)?  YES → new data!
 
+1. Want message #2
+2. Slot = 2 % 4 = slot 2
+3. Read slot 2, verify sequence = 2  ✓
+4. Increment: read_idx = 3
+
+Check: read_idx (3) < write_idx (3)?  NO → wait
+```
+
+## The sequence number catches overwrites
+
+With 4 slots, after 10 messages:
+
+```
 write_idx = 10
-Slow subscriber: read_idx = 6
 
-Subscriber wants message #6.
-Slot = 6 % 4 = slot 2
-
-But wait — the publisher already wrote message #10 to slot 2!
-(10 % 4 = 2)
-
-Slot 2 now contains message #10, not message #6.
+Slot 0: sequence = 8   (message #8, overwrote #0 and #4)
+Slot 1: sequence = 9   (message #9, overwrote #1 and #5)
+Slot 2: sequence = 6   (message #6, overwrote #2)
+Slot 3: sequence = 7   (message #7, overwrote #3)
 ```
 
-**How subscriber detects this:**
+Slow subscriber with read_idx = 5:
 
 ```
-Subscriber reads slot 2.
-Slot 2 header says: sequence = 10
-Subscriber expected: sequence = 6
-
-10 ≠ 6 → "This slot was overwritten! I missed messages 6-9."
+1. Want message #5
+2. Slot = 5 % 4 = slot 1
+3. Read slot 1, sequence = 9
+4. Expected 5, got 9 → OVERWRITTEN!
+5. Skip ahead to oldest available (message #6)
 ```
 
 ## Where does futex_word fit in?
@@ -167,62 +166,48 @@ Subscriber: *wakes up* "Let me check write_idx for actual data."
 ## Putting it all together
 
 ```
-/dev/shm/conduit_imu with 4 slots:
-
-write_idx = 10 means messages 0, 1, 2, ..., 9 have been written.
-
-Message 6 → slot 6 % 4 = slot 2 → sequence = 6
-Message 7 → slot 7 % 4 = slot 3 → sequence = 7
-Message 8 → slot 8 % 4 = slot 0 → sequence = 8  (overwrote msg 4)
-Message 9 → slot 9 % 4 = slot 1 → sequence = 9  (overwrote msg 5)
+/dev/shm/conduit_imu with 4 slots, after 10 messages:
 
 ┌─────────────────────────────────────────────────────────────────┐
 │ HEADER                                                          │
-│   write_idx = 10      "Next message will be #10"                │
-│   futex_word = 10                                               │
-│   read_idx[0] = 10    "Subscriber A: waiting for #10"           │
+│   write_idx = 10      "About to write message #10"              │
+│   read_idx[0] = 10    "Subscriber A: wants #10, waiting"        │
 │   read_idx[1] = 8     "Subscriber B: wants #8"                  │
 ├──────────────────────────────┬──────────────────────────────────┤
 │ Slot 0: sequence = 8         │ Slot 1: sequence = 9             │
-│ (message #8)                 │ (message #9)                     │
 ├──────────────────────────────┼──────────────────────────────────┤
 │ Slot 2: sequence = 6         │ Slot 3: sequence = 7             │
-│ (message #6)                 │ (message #7)                     │
 └──────────────────────────────┴──────────────────────────────────┘
 
-Available messages: 6, 7, 8, 9 (oldest 4 messages)
-Gone forever: 0, 1, 2, 3, 4, 5 (overwritten)
+Still available: messages 6, 7, 8, 9
+Overwritten: messages 0, 1, 2, 3, 4, 5
 ```
 
 **Subscriber A** (read_idx = 10):
 ```
-10 < 10? NO → Caught up. Sleep on futex.
+10 < 10? NO → Caught up. Wait.
 ```
 
 **Subscriber B** (read_idx = 8):
 ```
 8 < 10? YES → Data available!
-Read message #8 from slot (8 % 4 = 0)
-Check: slot 0 sequence (8) == expected (8)? YES ✓
+Slot = 8 % 4 = 0
+Read slot 0: sequence = 8 ✓ (matches what we want)
 Got message #8!
 read_idx = 9
 ```
 
 ## Summary
 
-| Value | Meaning | Who updates it |
-|-------|---------|----------------|
-| **write_idx** | Next message number to be written | Publisher (after each write) |
-| **read_idx** | Next message number subscriber wants | Each subscriber (after each read) |
-| **sequence** | "I am message #N" (stored in slot) | Publisher (during write) |
-| **futex_word** | "Wake up!" signal counter | Publisher (after write) |
+| Value | What it means | Example |
+|-------|---------------|---------|
+| **write_idx** | Next message number to write | 10 = "about to write #10" |
+| **read_idx** | Next message number to read | 8 = "want to read #8" |
+| **sequence** | Which message is in this slot | 8 = "I am message #8" |
 
-**The key insight:**
+All three are message numbers on the same scale: 0, 1, 2, 3...
 
-- `write_idx` and `read_idx` are message NUMBERS, not slot numbers
-- Slot number = message_number % slot_count
-- `sequence` inside a slot tells you which message is actually there
-- `futex_word` is just for efficient sleeping, nothing to do with message numbers
+**Slot number** is different — it's `message_number % slot_count`
 
 ---
 
