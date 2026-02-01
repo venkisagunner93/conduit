@@ -42,7 +42,15 @@ nav:
   - Home: index.md
   - Why Conduit: why-conduit.md
   - Getting Started: getting-started.md
-  - Architecture: architecture.md
+  - Architecture:
+      - Overview: architecture/index.md
+      - Shared Memory: architecture/shared-memory.md
+      - Ring Buffer: architecture/ring-buffer.md
+      - Indices: architecture/indices.md
+      - Sequence Numbers: architecture/sequence.md
+      - Futex: architecture/futex.md
+      - Memory Layout: architecture/memory-layout.md
+      - Complete Flow: architecture/complete-flow.md
   - API Reference:
       - Publisher: api/publisher.md
       - Subscriber: api/subscriber.md
