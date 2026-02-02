@@ -24,18 +24,6 @@ No photocopying. No passing notes. Everyone looks at the same whiteboard.
 | [Sequence Numbers](sequence.md) | How we detect overwritten data |
 | [Futex](futex.md) | How subscribers sleep efficiently |
 | [Memory Layout](memory-layout.md) | What the bytes actually look like |
-| [Complete Flow](complete-flow.md) | End-to-end message trace |
-
-## Summary
-
-| Concept | What it is | Why it matters |
-|---------|-----------|----------------|
-| **Shared memory** | RAM both processes can access | Zero-copy — no data duplication |
-| **Ring buffer** | Fixed slots that wrap around | Bounded memory, handles continuous data |
-| **write_idx** | "Publisher wrote N messages" | Tells subscribers where new data is |
-| **read_idx** | "Subscriber read up to N" | Each subscriber tracks own progress |
-| **sequence** | Version stamp in each slot | Detects if slow subscriber missed data |
-| **futex_word** | Doorbell counter | Efficient sleep/wake, zero CPU when idle |
 
 **The elegance:** All coordination happens through a few integers in shared memory. No locks. No kernel calls except when sleeping. No copies of your data.
 

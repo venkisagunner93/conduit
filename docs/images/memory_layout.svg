@@ -1,0 +1,112 @@
+<svg viewBox="0 0 750 580" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="750" height="580" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#1e293b">/dev/shm/conduit_imu</text>
+  
+  <!-- Main container -->
+  <rect x="50" y="50" width="600" height="510" fill="white" stroke="#94a3b8" stroke-width="2" rx="6"/>
+  
+  <!-- Header section -->
+  <rect x="50" y="50" width="600" height="210" fill="#dbeafe" stroke="#3B82F6" stroke-width="2" rx="6"/>
+  <text x="70" y="75" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#1e40af">HEADER</text>
+  
+  <!-- Config -->
+  <rect x="70" y="90" width="270" height="65" fill="#bfdbfe" stroke="#3B82F6" stroke-width="1" rx="4"/>
+  <text x="85" y="110" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#1e40af">Config</text>
+  <text x="85" y="128" font-family="monospace" font-size="10" fill="#3B82F6">slot_count = 16</text>
+  <text x="85" y="143" font-family="monospace" font-size="10" fill="#3B82F6">slot_size = 4096</text>
+  <text x="200" y="128" font-family="monospace" font-size="10" fill="#3B82F6">max_subscribers = 16</text>
+  
+  <!-- Write coordination -->
+  <rect x="360" y="90" width="270" height="65" fill="#bfdbfe" stroke="#3B82F6" stroke-width="1" rx="4"/>
+  <text x="375" y="110" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#1e40af">Publisher State</text>
+  <text x="375" y="128" font-family="monospace" font-size="10" fill="#3B82F6">write_idx = 1000</text>
+  <text x="375" y="143" font-family="monospace" font-size="10" fill="#3B82F6">futex_word = 1000</text>
+  <text x="510" y="128" font-family="monospace" font-size="10" fill="#3B82F6">subscriber_mask</text>
+  <text x="510" y="143" font-family="monospace" font-size="10" fill="#3B82F6">= 0b111</text>
+  
+  <!-- Subscriber read indices -->
+  <rect x="70" y="170" width="560" height="80" fill="#d1fae5" stroke="#10B981" stroke-width="1" rx="4"/>
+  <text x="85" y="190" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#065f46">Subscriber Read Indices (each on its own cache line)</text>
+  
+  <g transform="translate(85, 205)">
+    <rect x="0" y="0" width="85" height="35" fill="#a7f3d0" stroke="#10B981" stroke-width="1" rx="3"/>
+    <text x="42" y="14" text-anchor="middle" font-family="monospace" font-size="9" fill="#065f46">read_idx[0]</text>
+    <text x="42" y="28" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#059669">1000</text>
+    
+    <rect x="95" y="0" width="85" height="35" fill="#a7f3d0" stroke="#10B981" stroke-width="1" rx="3"/>
+    <text x="137" y="14" text-anchor="middle" font-family="monospace" font-size="9" fill="#065f46">read_idx[1]</text>
+    <text x="137" y="28" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#059669">998</text>
+    
+    <rect x="190" y="0" width="85" height="35" fill="#a7f3d0" stroke="#10B981" stroke-width="1" rx="3"/>
+    <text x="232" y="14" text-anchor="middle" font-family="monospace" font-size="9" fill="#065f46">read_idx[2]</text>
+    <text x="232" y="28" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#059669">995</text>
+    
+    <rect x="285" y="0" width="85" height="35" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" rx="3"/>
+    <text x="327" y="14" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">read_idx[3]</text>
+    <text x="327" y="28" text-anchor="middle" font-family="monospace" font-size="11" fill="#94a3b8">—</text>
+    
+    <text x="395" y="22" font-family="system-ui, sans-serif" font-size="12" fill="#64748b">...</text>
+    
+    <rect x="430" y="0" width="95" height="35" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" rx="3"/>
+    <text x="477" y="14" text-anchor="middle" font-family="monospace" font-size="9" fill="#94a3b8">read_idx[15]</text>
+    <text x="477" y="28" text-anchor="middle" font-family="monospace" font-size="11" fill="#94a3b8">—</text>
+  </g>
+  
+  <!-- Slots section -->
+  <rect x="50" y="260" width="600" height="300" fill="#fefce8" stroke="#eab308" stroke-width="2" rx="6"/>
+  <text x="70" y="285" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#a16207">SLOTS</text>
+  
+  <!-- Individual slots -->
+  <g transform="translate(70, 300)">
+    <rect x="0" y="0" width="560" height="45" fill="#fef9c3" stroke="#eab308" stroke-width="1" rx="4"/>
+    <text x="15" y="28" font-family="monospace" font-size="11" font-weight="bold" fill="#a16207">Slot 0</text>
+    <rect x="75" y="8" width="55" height="28" fill="#fde68a" stroke="#eab308" stroke-width="1" rx="2"/>
+    <text x="102" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#a16207">size</text>
+    <rect x="135" y="8" width="75" height="28" fill="#fde68a" stroke="#eab308" stroke-width="1" rx="2"/>
+    <text x="172" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#a16207">sequence</text>
+    <rect x="215" y="8" width="80" height="28" fill="#fde68a" stroke="#eab308" stroke-width="1" rx="2"/>
+    <text x="255" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#a16207">timestamp</text>
+    <rect x="300" y="8" width="250" height="28" fill="#fef08a" stroke="#eab308" stroke-width="1" rx="2"/>
+    <text x="425" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#a16207">payload</text>
+  </g>
+  
+  <g transform="translate(70, 350)">
+    <rect x="0" y="0" width="560" height="45" fill="#fef9c3" stroke="#eab308" stroke-width="1" rx="4"/>
+    <text x="15" y="28" font-family="monospace" font-size="11" font-weight="bold" fill="#a16207">Slot 1</text>
+    <rect x="75" y="8" width="55" height="28" fill="#fde68a" stroke="#eab308" stroke-width="1" rx="2"/>
+    <text x="102" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#a16207">size</text>
+    <rect x="135" y="8" width="75" height="28" fill="#fde68a" stroke="#eab308" stroke-width="1" rx="2"/>
+    <text x="172" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#a16207">sequence</text>
+    <rect x="215" y="8" width="80" height="28" fill="#fde68a" stroke="#eab308" stroke-width="1" rx="2"/>
+    <text x="255" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#a16207">timestamp</text>
+    <rect x="300" y="8" width="250" height="28" fill="#fef08a" stroke="#eab308" stroke-width="1" rx="2"/>
+    <text x="425" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#a16207">payload</text>
+  </g>
+  
+  <text x="350" y="420" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#a16207">...</text>
+  
+  <g transform="translate(70, 435)">
+    <rect x="0" y="0" width="560" height="45" fill="#fef9c3" stroke="#eab308" stroke-width="1" rx="4"/>
+    <text x="15" y="28" font-family="monospace" font-size="11" font-weight="bold" fill="#a16207">Slot 15</text>
+    <rect x="75" y="8" width="55" height="28" fill="#fde68a" stroke="#eab308" stroke-width="1" rx="2"/>
+    <text x="102" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#a16207">size</text>
+    <rect x="135" y="8" width="75" height="28" fill="#fde68a" stroke="#eab308" stroke-width="1" rx="2"/>
+    <text x="172" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#a16207">sequence</text>
+    <rect x="215" y="8" width="80" height="28" fill="#fde68a" stroke="#eab308" stroke-width="1" rx="2"/>
+    <text x="255" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#a16207">timestamp</text>
+    <rect x="300" y="8" width="250" height="28" fill="#fef08a" stroke="#eab308" stroke-width="1" rx="2"/>
+    <text x="425" y="26" text-anchor="middle" font-family="monospace" font-size="9" fill="#a16207">payload</text>
+  </g>
+  
+  <!-- Size annotations outside the box -->
+  <text x="680" y="160" font-family="monospace" font-size="10" fill="#64748b">~1 KB</text>
+  <line x1="655" y1="155" x2="670" y2="155" stroke="#64748b" stroke-width="1"/>
+  
+  <text x="680" y="410" font-family="monospace" font-size="10" fill="#64748b">16 × 4 KB</text>
+  <line x1="655" y1="405" x2="670" y2="405" stroke="#64748b" stroke-width="1"/>
+  
+  <text x="680" y="545" font-family="monospace" font-size="11" font-weight="bold" fill="#374151">≈ 65 KB</text>
+</svg>
