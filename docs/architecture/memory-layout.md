@@ -28,4 +28,3 @@ total = 1088 + (slot_count × slot_size)
 
 ---
 
-**Next:** [Complete Flow](complete-flow.md) — End-to-end message trace
