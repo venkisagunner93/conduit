@@ -48,7 +48,7 @@ forge clean      # Clean
 ## Demo
 
 ```bash
-# Terminal 1 - subscriber waits for publisher
+# Terminal 1 - subscriber waits for publisher.
 demo-subscriber
 
 # Terminal 2
