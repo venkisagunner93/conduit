@@ -34,11 +34,15 @@ public:
     bool running() const;
 
 protected:
-    // Subscribe to topic with member function callback
+    // Subscribe to topic with member function callback (raw)
     template<typename T, typename Func>
     void subscribe(const std::string& topic, Func T::* callback);
 
-    // Subscribe to topic with lambda/function
+    // Subscribe to topic with typed member function callback
+    template<typename MsgT, typename T>
+    void subscribe(const std::string& topic, void (T::* callback)(const TypedMessage<MsgT>&));
+
+    // Subscribe to topic with lambda/function (raw)
     void subscribe(const std::string& topic, std::function<void(const Message&)> callback);
 
     // Loop at fixed rate with member function callback
@@ -48,14 +52,15 @@ protected:
     // Loop at fixed rate with lambda/function
     void loop(double rate_hz, std::function<void()> callback);
 
-    // Create publisher
-    Publisher advertise(const std::string& topic, const PublisherOptions& options = {});
+    // Create typed publisher
+    template<typename T>
+    Publisher<T> advertise(const std::string& topic, const PublisherOptions& options = {});
 
 private:
     struct Subscription {
         std::string topic;
         std::function<void(const Message&)> callback;
-        std::unique_ptr<Subscriber> subscriber;
+        std::unique_ptr<internal::Subscriber> subscriber;
         std::thread thread;
     };
 
@@ -88,11 +93,34 @@ void Node::subscribe(const std::string& topic, Func T::* callback) {
     });
 }
 
+template<typename MsgT, typename T>
+void Node::subscribe(const std::string& topic, void (T::* callback)(const TypedMessage<MsgT>&)) {
+    subscribe(topic, [this, callback](const Message& msg) {
+        MsgT data = [&]() {
+            if constexpr (std::is_base_of_v<FixedMessageType, MsgT>) {
+                MsgT d;
+                std::memcpy(&d, msg.data, sizeof(MsgT));
+                return d;
+            } else {
+                return MsgT::deserialize(
+                    static_cast<const uint8_t*>(msg.data), msg.size);
+            }
+        }();
+        TypedMessage<MsgT> typed{std::move(data), msg.sequence, msg.timestamp_ns};
+        (static_cast<T*>(this)->*callback)(typed);
+    });
+}
+
 template<typename T, typename Func>
 void Node::loop(double rate_hz, Func T::* callback) {
     loop(rate_hz, [this, callback]() {
         (static_cast<T*>(this)->*callback)();
     });
+}
+
+template<typename T>
+Publisher<T> Node::advertise(const std::string& topic, const PublisherOptions& options) {
+    return Publisher<T>(topic, options);
 }
 
 }  // namespace conduit

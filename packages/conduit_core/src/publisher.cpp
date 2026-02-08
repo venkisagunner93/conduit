@@ -3,7 +3,7 @@
 
 namespace conduit {
 
-Publisher::Publisher(const std::string& topic, const PublisherOptions& options)
+internal::Publisher::Publisher(const std::string& topic, const PublisherOptions& options)
     : topic_(topic),
       max_message_size_(options.max_message_size),
       shm_(internal::ShmRegion::create(
@@ -24,7 +24,7 @@ Publisher::Publisher(const std::string& topic, const PublisherOptions& options)
     writer_->initialize();
 }
 
-Publisher::Publisher(Publisher&& other) noexcept
+internal::Publisher::Publisher(Publisher&& other) noexcept
     : topic_(std::move(other.topic_)),
       max_message_size_(other.max_message_size_),
       shm_(std::move(other.shm_)),
@@ -32,7 +32,7 @@ Publisher::Publisher(Publisher&& other) noexcept
     other.max_message_size_ = 0;
 }
 
-Publisher& Publisher::operator=(Publisher&& other) noexcept {
+internal::Publisher& internal::Publisher::operator=(Publisher&& other) noexcept {
     if (this != &other) {
         // Clean up current state
         if (writer_) {
@@ -49,14 +49,14 @@ Publisher& Publisher::operator=(Publisher&& other) noexcept {
     return *this;
 }
 
-Publisher::~Publisher() {
+internal::Publisher::~Publisher() {
     // Unlink shared memory so it's removed when publisher is destroyed
     if (writer_) {
         internal::ShmRegion::unlink(topic_);
     }
 }
 
-bool Publisher::publish(const void* data, size_t size) {
+bool internal::Publisher::publish(const void* data, size_t size) {
     return writer_->try_write(data, size);
 }
 

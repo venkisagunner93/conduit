@@ -1,0 +1,6 @@
+startup:
+  - name: publisher
+    exec: demo-publisher
+  - wait: topic:hello
+  - name: subscriber
+    exec: demo-subscriber

@@ -32,3 +32,4 @@ target_link_libraries(conduit
 )
 
 install(TARGETS conduit RUNTIME DESTINATION bin)
+install(FILES completion/conduit.bash DESTINATION share/conduit/completion)

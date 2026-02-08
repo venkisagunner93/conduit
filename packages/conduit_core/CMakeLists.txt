@@ -5,6 +5,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+# conduit_types
+find_package(conduit_types REQUIRED)
+
 # fmt
 include(FetchContent)
 set(FMT_INSTALL ON CACHE BOOL "Enable fmt installation")
@@ -36,6 +39,7 @@ target_link_libraries(conduit_core
     PUBLIC
         pthread
         fmt::fmt
+        conduit_types::conduit_types
     PRIVATE
         rt
 )
@@ -63,6 +67,7 @@ include(CMakePackageConfigHelpers)
 file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/conduit_coreConfig.cmake
 "include(CMakeFindDependencyMacro)
 find_dependency(fmt)
+find_dependency(conduit_types)
 include(\${CMAKE_CURRENT_LIST_DIR}/conduit_coreTargets.cmake)
 ")
 
@@ -96,4 +101,8 @@ if(BUILD_TESTING)
     add_executable(node_test tests/node_test.cpp)
     target_link_libraries(node_test conduit_core GTest::gtest_main)
     add_test(NAME node_test COMMAND node_test)
+
+    add_executable(typed_pubsub_test tests/typed_pubsub_test.cpp)
+    target_link_libraries(typed_pubsub_test conduit_core GTest::gtest_main)
+    add_test(NAME typed_pubsub_test COMMAND typed_pubsub_test)
 endif()

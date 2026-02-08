@@ -78,10 +78,6 @@ void Node::loop(double rate_hz, std::function<void()> callback) {
     loops_.push_back(std::move(lp));
 }
 
-Publisher Node::advertise(const std::string& topic, const PublisherOptions& options) {
-    return Publisher(topic, options);
-}
-
 void Node::run() {
     if (running_.load(std::memory_order_acquire)) {
         throw NodeError("Node already running");
@@ -107,7 +103,7 @@ void Node::run() {
 
     // Create subscribers and start threads
     for (auto& sub : subscriptions_) {
-        sub->subscriber = std::make_unique<Subscriber>(sub->topic);
+        sub->subscriber = std::make_unique<internal::Subscriber>(sub->topic);
         sub->thread = std::thread(&Node::spin_subscription, this, sub.get());
         log::info("Subscribed to: {}", sub->topic);
     }

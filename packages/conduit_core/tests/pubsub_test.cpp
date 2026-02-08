@@ -29,10 +29,10 @@ TEST_F(PubSubTest, test_publish_subscribe_basic) {
     const std::string topic = "test_topic_1";
 
     // Create publisher
-    Publisher pub(topic, {.depth = 16, .max_message_size = 1024});
+    internal::Publisher pub(topic, {.depth = 16, .max_message_size = 1024});
 
     // Create subscriber
-    Subscriber sub(topic);
+    internal::Subscriber sub(topic);
 
     // Publish
     const char* data = "hello world";
@@ -48,8 +48,8 @@ TEST_F(PubSubTest, test_publish_subscribe_basic) {
 TEST_F(PubSubTest, test_publish_subscribe_wait) {
     const std::string topic = "test_topic_2";
 
-    Publisher pub(topic);
-    Subscriber sub(topic);
+    internal::Publisher pub(topic);
+    internal::Subscriber sub(topic);
 
     std::atomic<bool> received{false};
 
@@ -72,8 +72,8 @@ TEST_F(PubSubTest, test_publish_subscribe_wait) {
 TEST_F(PubSubTest, test_publish_subscribe_timeout) {
     const std::string topic = "test_topic_3";
 
-    Publisher pub(topic);
-    Subscriber sub(topic);
+    internal::Publisher pub(topic);
+    internal::Subscriber sub(topic);
 
     auto start = std::chrono::steady_clock::now();
     auto msg = sub.wait_for(50ms);
@@ -86,10 +86,10 @@ TEST_F(PubSubTest, test_publish_subscribe_timeout) {
 TEST_F(PubSubTest, test_multiple_subscribers) {
     const std::string topic = "test_topic_4";
 
-    Publisher pub(topic);
-    Subscriber sub1(topic);
-    Subscriber sub2(topic);
-    Subscriber sub3(topic);
+    internal::Publisher pub(topic);
+    internal::Subscriber sub1(topic);
+    internal::Subscriber sub2(topic);
+    internal::Subscriber sub3(topic);
 
     pub.publish("message", 7);
 
@@ -109,7 +109,7 @@ TEST_F(PubSubTest, test_multiple_subscribers) {
 TEST_F(PubSubTest, test_publisher_message_too_large) {
     const std::string topic = "test_topic_5";
 
-    Publisher pub(topic, {.depth = 16, .max_message_size = 100});
+    internal::Publisher pub(topic, {.depth = 16, .max_message_size = 100});
 
     char big_data[200];
     std::memset(big_data, 'x', sizeof(big_data));
@@ -127,28 +127,28 @@ TEST_F(PubSubTest, test_subscriber_before_publisher) {
     internal::ShmRegion::unlink(topic);
 
     // Subscriber without publisher should throw
-    EXPECT_THROW(Subscriber sub(topic), ShmError);
+    EXPECT_THROW(internal::Subscriber sub(topic), ShmError);
 }
 
 TEST_F(PubSubTest, test_subscriber_max_limit) {
     const std::string topic = "test_topic_7";
 
-    Publisher pub(topic);
+    internal::Publisher pub(topic);
 
-    std::vector<std::unique_ptr<Subscriber>> subscribers;
+    std::vector<std::unique_ptr<internal::Subscriber>> subscribers;
     for (int i = 0; i < 16; ++i) {
-        subscribers.push_back(std::make_unique<Subscriber>(topic));
+        subscribers.push_back(std::make_unique<internal::Subscriber>(topic));
     }
 
     // 17th should fail
-    EXPECT_THROW(Subscriber sub(topic), SubscriberError);
+    EXPECT_THROW(internal::Subscriber sub(topic), SubscriberError);
 }
 
 TEST_F(PubSubTest, test_publisher_destructor_cleanup) {
     const std::string topic = "test_topic_8";
 
     {
-        Publisher pub(topic);
+        internal::Publisher pub(topic);
         EXPECT_TRUE(internal::ShmRegion::exists(topic));
     }
     // Publisher destroyed
@@ -159,8 +159,8 @@ TEST_F(PubSubTest, test_publisher_destructor_cleanup) {
 TEST_F(PubSubTest, test_high_throughput) {
     const std::string topic = "test_topic_9";
 
-    Publisher pub(topic, {.depth = 1024, .max_message_size = 64});
-    Subscriber sub(topic);
+    internal::Publisher pub(topic, {.depth = 1024, .max_message_size = 64});
+    internal::Subscriber sub(topic);
 
     constexpr int count = 100000;
     std::atomic<int> received{0};
@@ -194,8 +194,8 @@ TEST_F(PubSubTest, test_high_throughput) {
 TEST_F(PubSubTest, test_sequence_numbers) {
     const std::string topic = "test_topic_10";
 
-    Publisher pub(topic, {.depth = 16, .max_message_size = 64});
-    Subscriber sub(topic);
+    internal::Publisher pub(topic, {.depth = 16, .max_message_size = 64});
+    internal::Subscriber sub(topic);
 
     // Publish multiple messages
     for (int i = 0; i < 5; ++i) {
@@ -217,8 +217,8 @@ TEST_F(PubSubTest, test_sequence_numbers) {
 TEST_F(PubSubTest, test_accessors) {
     const std::string topic = "test_topic_1";
 
-    Publisher pub(topic, {.depth = 32, .max_message_size = 2048});
-    Subscriber sub(topic);
+    internal::Publisher pub(topic, {.depth = 32, .max_message_size = 2048});
+    internal::Subscriber sub(topic);
 
     EXPECT_EQ(pub.topic(), topic);
     EXPECT_EQ(pub.max_message_size(), 2048u);
@@ -228,18 +228,18 @@ TEST_F(PubSubTest, test_accessors) {
 TEST_F(PubSubTest, test_move_semantics) {
     const std::string topic = "test_topic_1";
 
-    Publisher pub1(topic);
+    internal::Publisher pub1(topic);
 
     // Create subscriber before publishing
-    Subscriber sub1(topic);
+    internal::Subscriber sub1(topic);
 
     // Move publisher and publish
-    Publisher pub2 = std::move(pub1);
+    internal::Publisher pub2 = std::move(pub1);
     EXPECT_EQ(pub2.topic(), topic);
     pub2.publish("test", 4);
 
     // Move subscriber and read
-    Subscriber sub2 = std::move(sub1);
+    internal::Subscriber sub2 = std::move(sub1);
 
     auto msg = sub2.take();
     ASSERT_TRUE(msg.has_value());
@@ -249,8 +249,8 @@ TEST_F(PubSubTest, test_move_semantics) {
 TEST_F(PubSubTest, test_message_has_timestamp) {
     const std::string topic = "test_topic_1";
 
-    Publisher pub(topic);
-    Subscriber sub(topic);
+    internal::Publisher pub(topic);
+    internal::Subscriber sub(topic);
 
     uint64_t before = internal::get_timestamp_ns();
     pub.publish("hello", 5);
@@ -266,8 +266,8 @@ TEST_F(PubSubTest, test_message_has_timestamp) {
 TEST_F(PubSubTest, test_timestamps_increasing) {
     const std::string topic = "test_topic_1";
 
-    Publisher pub(topic);
-    Subscriber sub(topic);
+    internal::Publisher pub(topic);
+    internal::Subscriber sub(topic);
 
     pub.publish("one", 3);
     pub.publish("two", 3);
@@ -288,8 +288,8 @@ TEST_F(PubSubTest, test_timestamps_increasing) {
 TEST_F(PubSubTest, test_sequence_starts_at_zero) {
     const std::string topic = "test_topic_1";
 
-    Publisher pub(topic);
-    Subscriber sub(topic);
+    internal::Publisher pub(topic);
+    internal::Subscriber sub(topic);
 
     pub.publish("a", 1);
     pub.publish("b", 1);
@@ -311,8 +311,8 @@ TEST_F(PubSubTest, test_sequence_starts_at_zero) {
 TEST_F(PubSubTest, test_gap_detection) {
     const std::string topic = "test_topic_1";
 
-    Publisher pub(topic, {.depth = 4, .max_message_size = 64});
-    Subscriber sub(topic);
+    internal::Publisher pub(topic, {.depth = 4, .max_message_size = 64});
+    internal::Subscriber sub(topic);
 
     // Publish more than depth (causes overwrites)
     for (int i = 0; i < 10; ++i) {

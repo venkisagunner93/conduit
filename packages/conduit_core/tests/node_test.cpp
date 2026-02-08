@@ -43,7 +43,7 @@ TEST_F(NodeTest, test_node_basic) {
     };
 
     // Create publisher first
-    Publisher pub("test_topic");
+    internal::Publisher pub("test_topic");
 
     // Create and run node in separate thread
     TestNode node;
@@ -90,8 +90,8 @@ TEST_F(NodeTest, test_node_multiple_subscriptions) {
         }
     };
 
-    Publisher pub_imu("imu");
-    Publisher pub_lidar("lidar");
+    internal::Publisher pub_imu("imu");
+    internal::Publisher pub_lidar("lidar");
 
     TestNode node;
     std::thread node_thread([&node]() {
@@ -116,11 +116,11 @@ TEST_F(NodeTest, test_node_multiple_subscriptions) {
 TEST_F(NodeTest, test_node_advertise_and_publish) {
     class ProducerNode : public Node {
     public:
-        std::optional<Publisher> output_;
+        std::optional<internal::Publisher> output_;
 
         ProducerNode() {
             subscribe("input", &ProducerNode::on_input);
-            output_.emplace(advertise("output"));
+            output_.emplace(internal::Publisher("output"));
         }
 
         void on_input(const Message& msg) {
@@ -128,12 +128,12 @@ TEST_F(NodeTest, test_node_advertise_and_publish) {
         }
     };
 
-    Publisher pub_input("input");
+    internal::Publisher pub_input("input");
 
     ProducerNode node;
 
     // Create subscriber after ProducerNode's advertise() creates the output topic
-    Subscriber sub_output("output");
+    internal::Subscriber sub_output("output");
 
     std::thread node_thread([&node]() {
         node.run();
@@ -166,7 +166,7 @@ TEST_F(NodeTest, test_node_stop_while_waiting) {
     };
 
     // Create publisher so topic exists
-    Publisher pub("never_publishes");
+    internal::Publisher pub("never_publishes");
 
     TestNode node;
     std::thread node_thread([&node]() {
@@ -199,7 +199,7 @@ TEST_F(NodeTest, test_node_lambda_subscribe) {
         }
     };
 
-    Publisher pub("test_topic");
+    internal::Publisher pub("test_topic");
 
     TestNode node(count);
     std::thread node_thread([&node]() {
@@ -226,7 +226,7 @@ TEST_F(NodeTest, test_node_cannot_subscribe_while_running) {
         }
     };
 
-    Publisher pub("dummy");
+    internal::Publisher pub("dummy");
 
     TestNode node;
     std::thread node_thread([&node]() {
@@ -253,7 +253,7 @@ TEST_F(NodeTest, test_node_running_state) {
         }
     };
 
-    Publisher pub("test_topic");
+    internal::Publisher pub("test_topic");
 
     TestNode node;
     EXPECT_FALSE(node.running());
@@ -283,7 +283,7 @@ TEST_F(NodeTest, test_node_cannot_run_twice) {
         }
     };
 
-    Publisher pub("test_topic");
+    internal::Publisher pub("test_topic");
 
     TestNode node;
     std::thread node_thread([&node]() {

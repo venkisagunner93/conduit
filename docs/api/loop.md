@@ -66,12 +66,12 @@ Period: 10 ms (100 Hz)
 Callback takes: 15 ms
 
 Iteration 1: callback() runs, takes 15 ms
-             → Missed deadline by 5 ms
-             → Warning logged
-             → Iteration 2 starts immediately
+             -> Missed deadline by 5 ms
+             -> Warning logged
+             -> Iteration 2 starts immediately
 
 Iteration 2: callback() runs, takes 8 ms
-             → On time, sleeps 2 ms until next
+             -> On time, sleeps 2 ms until next
 ```
 
 A warning is logged when deadlines are missed.
@@ -81,34 +81,41 @@ A warning is logged when deadlines are missed.
 ### Control Loop
 
 ```cpp
-class ControlNode : public conduit::Node {
+#include <conduit_core/node.hpp>
+#include <conduit_types/primitives/vec3.hpp>
+#include <conduit_types/derived/pose3d.hpp>
+
+using namespace conduit;
+
+class ControlNode : public Node {
 public:
     ControlNode() {
-        subscribe("state", &ControlNode::on_state);
-        pub_.emplace(advertise("cmd"));
+        subscribe<Pose3D>("state", &ControlNode::on_state);
+        pub_.emplace(advertise<Vec3>("cmd"));
         loop(100.0, &ControlNode::control);  // 100 Hz control
     }
 
 private:
-    void on_state(const conduit::Message& msg) {
+    void on_state(const TypedMessage<Pose3D>& msg) {
         std::lock_guard<std::mutex> lock(mutex_);
-        latest_state_ = *static_cast<const State*>(msg.data());
+        latest_state_ = msg.data;
     }
 
     void control() {
-        State state;
+        Pose3D state;
         {
             std::lock_guard<std::mutex> lock(mutex_);
             state = latest_state_;
         }
 
-        Command cmd = compute_control(state);
-        pub_->publish(&cmd, sizeof(cmd));
+        Vec3 cmd{};
+        cmd.x = compute_control(state);
+        pub_->publish(cmd);
     }
 
     std::mutex mutex_;
-    State latest_state_;
-    std::optional<conduit::Publisher> pub_;
+    Pose3D latest_state_{};
+    std::optional<Publisher<Vec3>> pub_;
 };
 ```
 
@@ -141,20 +148,27 @@ private:
 ### Publish at Fixed Rate
 
 ```cpp
-class HeartbeatNode : public conduit::Node {
+#include <conduit_core/node.hpp>
+#include <conduit_types/primitives/uint.hpp>
+
+using namespace conduit;
+
+class HeartbeatNode : public Node {
 public:
     HeartbeatNode() {
-        pub_.emplace(advertise("heartbeat"));
+        pub_.emplace(advertise<Uint>("heartbeat"));
         loop(1.0, &HeartbeatNode::heartbeat);  // 1 Hz
     }
 
 private:
     void heartbeat() {
-        uint64_t timestamp = get_timestamp();
-        pub_->publish(&timestamp, sizeof(timestamp));
+        Uint msg{};
+        msg.value = count_++;
+        pub_->publish(msg);
     }
 
-    std::optional<conduit::Publisher> pub_;
+    std::optional<Publisher<Uint>> pub_;
+    uint64_t count_ = 0;
 };
 ```
 
@@ -163,39 +177,46 @@ private:
 Common pattern: subscribe for input, loop for output.
 
 ```cpp
-class ProcessorNode : public conduit::Node {
+#include <conduit_core/node.hpp>
+#include <conduit_types/derived/imu.hpp>
+#include <conduit_types/primitives/vec3.hpp>
+
+using namespace conduit;
+
+class ProcessorNode : public Node {
 public:
     ProcessorNode() {
-        subscribe("input", &ProcessorNode::on_input);
-        pub_.emplace(advertise("output"));
+        subscribe<Imu>("imu", &ProcessorNode::on_input);
+        pub_.emplace(advertise<Vec3>("filtered_accel"));
         loop(50.0, &ProcessorNode::process);  // 50 Hz output
     }
 
 private:
-    void on_input(const conduit::Message& msg) {
-        // Store latest input (called whenever new data arrives)
+    void on_input(const TypedMessage<Imu>& msg) {
         std::lock_guard<std::mutex> lock(mutex_);
-        latest_ = *static_cast<const InputData*>(msg.data());
+        latest_ = msg.data;
         has_data_ = true;
     }
 
     void process() {
-        // Process at fixed rate (50 Hz)
-        InputData input;
+        Imu input;
         {
             std::lock_guard<std::mutex> lock(mutex_);
             if (!has_data_) return;
             input = latest_;
         }
 
-        OutputData output = compute(input);
-        pub_->publish(&output, sizeof(output));
+        Vec3 filtered{};
+        filtered.x = filter(input.linear_acceleration.x);
+        filtered.y = filter(input.linear_acceleration.y);
+        filtered.z = filter(input.linear_acceleration.z);
+        pub_->publish(filtered);
     }
 
     std::mutex mutex_;
-    InputData latest_;
+    Imu latest_{};
     bool has_data_ = false;
-    std::optional<conduit::Publisher> pub_;
+    std::optional<Publisher<Vec3>> pub_;
 };
 ```
 
@@ -220,11 +241,11 @@ Each loop runs in its own thread. If you share data between:
 
 ```cpp
 std::mutex mutex_;
-SharedData shared_;
+Vec3 shared_{};
 
-void on_input(const Message& msg) {
+void on_input(const TypedMessage<Vec3>& msg) {
     std::lock_guard<std::mutex> lock(mutex_);
-    shared_ = parse(msg);
+    shared_ = msg.data;
 }
 
 void loop_callback() {

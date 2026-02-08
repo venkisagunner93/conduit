@@ -15,7 +15,7 @@ namespace conduit {
 
 struct TopicRecorder {
     std::string topic;
-    std::unique_ptr<Subscriber> subscriber;
+    std::unique_ptr<internal::Subscriber> subscriber;
     std::thread thread;
     mcap::ChannelId channel_id;
 };
@@ -82,7 +82,7 @@ void Tank::start() {
 
     // Start threads
     for (auto& tr : impl_->topic_recorders) {
-        tr->subscriber = std::make_unique<Subscriber>(tr->topic);
+        tr->subscriber = std::make_unique<internal::Subscriber>(tr->topic);
         tr->thread = std::thread([this, tr_ptr = tr.get()]() {
             impl_->record_loop(tr_ptr);
         });

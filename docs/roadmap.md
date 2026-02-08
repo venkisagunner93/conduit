@@ -2,42 +2,6 @@
 
 Planned features for Conduit.
 
-## Protobuf Integration
-
-**Status:** Planned
-
-Currently, Conduit is serialization-agnostic. You send raw bytes. This gives maximum flexibility but requires manual serialization.
-
-Protobuf integration will add:
-
-- **Schema definitions** — Define messages in `.proto` files
-- **Code generation** — Generate C++ classes for messages
-- **Type safety** — Compile-time checks for message types
-- **Introspection** — CLI tools can display message fields
-
-```proto
-// imu.proto
-message ImuData {
-  double timestamp = 1;
-  repeated float accel = 2;
-  repeated float gyro = 3;
-}
-```
-
-```cpp
-// Generated API
-ImuData msg;
-msg.set_timestamp(now());
-msg.add_accel(0.1f);
-pub.publish(msg);
-```
-
-Why Protobuf over others:
-- Fast serialization/deserialization
-- Compact binary format
-- Backward compatible schema evolution
-- Widely used in robotics and industry
-
 ## conduit_joint
 
 **Status:** Planned
@@ -142,6 +106,7 @@ These are under consideration but not yet planned:
 | **Time sync** | Coordinated timestamps across machines |
 | **Priority topics** | Real-time scheduling for critical data |
 | **Encryption** | Secure network transport |
+| **Message introspection** | CLI tools that understand typed messages |
 
 ## Contributing
 

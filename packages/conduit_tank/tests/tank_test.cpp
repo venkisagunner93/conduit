@@ -38,7 +38,7 @@ TEST_F(TankTest, test_tank_basic) {
     const std::string output_path = "/tmp/test_basic.mcap";
     const std::string topic = "test_topic";
 
-    Publisher pub(topic);
+    internal::Publisher pub(topic);
 
     Tank tank(output_path);
     tank.add_topic(topic);
@@ -63,8 +63,8 @@ TEST_F(TankTest, test_tank_basic) {
 TEST_F(TankTest, test_tank_multiple_topics) {
     const std::string output_path = "/tmp/test_multi.mcap";
 
-    Publisher pub_a("topic_a");
-    Publisher pub_b("topic_b");
+    internal::Publisher pub_a("topic_a");
+    internal::Publisher pub_b("topic_b");
 
     Tank tank(output_path);
     tank.add_topic("topic_a");
@@ -85,7 +85,7 @@ TEST_F(TankTest, test_tank_multiple_topics) {
 }
 
 TEST_F(TankTest, test_tank_cannot_add_while_recording) {
-    Publisher pub("topic1");
+    internal::Publisher pub("topic1");
 
     Tank tank("/tmp/test.mcap");
     tank.add_topic("topic1");
@@ -98,7 +98,7 @@ TEST_F(TankTest, test_tank_cannot_add_while_recording) {
 }
 
 TEST_F(TankTest, test_tank_destructor_stops) {
-    Publisher pub("topic");
+    internal::Publisher pub("topic");
     const std::string output_path = "/tmp/test_dtor.mcap";
 
     {
@@ -120,7 +120,7 @@ TEST_F(TankTest, test_tank_destructor_stops) {
 }
 
 TEST_F(TankTest, test_tank_already_recording) {
-    Publisher pub("topic");
+    internal::Publisher pub("topic");
     const std::string output_path = "/tmp/test_already.mcap";
 
     Tank tank(output_path);
@@ -134,7 +134,7 @@ TEST_F(TankTest, test_tank_already_recording) {
 }
 
 TEST_F(TankTest, test_tank_stop_idempotent) {
-    Publisher pub("topic");
+    internal::Publisher pub("topic");
     const std::string output_path = "/tmp/test_idempotent.mcap";
 
     Tank tank(output_path);

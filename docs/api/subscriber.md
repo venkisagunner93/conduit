@@ -1,17 +1,18 @@
 # Subscriber
 
-Receive messages from a topic.
+Receive typed messages from a topic.
 
 ## Basic Usage
 
 ```cpp
-#include <conduit_core/pubsub.hpp>
+#include <conduit_core/subscriber.hpp>
+#include <conduit_types/primitives/vec3.hpp>
 
-conduit::Subscriber sub("my_topic");
+conduit::Subscriber<conduit::Vec3> sub("imu_accel");
 
 while (running) {
-    conduit::Message msg = sub.wait();
-    process(msg.data(), msg.size());
+    auto msg = sub.wait();
+    process(msg.data);  // msg.data is a Vec3
 }
 ```
 
@@ -21,18 +22,23 @@ The preferred way — Node handles threading:
 
 ```cpp
 #include <conduit_core/node.hpp>
+#include <conduit_types/derived/imu.hpp>
 
-class MyNode : public conduit::Node {
+using namespace conduit;
+
+class MyNode : public Node {
 public:
     MyNode() {
-        subscribe("input", &MyNode::on_message);
+        subscribe<Imu>("imu", &MyNode::on_imu);
     }
 
 private:
-    void on_message(const conduit::Message& msg) {
+    void on_imu(const TypedMessage<Imu>& msg) {
         // Called in a dedicated thread for each message
-        const MyStruct* data = static_cast<const MyStruct*>(msg.data());
-        process(data);
+        log::info("Accel: [{}, {}, {}]",
+            msg.data.linear_acceleration.x,
+            msg.data.linear_acceleration.y,
+            msg.data.linear_acceleration.z);
     }
 };
 ```
@@ -44,7 +50,7 @@ Each subscription runs in its own thread. You don't manage the loop.
 ### Constructor
 
 ```cpp
-Subscriber(const std::string& topic);
+Subscriber<T>(const std::string& topic, const SubscriberOptions& options = {});
 ```
 
 Opens shared memory at `/dev/shm/conduit_{topic}`.
@@ -54,33 +60,33 @@ If the topic doesn't exist yet, the constructor **waits** until the publisher cr
 ### wait()
 
 ```cpp
-Message wait();
+TypedMessage<T> wait();
 ```
 
-Blocks until the next message arrives.
+Blocks until the next message arrives. Returns a `TypedMessage<T>` with the deserialized data.
 
 This uses futex for efficient sleeping — zero CPU while waiting.
 
-### try_read()
+### take()
 
 ```cpp
-std::optional<Message> try_read();
+std::optional<TypedMessage<T>> take();
 ```
 
 Non-blocking read.
 
-**Returns:** Message if available, `std::nullopt` otherwise.
+**Returns:** `TypedMessage<T>` if available, `std::nullopt` otherwise.
 
 ```cpp
-if (auto msg = sub.try_read()) {
-    process(msg->data(), msg->size());
+if (auto msg = sub.take()) {
+    process(msg->data);
 }
 ```
 
 ### wait_for()
 
 ```cpp
-std::optional<Message> wait_for(std::chrono::nanoseconds timeout);
+std::optional<TypedMessage<T>> wait_for(std::chrono::nanoseconds timeout);
 ```
 
 Blocks until a message arrives or timeout.
@@ -89,7 +95,7 @@ Blocks until a message arrives or timeout.
 using namespace std::chrono_literals;
 
 if (auto msg = sub.wait_for(100ms)) {
-    process(msg->data(), msg->size());
+    process(msg->data);
 } else {
     // Timed out
 }
@@ -103,79 +109,84 @@ const std::string& topic() const;
 
 Returns the topic name.
 
-## Message Class
+## TypedMessage
 
 ```cpp
-class Message {
-public:
-    const void* data() const;       // Pointer to payload
-    size_t size() const;            // Payload size in bytes
-    uint64_t sequence() const;      // Message sequence number
-    uint64_t timestamp_ns() const;  // Publish timestamp
+template <typename T>
+struct TypedMessage {
+    T data;                 // The deserialized message
+    uint64_t sequence;      // Message sequence number
+    uint64_t timestamp_ns;  // Publish timestamp (nanoseconds)
 };
 ```
 
-### Zero-Copy Access
-
-`data()` returns a pointer **directly into shared memory**. No copying.
+Access the message data directly:
 
 ```cpp
-Message msg = sub.wait();
-const ImuData* imu = static_cast<const ImuData*>(msg.data());
-float ax = imu->accel[0];  // Reading shared memory directly
+auto msg = sub.wait();
+double x = msg.data.x;          // Access fields directly
+uint64_t seq = msg.sequence;     // Sequence number
+uint64_t ts = msg.timestamp_ns;  // Timestamp
 ```
 
-**Important:** The pointer is only valid until the next `wait()` / `try_read()`. Copy if you need to keep it.
+## Node Subscribe
 
-### Measuring Latency
+### Typed Subscribe
 
 ```cpp
-#include <conduit_core/internal/time.hpp>
+subscribe<MsgType>("topic", &MyNode::callback);
+```
 
-Message msg = sub.wait();
-uint64_t now = conduit::internal::get_timestamp_ns();
-uint64_t latency_ns = now - msg.timestamp_ns();
+The callback receives `const TypedMessage<MsgType>&`:
+
+```cpp
+void on_imu(const TypedMessage<Imu>& msg) {
+    Imu imu = msg.data;
+    uint64_t seq = msg.sequence;
+}
+```
+
+### Raw Subscribe
+
+For tools and introspection, raw subscribe is still available:
+
+```cpp
+subscribe("topic", &MyNode::callback);
+```
+
+The callback receives `const conduit::Message&` with raw bytes:
+
+```cpp
+void on_raw(const conduit::Message& msg) {
+    const void* data = msg.data;
+    size_t size = msg.size;
+}
 ```
 
 ## Examples
 
-### Simple Subscriber
+### Typed Subscriber
 
 ```cpp
-class EchoSubscriber : public conduit::Node {
+#include <conduit_core/node.hpp>
+#include <conduit_types/derived/odometry.hpp>
+
+using namespace conduit;
+
+class OdomSubscriber : public Node {
 public:
-    EchoSubscriber() {
-        subscribe("messages", &EchoSubscriber::on_message);
+    OdomSubscriber() {
+        subscribe<Odometry>("odom", &OdomSubscriber::on_odom);
     }
 
 private:
-    void on_message(const conduit::Message& msg) {
-        std::string text(static_cast<const char*>(msg.data()), msg.size());
-        conduit::log::info("Received: {}", text);
-    }
-};
-```
-
-### Struct Subscriber
-
-```cpp
-struct ImuData {
-    double timestamp;
-    float accel[3];
-    float gyro[3];
-};
-
-class ImuSubscriber : public conduit::Node {
-public:
-    ImuSubscriber() {
-        subscribe("imu", &ImuSubscriber::on_imu);
-    }
-
-private:
-    void on_imu(const conduit::Message& msg) {
-        const ImuData* imu = static_cast<const ImuData*>(msg.data());
-        conduit::log::info("Accel: [{}, {}, {}]",
-            imu->accel[0], imu->accel[1], imu->accel[2]);
+    void on_odom(const TypedMessage<Odometry>& msg) {
+        const auto& odom = msg.data;
+        log::info("Position: [{}, {}, {}] yaw: {}",
+            odom.pose.position.x,
+            odom.pose.position.y,
+            odom.pose.position.z,
+            odom.pose.orientation.to_yaw());
     }
 };
 ```
@@ -183,26 +194,31 @@ private:
 ### Multiple Subscriptions
 
 ```cpp
-class FusionNode : public conduit::Node {
+#include <conduit_core/node.hpp>
+#include <conduit_types/derived/imu.hpp>
+#include <conduit_types/derived/pose3d.hpp>
+
+using namespace conduit;
+
+class FusionNode : public Node {
 public:
     FusionNode() {
-        subscribe("imu", &FusionNode::on_imu);
-        subscribe("gps", &FusionNode::on_gps);
-        subscribe("camera", &FusionNode::on_camera);
+        subscribe<Imu>("imu", &FusionNode::on_imu);
+        subscribe<Pose3D>("gps_pose", &FusionNode::on_gps);
         // Each runs in its own thread
     }
 
 private:
-    void on_imu(const conduit::Message& msg) { /* ... */ }
-    void on_gps(const conduit::Message& msg) { /* ... */ }
-    void on_camera(const conduit::Message& msg) { /* ... */ }
+    void on_imu(const TypedMessage<Imu>& msg) { /* ... */ }
+    void on_gps(const TypedMessage<Pose3D>& msg) { /* ... */ }
 };
 ```
 
 ### Manual Loop (Without Node)
 
 ```cpp
-#include <conduit_core/pubsub.hpp>
+#include <conduit_core/subscriber.hpp>
+#include <conduit_types/primitives/vec3.hpp>
 #include <atomic>
 #include <signal.h>
 
@@ -213,11 +229,11 @@ void signal_handler(int) { running = false; }
 int main() {
     signal(SIGINT, signal_handler);
 
-    conduit::Subscriber sub("my_topic");
+    conduit::Subscriber<conduit::Vec3> sub("accel");
 
     while (running) {
         if (auto msg = sub.wait_for(std::chrono::milliseconds(100))) {
-            process(msg->data(), msg->size());
+            process(msg->data);
         }
     }
 }
@@ -246,10 +262,10 @@ If a subscriber can't keep up, the publisher eventually overwrites unread data:
 
 ```
 write_idx = 100
-read_idx  = 80   ← Subscriber is 20 messages behind
+read_idx  = 80   <- Subscriber is 20 messages behind
 slot_count = 16
 
-100 - 80 = 20 > 16  ← Subscriber has fallen behind!
+100 - 80 = 20 > 16  <- Subscriber has fallen behind!
 ```
 
 When this happens:
@@ -258,6 +274,6 @@ When this happens:
 3. Warning can be logged
 
 **Solutions:**
-- Increase `slot_count` for more buffer space
+- Increase `depth` in `PublisherOptions` for more buffer space
 - Make callback faster
 - Accept occasional drops (common for sensors)

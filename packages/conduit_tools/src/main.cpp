@@ -13,13 +13,13 @@ void print_usage() {
     fmt::print("  echo <topic>       Print messages (hex)\n");
     fmt::print("  hz <topic>         Measure publish rate\n");
     fmt::print("  record             Record topics to MCAP\n");
-    fmt::print("  flow <file>        Run a flow file\n");
+    fmt::print("  flow <name>        Run a flow by name or path\n");
     fmt::print("\n");
     fmt::print("Examples:\n");
     fmt::print("  conduit topics\n");
     fmt::print("  conduit echo imu\n");
     fmt::print("  conduit record -o recording.mcap imu lidar\n");
-    fmt::print("  conduit flow system.flow.yaml\n");
+    fmt::print("  conduit flow demo\n");
 }
 
 int main(int argc, char** argv) {

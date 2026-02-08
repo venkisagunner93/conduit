@@ -6,6 +6,16 @@ The `conduit` command provides tools for monitoring and recording.
 conduit <command> [options]
 ```
 
+## Bash Completion
+
+Enable tab completion for commands, topics, and flow names:
+
+```bash
+source install/share/conduit/completion/conduit.bash
+```
+
+Add to your `.bashrc` for permanent setup.
+
 ## topics
 
 List all active topics.
@@ -94,10 +104,31 @@ Press `Ctrl+C` to stop recording.
 Run a flow file to orchestrate multiple nodes.
 
 ```bash
-conduit flow robot.flow.yaml
+# Run by name (resolves from installed flows)
+conduit flow demo
+
+# Run by path
+conduit flow ./my_system.flow.yaml
 ```
 
 Press `Ctrl+C` for graceful shutdown (runs shutdown sequence).
+
+### Flow Name Resolution
+
+When you pass a name (no `/` or `.yaml`), Conduit looks for matching flow files in the installed flows directory (`<install>/share/conduit/flows/`):
+
+1. `<name>.flow.yaml`
+2. `<name>.yaml`
+
+This means any package can install flow files and they become available by name.
+
+### List Available Flows
+
+```bash
+$ conduit flow --list
+demo
+robot
+```
 
 ### Flow File Format
 
@@ -144,6 +175,16 @@ shutdown:                          # Optional (default: reverse of startup)
   working_dir: /path      # Working directory
 ```
 
+### Installing Flow Files
+
+Add to your package's `CMakeLists.txt`:
+
+```cmake
+install(FILES my_flow.flow.yaml DESTINATION share/conduit/flows)
+```
+
+After building, `conduit flow my_flow` will find it.
+
 ## Examples
 
 ### Monitor a Robot
@@ -186,6 +227,6 @@ startup:
 ```
 
 ```bash
-conduit flow robot.flow.yaml
+conduit flow robot
 # Ctrl+C for graceful shutdown
 ```

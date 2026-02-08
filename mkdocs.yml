@@ -50,10 +50,11 @@ nav:
       - Sequence Numbers: architecture/sequence.md
       - Futex: architecture/futex.md
       - Memory Layout: architecture/memory-layout.md
-      - Complete Flow: architecture/complete-flow.md
+
   - API Reference:
       - Publisher: api/publisher.md
       - Subscriber: api/subscriber.md
+      - Types: api/types.md
       - Loop: api/loop.md
   - CLI Tools: cli.md
   - Roadmap: roadmap.md

@@ -59,14 +59,14 @@ This adds `install/bin` to your PATH.
 
 Open three terminals (use `cexec` to attach to the running container).
 
-**Terminal 1 — Subscriber:**
-```bash
-demo-subscriber
-```
-
-**Terminal 2 — Publisher:**
+**Terminal 1 — Publisher:**
 ```bash
 demo-publisher
+```
+
+**Terminal 2 — Subscriber:**
+```bash
+demo-subscriber
 ```
 
 **Terminal 3 — Monitor:**
@@ -76,12 +76,18 @@ conduit hz hello    # Measure rate
 conduit echo hello  # See messages
 ```
 
+Or launch everything with a flow:
+
+```bash
+conduit flow demo
+```
+
 ## Create Your First Node
 
 ### 1. Create a package
 
 ```bash
-forge pkg my_robot --deps conduit_core
+forge pkg my_robot --deps conduit_core conduit_types
 ```
 
 This creates:
@@ -101,23 +107,27 @@ Edit `packages/my_robot/src/my_robot.cpp`:
 ```cpp
 #include <conduit_core/node.hpp>
 #include <conduit_core/log.hpp>
+#include <conduit_types/primitives/uint.hpp>
 #include <optional>
 
-class MyPublisher : public conduit::Node {
+using namespace conduit;
+
+class MyPublisher : public Node {
 public:
     MyPublisher() {
-        pub_.emplace(advertise("my_topic"));
+        pub_.emplace(advertise<Uint>("my_topic"));
         loop(10.0, &MyPublisher::publish);
     }
 
 private:
     void publish() {
-        std::string msg = "Hello " + std::to_string(count_++);
-        pub_->publish(msg.data(), msg.size());
-        conduit::log::info("Sent: {}", msg);
+        Uint msg{};
+        msg.value = count_++;
+        pub_->publish(msg);
+        log::info("Sent: {}", msg.value);
     }
 
-    std::optional<conduit::Publisher> pub_;
+    std::optional<Publisher<Uint>> pub_;
     uint64_t count_ = 0;
 };
 
@@ -127,9 +137,34 @@ int main() {
 }
 ```
 
-### 3. Update CMakeLists.txt
+### 3. Write a subscriber
 
-Replace the library with an executable:
+```cpp
+#include <conduit_core/node.hpp>
+#include <conduit_core/log.hpp>
+#include <conduit_types/primitives/uint.hpp>
+
+using namespace conduit;
+
+class MySubscriber : public Node {
+public:
+    MySubscriber() {
+        subscribe<Uint>("my_topic", &MySubscriber::on_message);
+    }
+
+private:
+    void on_message(const TypedMessage<Uint>& msg) {
+        log::info("Received [seq={}]: {}", msg.sequence, msg.data.value);
+    }
+};
+
+int main() {
+    MySubscriber node;
+    node.run();
+}
+```
+
+### 4. Update CMakeLists.txt
 
 ```cmake
 cmake_minimum_required(VERSION 3.16)
@@ -139,6 +174,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(conduit_core REQUIRED)
+find_package(conduit_types REQUIRED)
 
 add_executable(my_publisher src/my_robot.cpp)
 target_link_libraries(my_publisher conduit_core::conduit_core)
@@ -146,7 +182,7 @@ target_link_libraries(my_publisher conduit_core::conduit_core)
 install(TARGETS my_publisher RUNTIME DESTINATION bin)
 ```
 
-### 4. Build and run
+### 5. Build and run
 
 ```bash
 forge build my_robot
@@ -164,6 +200,7 @@ conduit echo my_topic
 conduit/
 ├── packages/           # All Conduit packages
 │   ├── conduit_core/   # Core library
+│   ├── conduit_types/  # Message types
 │   ├── conduit_tank/   # Recording
 │   ├── conduit_flow/   # Flow execution
 │   ├── conduit_tools/  # CLI
@@ -188,8 +225,9 @@ forge pkg <name>         # Create new package
 
 ## Next Steps
 
-- [Publisher API](api/publisher.md) — How to publish messages
+- [Publisher API](api/publisher.md) — How to publish typed messages
 - [Subscriber API](api/subscriber.md) — How to subscribe to topics
+- [Types](api/types.md) — Built-in message types
 - [Loop API](api/loop.md) — How to run code at fixed rates
-- [CLI Tools](cli.md) — Monitor and record
-- [Architecture](architecture.md) — How it works under the hood
+- [CLI Tools](cli.md) — Monitor, record, and launch
+- [Architecture](architecture/index.md) — How it works under the hood

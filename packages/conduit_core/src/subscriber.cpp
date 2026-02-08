@@ -3,7 +3,7 @@
 
 namespace conduit {
 
-Subscriber::Subscriber(const std::string& topic, const SubscriberOptions& options)
+internal::Subscriber::Subscriber(const std::string& topic, const SubscriberOptions& options)
     : topic_(topic),
       shm_(internal::ShmRegion::open(topic)),
       reader_(std::make_unique<internal::RingBufferReader>(shm_.data(), shm_.size())),
@@ -15,7 +15,7 @@ Subscriber::Subscriber(const std::string& topic, const SubscriberOptions& option
     }
 }
 
-Subscriber::Subscriber(Subscriber&& other) noexcept
+internal::Subscriber::Subscriber(Subscriber&& other) noexcept
     : topic_(std::move(other.topic_)),
       shm_(std::move(other.shm_)),
       reader_(std::move(other.reader_)),
@@ -23,7 +23,7 @@ Subscriber::Subscriber(Subscriber&& other) noexcept
     other.slot_ = -1;
 }
 
-Subscriber& Subscriber::operator=(Subscriber&& other) noexcept {
+internal::Subscriber& internal::Subscriber::operator=(Subscriber&& other) noexcept {
     if (this != &other) {
         // Release current slot
         if (slot_ >= 0 && reader_) {
@@ -40,13 +40,13 @@ Subscriber& Subscriber::operator=(Subscriber&& other) noexcept {
     return *this;
 }
 
-Subscriber::~Subscriber() {
+internal::Subscriber::~Subscriber() {
     if (slot_ >= 0 && reader_) {
         reader_->release_slot(slot_);
     }
 }
 
-std::optional<Message> Subscriber::take() {
+std::optional<Message> internal::Subscriber::take() {
     auto result = reader_->try_read(slot_);
     if (!result) {
         return std::nullopt;
@@ -60,7 +60,7 @@ std::optional<Message> Subscriber::take() {
     };
 }
 
-Message Subscriber::wait() {
+Message internal::Subscriber::wait() {
     auto result = reader_->wait(slot_);
     // wait() always returns a value (blocks until data available)
     return Message{
@@ -71,7 +71,7 @@ Message Subscriber::wait() {
     };
 }
 
-std::optional<Message> Subscriber::wait_for(std::chrono::nanoseconds timeout) {
+std::optional<Message> internal::Subscriber::wait_for(std::chrono::nanoseconds timeout) {
     auto result = reader_->wait_for(slot_, timeout);
     if (!result) {
         return std::nullopt;

@@ -1,0 +1,9 @@
+[package]
+name = "conduit_types"
+version = "0.1.0"
+description = "Message type interfaces for Conduit pub/sub middleware"
+
+[dependencies]
+
+[build]
+type = "cmake"
