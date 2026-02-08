@@ -6,8 +6,9 @@
 
 namespace conduit {
 
+/// @brief Fixed-size unsigned 64-bit integer message type.
 struct Uint : public FixedMessageType {
-    uint64_t value;
+    uint64_t value;  ///< Unsigned integer value.
 };
 
 }  // namespace conduit

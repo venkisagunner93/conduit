@@ -4,10 +4,11 @@
 
 namespace conduit {
 
+/// @brief Fixed-size 3D vector message type.
 struct Vec3 : FixedMessageType {
-    double x;
-    double y;
-    double z;
+    double x;  ///< X component.
+    double y;  ///< Y component.
+    double z;  ///< Z component.
 };
 
 }  // namespace conduit

@@ -7,15 +7,25 @@
 
 namespace conduit {
 
+/// @brief Euler angle rotation order.
 enum class EulerOrder { ZYX, XYZ };
 
+/// @brief Quaternion orientation (x, y, z, w) with Euler angle conversions.
+///
+/// Represents a 3D rotation as a unit quaternion. Provides factory methods
+/// for constructing from Euler angles and extracting them back.
 struct Orientation : FixedMessageType {
-    double x;
-    double y;
-    double z;
-    double w;
+    double x;  ///< Quaternion X component.
+    double y;  ///< Quaternion Y component.
+    double z;  ///< Quaternion Z component.
+    double w;  ///< Quaternion W (scalar) component.
 
-    // Euler angles (roll, pitch, yaw) to quaternion
+    /// @brief Create a quaternion from Euler angles (roll, pitch, yaw).
+    /// @param roll Rotation about X axis in radians.
+    /// @param pitch Rotation about Y axis in radians.
+    /// @param yaw Rotation about Z axis in radians.
+    /// @param order Euler angle convention (default ZYX).
+    /// @return Unit quaternion representing the rotation.
     static Orientation from_euler(double roll, double pitch, double yaw,
                                   EulerOrder order = EulerOrder::ZYX) {
         const double cr = std::cos(roll * 0.5), sr = std::sin(roll * 0.5);
@@ -37,7 +47,9 @@ struct Orientation : FixedMessageType {
         return q;
     }
 
-    // Yaw-only rotation (convenience for 2D)
+    /// @brief Create a quaternion from a yaw-only rotation (convenience for 2D).
+    /// @param yaw Rotation about Z axis in radians.
+    /// @return Unit quaternion representing the rotation.
     static Orientation from_yaw(double yaw) {
         Orientation q{};
         q.z = std::sin(yaw * 0.5);
@@ -45,7 +57,9 @@ struct Orientation : FixedMessageType {
         return q;
     }
 
-    // Quaternion to Euler angles → Vec3{roll, pitch, yaw}
+    /// @brief Convert quaternion to Euler angles.
+    /// @param order Euler angle convention (default ZYX).
+    /// @return Vec3 with x=roll, y=pitch, z=yaw in radians.
     Vec3 to_euler(EulerOrder order = EulerOrder::ZYX) const {
         Vec3 e{};
         if (order == EulerOrder::ZYX) {
@@ -62,7 +76,8 @@ struct Orientation : FixedMessageType {
         return e;
     }
 
-    // Extract yaw (convenience for 2D)
+    /// @brief Extract the yaw angle from the quaternion (convenience for 2D).
+    /// @return Yaw angle in radians.
     double to_yaw() const {
         return std::atan2(2.0 * (w * z + x * y), 1.0 - 2.0 * (y * y + z * z));
     }

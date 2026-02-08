@@ -13,8 +13,32 @@
 
 namespace conduit {
 
+/// @brief Base class for conduit processing nodes.
+///
+/// A Node manages subscriptions and publish loops. Each subscription
+/// runs on its own thread, with callbacks dispatched automatically
+/// when messages arrive. Call run() to start all threads and block
+/// until SIGINT/SIGTERM or stop() is called.
+///
+/// @code
+/// class MyNode : public conduit::Node {
+/// public:
+///     MyNode() {
+///         subscribe<Imu>("imu", &MyNode::on_imu);
+///         pub_ = advertise<Twist>("cmd_vel");
+///         loop(10.0, &MyNode::tick);
+///     }
+/// private:
+///     void on_imu(const TypedMessage<Imu>& msg) { /* ... */ }
+///     void tick() { pub_.publish(Twist{}); }
+///     Publisher<Twist> pub_;
+/// };
+/// @endcode
+///
+/// @see Publisher, Subscriber
 class Node {
 public:
+    /// @brief Construct a node.
     Node();
     virtual ~Node();
 
@@ -24,35 +48,63 @@ public:
     Node(Node&&) = delete;
     Node& operator=(Node&&) = delete;
 
-    // Run node (blocks until SIGINT/SIGTERM or stop() called)
+    /// @brief Run the node, blocking until SIGINT/SIGTERM or stop() is called.
+    ///
+    /// Starts all subscription threads and loop threads, installs signal
+    /// handlers, and blocks the calling thread.
     void run();
 
-    // Stop node (can be called from any thread or signal handler)
+    /// @brief Stop the node (can be called from any thread or signal handler).
     void stop();
 
-    // Check if running
+    /// @brief Check if the node is currently running.
+    /// @return true if run() has been called and stop() has not yet completed.
     bool running() const;
 
 protected:
-    // Subscribe to topic with member function callback (raw)
+    /// @brief Subscribe to a topic with a member function callback (raw).
+    /// @tparam T Derived Node type.
+    /// @tparam Func Member function pointer type.
+    /// @param topic Topic name to subscribe to.
+    /// @param callback Member function to call on each message.
     template<typename T, typename Func>
     void subscribe(const std::string& topic, Func T::* callback);
 
-    // Subscribe to topic with typed member function callback
+    /// @brief Subscribe to a topic with a typed member function callback.
+    ///
+    /// Messages are automatically deserialized to MsgT before invoking
+    /// the callback.
+    ///
+    /// @tparam MsgT Message type to deserialize into.
+    /// @tparam T Derived Node type.
+    /// @param topic Topic name to subscribe to.
+    /// @param callback Member function receiving TypedMessage<MsgT>.
     template<typename MsgT, typename T>
     void subscribe(const std::string& topic, void (T::* callback)(const TypedMessage<MsgT>&));
 
-    // Subscribe to topic with lambda/function (raw)
+    /// @brief Subscribe to a topic with a lambda or std::function callback (raw).
+    /// @param topic Topic name to subscribe to.
+    /// @param callback Function invoked with each raw Message.
     void subscribe(const std::string& topic, std::function<void(const Message&)> callback);
 
-    // Loop at fixed rate with member function callback
+    /// @brief Register a fixed-rate loop with a member function callback.
+    /// @tparam T Derived Node type.
+    /// @tparam Func Member function pointer type.
+    /// @param rate_hz Loop frequency in Hz.
+    /// @param callback Member function to call each iteration.
     template<typename T, typename Func>
     void loop(double rate_hz, Func T::* callback);
 
-    // Loop at fixed rate with lambda/function
+    /// @brief Register a fixed-rate loop with a lambda or std::function callback.
+    /// @param rate_hz Loop frequency in Hz.
+    /// @param callback Function to call each iteration.
     void loop(double rate_hz, std::function<void()> callback);
 
-    // Create typed publisher
+    /// @brief Create a typed publisher for the given topic.
+    /// @tparam T Message type to publish.
+    /// @param topic Topic name.
+    /// @param options Publisher configuration.
+    /// @return A Publisher<T> ready to publish messages.
     template<typename T>
     Publisher<T> advertise(const std::string& topic, const PublisherOptions& options = {});
 

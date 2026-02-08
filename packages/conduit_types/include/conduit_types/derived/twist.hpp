@@ -6,10 +6,11 @@
 
 namespace conduit {
 
+/// @brief Linear and angular velocity in 3D.
 struct Twist : FixedMessageType {
-    Header header;
-    Vec3 linear;
-    Vec3 angular;
+    Header header;   ///< Timestamp and coordinate frame.
+    Vec3 linear;     ///< Linear velocity (m/s) in x, y, z.
+    Vec3 angular;    ///< Angular velocity (rad/s) in x, y, z.
 };
 
 }  // namespace conduit

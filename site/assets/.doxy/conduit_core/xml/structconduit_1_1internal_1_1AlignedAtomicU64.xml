@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1internal_1_1AlignedAtomicU64" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::internal::AlignedAtomicU64</compoundname>
+    <includes refid="ring__buffer_8hpp" local="no">ring_buffer.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1internal_1_1AlignedAtomicU64_1ad7e4cc81d2cc05d73b28ae0ccbdd2979" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; conduit::internal::AlignedAtomicU64::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>conduit::internal::AlignedAtomicU64::value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="44" column="17" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Cache-line-aligned atomic uint64_t to prevent false sharing. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="43" column="1" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="43" bodyend="45"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1internal_1_1AlignedAtomicU64_1ad7e4cc81d2cc05d73b28ae0ccbdd2979" prot="public" virt="non-virtual"><scope>conduit::internal::AlignedAtomicU64</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

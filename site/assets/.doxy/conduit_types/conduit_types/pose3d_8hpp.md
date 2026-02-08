@@ -1,0 +1,95 @@
+
+
+# File pose3d.hpp
+
+
+
+[**FileList**](files.md) **>** [**conduit\_types**](dir_2f8116ad873fa9f4ab4bc95e5e2c7e48.md) **>** [**include**](dir_b494fed11488e6772c8fe9a92fd0e861.md) **>** [**conduit\_types**](dir_5c67974ec98d7ff0f95b9e09c6bc682d.md) **>** [**derived**](dir_6c611f3cf964ed6f858fc2fcf2f339e5.md) **>** [**pose3d.hpp**](pose3d_8hpp.md)
+
+[Go to the source code of this file](pose3d_8hpp_source.md)
+
+
+
+* `#include "conduit_types/derived/orientation.hpp"`
+* `#include "conduit_types/fixed_message_type.hpp"`
+* `#include "conduit_types/header.hpp"`
+* `#include "conduit_types/primitives/vec3.hpp"`
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Namespaces
+
+| Type | Name |
+| ---: | :--- |
+| namespace | [**conduit**](namespaceconduit.md) <br> |
+
+
+## Classes
+
+| Type | Name |
+| ---: | :--- |
+| struct | [**Pose3D**](structconduit_1_1Pose3D.md) <br>_3D pose with position and orientation._  |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------
+The documentation for this class was generated from the following file `packages/conduit_types/include/conduit_types/derived/pose3d.hpp`
+

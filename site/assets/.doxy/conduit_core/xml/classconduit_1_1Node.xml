@@ -1,0 +1,694 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classconduit_1_1Node" kind="class" language="C++" prot="public">
+    <compoundname>conduit::Node</compoundname>
+    <includes refid="node_8hpp" local="no">node.hpp</includes>
+    <innerclass refid="structconduit_1_1Node_1_1Loop" prot="private">conduit::Node::Loop</innerclass>
+    <innerclass refid="structconduit_1_1Node_1_1Subscription" prot="private">conduit::Node::Subscription</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classconduit_1_1Node_1a3f1ec057af98e0db3566504d29b89062" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; Subscription &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;Subscription&gt; &gt; conduit::Node::subscriptions_</definition>
+        <argsstring></argsstring>
+        <name>subscriptions_</name>
+        <qualifiedname>conduit::Node::subscriptions_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="126" column="17" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1Node_1a3cda257ee63440e5e76dbf2ea7bee38d" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::unique_ptr&lt; Loop &gt; &gt;</type>
+        <definition>std::vector&lt;std::unique_ptr&lt;Loop&gt; &gt; conduit::Node::loops_</definition>
+        <argsstring></argsstring>
+        <name>loops_</name>
+        <qualifiedname>conduit::Node::loops_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="127" column="17" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1Node_1aeccf622131b1902b1fb230aaee40699f" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; conduit::Node::running_</definition>
+        <argsstring></argsstring>
+        <name>running_</name>
+        <qualifiedname>conduit::Node::running_</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="128" column="17" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="128" bodyend="128"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classconduit_1_1Node_1a29da40a951d3bb0496f04dae4e660695" prot="private" static="yes" mutable="no">
+        <type>std::atomic&lt; <ref refid="classconduit_1_1Node" kindref="compound">Node</ref> * &gt;</type>
+        <definition>std::atomic&lt;Node*&gt; conduit::Node::active_node_</definition>
+        <argsstring></argsstring>
+        <name>active_node_</name>
+        <qualifiedname>conduit::Node::active_node_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="134" column="24" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classconduit_1_1Node_1ade1d7e5c0239fa5aa7cb90dbe028fc01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::Node::Node</definition>
+        <argsstring>()</argsstring>
+        <name>Node</name>
+        <qualifiedname>conduit::Node::Node</qualifiedname>
+        <briefdescription>
+<para>Construct a node. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="42" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1a382d59a290d3afb1459f1d815b1836f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual conduit::Node::~Node</definition>
+        <argsstring>()</argsstring>
+        <name>~Node</name>
+        <qualifiedname>conduit::Node::~Node</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="43" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1a1726bb41ce8b81221278b86a5cbbd75e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::Node::Node</definition>
+        <argsstring>(const Node &amp;)=delete</argsstring>
+        <name>Node</name>
+        <qualifiedname>conduit::Node::Node</qualifiedname>
+        <param>
+          <type>const <ref refid="classconduit_1_1Node" kindref="compound">Node</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="46" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1aba56f28759258ef658231f50be6923dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1Node" kindref="compound">Node</ref> &amp;</type>
+        <definition>Node &amp; conduit::Node::operator=</definition>
+        <argsstring>(const Node &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>conduit::Node::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classconduit_1_1Node" kindref="compound">Node</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="47" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1a08df3667681681abeb7bee37b1a2f03a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::Node::Node</definition>
+        <argsstring>(Node &amp;&amp;)=delete</argsstring>
+        <name>Node</name>
+        <qualifiedname>conduit::Node::Node</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1Node" kindref="compound">Node</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="48" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1a865c24746f56439a40912abe474da14c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1Node" kindref="compound">Node</ref> &amp;</type>
+        <definition>Node &amp; conduit::Node::operator=</definition>
+        <argsstring>(Node &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>conduit::Node::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1Node" kindref="compound">Node</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="49" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1abe2f9a7950397c510ebce3b0202a240d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::Node::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <qualifiedname>conduit::Node::run</qualifiedname>
+        <briefdescription>
+<para>Run the node, blocking until SIGINT/SIGTERM or <ref refid="classconduit_1_1Node_1a31b8f4a55ce4421937cff2ccef67fb6c" kindref="member">stop()</ref> is called. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Starts all subscription threads and loop threads, installs signal handlers, and blocks the calling thread. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="55" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1a31b8f4a55ce4421937cff2ccef67fb6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::Node::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <qualifiedname>conduit::Node::stop</qualifiedname>
+        <briefdescription>
+<para>Stop the node (can be called from any thread or signal handler). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="58" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1a44db8b05c77f3c7d846fa0db8a1e82f9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool conduit::Node::running</definition>
+        <argsstring>() const</argsstring>
+        <name>running</name>
+        <qualifiedname>conduit::Node::running</qualifiedname>
+        <briefdescription>
+<para>Check if the node is currently running. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if <ref refid="classconduit_1_1Node_1abe2f9a7950397c510ebce3b0202a240d" kindref="member">run()</ref> has been called and <ref refid="classconduit_1_1Node_1a31b8f4a55ce4421937cff2ccef67fb6c" kindref="member">stop()</ref> has not yet completed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="62" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classconduit_1_1Node_1af7f198446a1c7f9575d531582b4007ac" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename Func</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void conduit::Node::subscribe</definition>
+        <argsstring>(const std::string &amp;topic, Func T::*callback)</argsstring>
+        <name>subscribe</name>
+        <qualifiedname>conduit::Node::subscribe</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>topic</declname>
+        </param>
+        <param>
+          <type>Func T::*</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Subscribe to a topic with a member function callback (raw). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Derived <ref refid="classconduit_1_1Node" kindref="compound">Node</ref> type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Member function pointer type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>topic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Topic name to subscribe to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Member function to call on each message. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="71" column="10" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="142" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1a0d2b960d81b49b92d9b195b398ea8b12" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename MsgT</type>
+          </param>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void conduit::Node::subscribe</definition>
+        <argsstring>(const std::string &amp;topic, void(T::*callback)(const TypedMessage&lt; MsgT &gt; &amp;))</argsstring>
+        <name>subscribe</name>
+        <qualifiedname>conduit::Node::subscribe</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>topic</declname>
+        </param>
+        <param>
+          <type>void(T::*)(const TypedMessage&lt; MsgT &gt; &amp;)</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Subscribe to a topic with a typed member function callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Messages are automatically deserialized to MsgT before invoking the callback.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>MsgT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structconduit_1_1Message" kindref="compound">Message</ref> type to deserialize into. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Derived <ref refid="classconduit_1_1Node" kindref="compound">Node</ref> type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>topic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Topic name to subscribe to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Member function receiving TypedMessage&lt;MsgT&gt;. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="83" column="10" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="149" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1a4254e0cdb2693ccfcdf57ea69a29ada4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::Node::subscribe</definition>
+        <argsstring>(const std::string &amp;topic, std::function&lt; void(const Message &amp;)&gt; callback)</argsstring>
+        <name>subscribe</name>
+        <qualifiedname>conduit::Node::subscribe</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>topic</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void(const <ref refid="structconduit_1_1Message" kindref="compound">Message</ref> &amp;)&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Subscribe to a topic with a lambda or std::function callback (raw). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>topic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Topic name to subscribe to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function invoked with each raw <ref refid="structconduit_1_1Message" kindref="compound">Message</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="88" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1ac0f4890044b82638be5330fd80eb0990" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename Func</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void conduit::Node::loop</definition>
+        <argsstring>(double rate_hz, Func T::*callback)</argsstring>
+        <name>loop</name>
+        <qualifiedname>conduit::Node::loop</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>rate_hz</declname>
+        </param>
+        <param>
+          <type>Func T::*</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Register a fixed-rate loop with a member function callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Derived <ref refid="classconduit_1_1Node" kindref="compound">Node</ref> type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Member function pointer type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rate_hz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Loop frequency in Hz. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Member function to call each iteration. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="96" column="10" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="167" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1a1d9fdc67f2b26a8ca93ae57528dbbeb8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::Node::loop</definition>
+        <argsstring>(double rate_hz, std::function&lt; void()&gt; callback)</argsstring>
+        <name>loop</name>
+        <qualifiedname>conduit::Node::loop</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>rate_hz</declname>
+        </param>
+        <param>
+          <type>std::function&lt; void()&gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Register a fixed-rate loop with a lambda or std::function callback. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rate_hz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Loop frequency in Hz. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function to call each iteration. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="101" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1adaecfc36a0e4cc6075e1354b51cd4140" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>Publisher&lt; T &gt;</type>
+        <definition>Publisher&lt; T &gt; conduit::Node::advertise</definition>
+        <argsstring>(const std::string &amp;topic, const PublisherOptions &amp;options={})</argsstring>
+        <name>advertise</name>
+        <qualifiedname>conduit::Node::advertise</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>topic</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structconduit_1_1PublisherOptions" kindref="compound">PublisherOptions</ref> &amp;</type>
+          <declname>options</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Create a typed publisher for the given topic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structconduit_1_1Message" kindref="compound">Message</ref> type to publish. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>topic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Topic name. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Publisher configuration. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A Publisher&lt;T&gt; ready to publish messages. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="109" column="15" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="174" bodyend="176"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classconduit_1_1Node_1a1be51c9617f9beb97067c4d98a418949" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::Node::spin_subscription</definition>
+        <argsstring>(Subscription *sub)</argsstring>
+        <name>spin_subscription</name>
+        <qualifiedname>conduit::Node::spin_subscription</qualifiedname>
+        <param>
+          <type>Subscription *</type>
+          <declname>sub</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="130" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1a6090627391e9d59a5ff65cb3cf957bdb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::Node::spin_loop</definition>
+        <argsstring>(Loop *lp)</argsstring>
+        <name>spin_loop</name>
+        <qualifiedname>conduit::Node::spin_loop</qualifiedname>
+        <param>
+          <type>Loop *</type>
+          <declname>lp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="131" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1aeaed0967706fc945e53a3d1cc2ed4840" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::Node::install_signal_handlers</definition>
+        <argsstring>()</argsstring>
+        <name>install_signal_handlers</name>
+        <qualifiedname>conduit::Node::install_signal_handlers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="136" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Node_1a60f8136e7be0e95fbef429b36da327ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::Node::uninstall_signal_handlers</definition>
+        <argsstring>()</argsstring>
+        <name>uninstall_signal_handlers</name>
+        <qualifiedname>conduit::Node::uninstall_signal_handlers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="137" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classconduit_1_1Node_1a0bdba8f4117a430d2bacf4f3c97d88b2" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void conduit::Node::signal_handler</definition>
+        <argsstring>(int sig)</argsstring>
+        <name>signal_handler</name>
+        <qualifiedname>conduit::Node::signal_handler</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>sig</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="135" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for conduit processing nodes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="classconduit_1_1Node" kindref="compound">Node</ref> manages subscriptions and publish loops. Each subscription runs on its own thread, with callbacks dispatched automatically when messages arrive. Call <ref refid="classconduit_1_1Node_1abe2f9a7950397c510ebce3b0202a240d" kindref="member">run()</ref> to start all threads and block until SIGINT/SIGTERM or <ref refid="classconduit_1_1Node_1a31b8f4a55ce4421937cff2ccef67fb6c" kindref="member">stop()</ref> is called.</para>
+<para><programlisting><codeline><highlight class="keyword">class<sp/></highlight><highlight class="normal">MyNode<sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1Node" kindref="compound">conduit::Node</ref><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>MyNode()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>subscribe&lt;Imu&gt;(</highlight><highlight class="stringliteral">&quot;imu&quot;</highlight><highlight class="normal">,<sp/>&amp;MyNode::on_imu);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pub_<sp/>=<sp/>advertise&lt;Twist&gt;(</highlight><highlight class="stringliteral">&quot;cmd_vel&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loop(10.0,<sp/>&amp;MyNode::tick);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>on_imu(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TypedMessage&lt;Imu&gt;&amp;<sp/>msg)<sp/>{<sp/></highlight><highlight class="comment">/*<sp/>...<sp/>*/</highlight><highlight class="normal"><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tick()<sp/>{<sp/>pub_.publish(Twist{});<sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Publisher&lt;Twist&gt;<sp/>pub_;</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="see"><para>Publisher, Subscriber </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/node.hpp" line="39" column="1" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="39" bodyend="138"/>
+    <listofallmembers>
+      <member refid="classconduit_1_1Node_1a29da40a951d3bb0496f04dae4e660695" prot="private" virt="non-virtual"><scope>conduit::Node</scope><name>active_node_</name></member>
+      <member refid="classconduit_1_1Node_1adaecfc36a0e4cc6075e1354b51cd4140" prot="protected" virt="non-virtual"><scope>conduit::Node</scope><name>advertise</name></member>
+      <member refid="classconduit_1_1Node_1aeaed0967706fc945e53a3d1cc2ed4840" prot="private" virt="non-virtual"><scope>conduit::Node</scope><name>install_signal_handlers</name></member>
+      <member refid="classconduit_1_1Node_1ac0f4890044b82638be5330fd80eb0990" prot="protected" virt="non-virtual"><scope>conduit::Node</scope><name>loop</name></member>
+      <member refid="classconduit_1_1Node_1a1d9fdc67f2b26a8ca93ae57528dbbeb8" prot="protected" virt="non-virtual"><scope>conduit::Node</scope><name>loop</name></member>
+      <member refid="classconduit_1_1Node_1a3cda257ee63440e5e76dbf2ea7bee38d" prot="private" virt="non-virtual"><scope>conduit::Node</scope><name>loops_</name></member>
+      <member refid="classconduit_1_1Node_1ade1d7e5c0239fa5aa7cb90dbe028fc01" prot="public" virt="non-virtual"><scope>conduit::Node</scope><name>Node</name></member>
+      <member refid="classconduit_1_1Node_1a1726bb41ce8b81221278b86a5cbbd75e" prot="public" virt="non-virtual"><scope>conduit::Node</scope><name>Node</name></member>
+      <member refid="classconduit_1_1Node_1a08df3667681681abeb7bee37b1a2f03a" prot="public" virt="non-virtual"><scope>conduit::Node</scope><name>Node</name></member>
+      <member refid="classconduit_1_1Node_1aba56f28759258ef658231f50be6923dc" prot="public" virt="non-virtual"><scope>conduit::Node</scope><name>operator=</name></member>
+      <member refid="classconduit_1_1Node_1a865c24746f56439a40912abe474da14c" prot="public" virt="non-virtual"><scope>conduit::Node</scope><name>operator=</name></member>
+      <member refid="classconduit_1_1Node_1abe2f9a7950397c510ebce3b0202a240d" prot="public" virt="non-virtual"><scope>conduit::Node</scope><name>run</name></member>
+      <member refid="classconduit_1_1Node_1a44db8b05c77f3c7d846fa0db8a1e82f9" prot="public" virt="non-virtual"><scope>conduit::Node</scope><name>running</name></member>
+      <member refid="classconduit_1_1Node_1aeccf622131b1902b1fb230aaee40699f" prot="private" virt="non-virtual"><scope>conduit::Node</scope><name>running_</name></member>
+      <member refid="classconduit_1_1Node_1a0bdba8f4117a430d2bacf4f3c97d88b2" prot="private" virt="non-virtual"><scope>conduit::Node</scope><name>signal_handler</name></member>
+      <member refid="classconduit_1_1Node_1a6090627391e9d59a5ff65cb3cf957bdb" prot="private" virt="non-virtual"><scope>conduit::Node</scope><name>spin_loop</name></member>
+      <member refid="classconduit_1_1Node_1a1be51c9617f9beb97067c4d98a418949" prot="private" virt="non-virtual"><scope>conduit::Node</scope><name>spin_subscription</name></member>
+      <member refid="classconduit_1_1Node_1a31b8f4a55ce4421937cff2ccef67fb6c" prot="public" virt="non-virtual"><scope>conduit::Node</scope><name>stop</name></member>
+      <member refid="classconduit_1_1Node_1af7f198446a1c7f9575d531582b4007ac" prot="protected" virt="non-virtual"><scope>conduit::Node</scope><name>subscribe</name></member>
+      <member refid="classconduit_1_1Node_1a0d2b960d81b49b92d9b195b398ea8b12" prot="protected" virt="non-virtual"><scope>conduit::Node</scope><name>subscribe</name></member>
+      <member refid="classconduit_1_1Node_1a4254e0cdb2693ccfcdf57ea69a29ada4" prot="protected" virt="non-virtual"><scope>conduit::Node</scope><name>subscribe</name></member>
+      <member refid="classconduit_1_1Node_1a3f1ec057af98e0db3566504d29b89062" prot="private" virt="non-virtual"><scope>conduit::Node</scope><name>subscriptions_</name></member>
+      <member refid="classconduit_1_1Node_1a60f8136e7be0e95fbef429b36da327ba" prot="private" virt="non-virtual"><scope>conduit::Node</scope><name>uninstall_signal_handlers</name></member>
+      <member refid="classconduit_1_1Node_1a382d59a290d3afb1459f1d815b1836f3" prot="public" virt="virtual"><scope>conduit::Node</scope><name>~Node</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

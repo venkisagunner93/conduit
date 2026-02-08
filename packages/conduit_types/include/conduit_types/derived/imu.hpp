@@ -7,11 +7,12 @@
 
 namespace conduit {
 
+/// @brief Inertial Measurement Unit data (orientation, angular velocity, linear acceleration).
 struct Imu : FixedMessageType {
-    Header header;
-    Orientation orientation;
-    Vec3 angular_velocity;
-    Vec3 linear_acceleration;
+    Header header;                ///< Timestamp and coordinate frame.
+    Orientation orientation;      ///< Quaternion orientation estimate.
+    Vec3 angular_velocity;        ///< Angular velocity (rad/s).
+    Vec3 linear_acceleration;     ///< Linear acceleration (m/s^2).
 };
 
 }  // namespace conduit

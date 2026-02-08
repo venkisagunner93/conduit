@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classconduit_1_1VariableMessageType" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>conduit::VariableMessageType</compoundname>
+    <includes refid="variable__message__type_8hpp" local="no">variable_message_type.hpp</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classconduit_1_1VariableMessageType_1ad18dc0047f0e966253217cd7443d4889" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual conduit::VariableMessageType::~VariableMessageType</definition>
+        <argsstring>()=default</argsstring>
+        <name>~VariableMessageType</name>
+        <qualifiedname>conduit::VariableMessageType::~VariableMessageType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/variable_message_type.hpp" line="29" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1VariableMessageType_1a9e57c0c024be6052eb0b08fee02ae1f4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>size_t</type>
+        <definition>virtual size_t conduit::VariableMessageType::serialized_size</definition>
+        <argsstring>() const =0</argsstring>
+        <name>serialized_size</name>
+        <qualifiedname>conduit::VariableMessageType::serialized_size</qualifiedname>
+        <briefdescription>
+<para>Compute the serialized size in bytes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Number of bytes needed for <ref refid="classconduit_1_1VariableMessageType_1a65015df9c98e2adfad4d5b7c89559f04" kindref="member">serialize()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/variable_message_type.hpp" line="33" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1VariableMessageType_1a65015df9c98e2adfad4d5b7c89559f04" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void conduit::VariableMessageType::serialize</definition>
+        <argsstring>(uint8_t *buffer) const =0</argsstring>
+        <name>serialize</name>
+        <qualifiedname>conduit::VariableMessageType::serialize</qualifiedname>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+<para>Serialize the message into a pre-allocated buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output buffer (must have at least <ref refid="classconduit_1_1VariableMessageType_1a9e57c0c024be6052eb0b08fee02ae1f4" kindref="member">serialized_size()</ref> bytes). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/variable_message_type.hpp" line="37" column="18"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classconduit_1_1VariableMessageType_1a3da33d42418e3b54bc8118082fc9bf2d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::VariableMessageType::VariableMessageType</definition>
+        <argsstring>()=default</argsstring>
+        <name>VariableMessageType</name>
+        <qualifiedname>conduit::VariableMessageType::VariableMessageType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/variable_message_type.hpp" line="40" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for variable-size messages requiring serialization. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Derive from this to create messages with dynamic-size fields (e.g. strings). Subclasses must implement <ref refid="classconduit_1_1VariableMessageType_1a9e57c0c024be6052eb0b08fee02ae1f4" kindref="member">serialized_size()</ref>, <ref refid="classconduit_1_1VariableMessageType_1a65015df9c98e2adfad4d5b7c89559f04" kindref="member">serialize()</ref>, and a static deserialize() factory method.</para>
+<para><simplesect kind="see"><para><ref refid="variable__message__type_8hpp_1ab13bf844046921b5072dbb092ee0e0d6" kindref="member">validate_variable_message_type</ref>, <ref refid="classconduit_1_1WriteBuffer" kindref="compound">WriteBuffer</ref>, <ref refid="classconduit_1_1ReadBuffer" kindref="compound">ReadBuffer</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="packages/conduit_types/include/conduit_types/variable_message_type.hpp" line="27" column="1" bodyfile="packages/conduit_types/include/conduit_types/variable_message_type.hpp" bodystart="27" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classconduit_1_1VariableMessageType_1a65015df9c98e2adfad4d5b7c89559f04" prot="public" virt="pure-virtual"><scope>conduit::VariableMessageType</scope><name>serialize</name></member>
+      <member refid="classconduit_1_1VariableMessageType_1a9e57c0c024be6052eb0b08fee02ae1f4" prot="public" virt="pure-virtual"><scope>conduit::VariableMessageType</scope><name>serialized_size</name></member>
+      <member refid="classconduit_1_1VariableMessageType_1a3da33d42418e3b54bc8118082fc9bf2d" prot="protected" virt="non-virtual"><scope>conduit::VariableMessageType</scope><name>VariableMessageType</name></member>
+      <member refid="classconduit_1_1VariableMessageType_1ad18dc0047f0e966253217cd7443d4889" prot="public" virt="virtual"><scope>conduit::VariableMessageType</scope><name>~VariableMessageType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

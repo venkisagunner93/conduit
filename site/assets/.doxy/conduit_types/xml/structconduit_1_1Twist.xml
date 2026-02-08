@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1Twist" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::Twist</compoundname>
+    <basecompoundref refid="structconduit_1_1FixedMessageType" prot="public" virt="non-virtual">conduit::FixedMessageType</basecompoundref>
+    <includes refid="twist_8hpp" local="no">twist.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1Twist_1ac4304f8e1a9241446e82cecda9b959b5" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Header" kindref="compound">Header</ref></type>
+        <definition>Header conduit::Twist::header</definition>
+        <argsstring></argsstring>
+        <name>header</name>
+        <qualifiedname>conduit::Twist::header</qualifiedname>
+        <briefdescription>
+<para>Timestamp and coordinate frame. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/twist.hpp" line="11" column="12" bodyfile="packages/conduit_types/include/conduit_types/derived/twist.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Twist_1a5b51b73e66a56b476a5ea3293edcd375" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Vec3" kindref="compound">Vec3</ref></type>
+        <definition>Vec3 conduit::Twist::linear</definition>
+        <argsstring></argsstring>
+        <name>linear</name>
+        <qualifiedname>conduit::Twist::linear</qualifiedname>
+        <briefdescription>
+<para>Linear velocity (m/s) in x, y, z. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/twist.hpp" line="12" column="10" bodyfile="packages/conduit_types/include/conduit_types/derived/twist.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Twist_1adbee3f6333d0ed10e66a66c37428cf1b" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Vec3" kindref="compound">Vec3</ref></type>
+        <definition>Vec3 conduit::Twist::angular</definition>
+        <argsstring></argsstring>
+        <name>angular</name>
+        <qualifiedname>conduit::Twist::angular</qualifiedname>
+        <briefdescription>
+<para>Angular velocity (rad/s) in x, y, z. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/twist.hpp" line="13" column="10" bodyfile="packages/conduit_types/include/conduit_types/derived/twist.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Linear and angular velocity in 3D. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Twist</label>
+        <link refid="structconduit_1_1Twist"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="3">
+        <label>conduit::Header</label>
+        <link refid="structconduit_1_1Header"/>
+      </node>
+      <node id="1">
+        <label>conduit::Twist</label>
+        <link refid="structconduit_1_1Twist"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>angular</edgelabel>
+          <edgelabel>linear</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>conduit::Vec3</label>
+        <link refid="structconduit_1_1Vec3"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="packages/conduit_types/include/conduit_types/derived/twist.hpp" line="10" column="1" bodyfile="packages/conduit_types/include/conduit_types/derived/twist.hpp" bodystart="10" bodyend="14"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1Twist_1adbee3f6333d0ed10e66a66c37428cf1b" prot="public" virt="non-virtual"><scope>conduit::Twist</scope><name>angular</name></member>
+      <member refid="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" prot="protected" virt="non-virtual"><scope>conduit::Twist</scope><name>FixedMessageType</name></member>
+      <member refid="structconduit_1_1Twist_1ac4304f8e1a9241446e82cecda9b959b5" prot="public" virt="non-virtual"><scope>conduit::Twist</scope><name>header</name></member>
+      <member refid="structconduit_1_1Twist_1a5b51b73e66a56b476a5ea3293edcd375" prot="public" virt="non-virtual"><scope>conduit::Twist</scope><name>linear</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

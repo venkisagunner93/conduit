@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="odometry_8hpp" kind="file" language="C++">
+    <compoundname>odometry.hpp</compoundname>
+    <includes refid="pose3d_8hpp" local="yes">conduit_types/derived/pose3d.hpp</includes>
+    <includes refid="fixed__message__type_8hpp" local="yes">conduit_types/fixed_message_type.hpp</includes>
+    <includes refid="header_8hpp" local="yes">conduit_types/header.hpp</includes>
+    <includes refid="vec3_8hpp" local="yes">conduit_types/primitives/vec3.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>packages/conduit_types/include/conduit_types/derived/odometry.hpp</label>
+        <link refid="odometry_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>conduit_types/derived/orientation.hpp</label>
+        <link refid="orientation_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>conduit_types/derived/pose3d.hpp</label>
+        <link refid="pose3d_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>conduit_types/fixed_message_type.hpp</label>
+        <link refid="fixed__message__type_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>conduit_types/header.hpp</label>
+        <link refid="header_8hpp_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>conduit_types/primitives/vec3.hpp</label>
+        <link refid="vec3_8hpp_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>cmath</label>
+      </node>
+      <node id="5">
+        <label>cstddef</label>
+      </node>
+      <node id="10">
+        <label>cstdint</label>
+      </node>
+      <node id="11">
+        <label>cstring</label>
+      </node>
+      <node id="6">
+        <label>type_traits</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structconduit_1_1Odometry" prot="public">conduit::Odometry</innerclass>
+    <innernamespace refid="namespaceconduit">conduit</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;conduit_types/derived/pose3d.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fixed__message__type_8hpp" kindref="compound">conduit_types/fixed_message_type.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;conduit_types/header.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;conduit_types/primitives/vec3.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">conduit<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="structconduit_1_1Odometry" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structconduit_1_1Odometry" kindref="compound">Odometry</ref><sp/>:<sp/><ref refid="structconduit_1_1FixedMessageType" kindref="compound">FixedMessageType</ref><sp/>{</highlight></codeline>
+<codeline lineno="12" refid="structconduit_1_1Odometry_1a8014c74ffae925f910218b71055692da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structconduit_1_1Header" kindref="compound">Header</ref><sp/><ref refid="structconduit_1_1Odometry_1a8014c74ffae925f910218b71055692da" kindref="member">header</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="13" refid="structconduit_1_1Odometry_1ae322d688043159ab5f89b1099047ab43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structconduit_1_1Odometry_1ae322d688043159ab5f89b1099047ab43" kindref="member">child_frame</ref>[64];<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="14" refid="structconduit_1_1Odometry_1a45c194810722157a8f23ad70d42ab6cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structconduit_1_1Pose3D" kindref="compound">Pose3D</ref><sp/><ref refid="structconduit_1_1Odometry_1a45c194810722157a8f23ad70d42ab6cb" kindref="member">pose</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="15" refid="structconduit_1_1Odometry_1a6f466f64cbf86efa688f1ed1d8e0381a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structconduit_1_1Vec3" kindref="compound">Vec3</ref><sp/><ref refid="structconduit_1_1Odometry_1a6f466f64cbf86efa688f1ed1d8e0381a" kindref="member">linear_velocity</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16" refid="structconduit_1_1Odometry_1a98b22c0ff691a68cd00dc030072ae27d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structconduit_1_1Vec3" kindref="compound">Vec3</ref><sp/><ref refid="structconduit_1_1Odometry_1a98b22c0ff691a68cd00dc030072ae27d" kindref="member">angular_velocity</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>conduit</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="packages/conduit_types/include/conduit_types/derived/odometry.hpp"/>
+  </compounddef>
+</doxygen>

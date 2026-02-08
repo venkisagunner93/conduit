@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     liblz4-dev \
     libzstd-dev \
     libyaml-cpp-dev \
+    doxygen \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Node.js (required for Claude Code)
@@ -55,6 +56,6 @@ COPY --chown=docker_user:docker_user tools/conduit-forge /tmp/conduit-forge
 RUN pip3 install --break-system-packages /tmp/conduit-forge \
 && rm -rf /tmp/conduit-forge
 
-RUN pip3 install --break-system-packages mkdocs mkdocs-material
+RUN pip3 install --break-system-packages mkdocs mkdocs-material mkdoxy
 
 CMD ["/bin/bash"]

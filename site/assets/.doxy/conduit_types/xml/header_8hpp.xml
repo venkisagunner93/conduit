@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="header_8hpp" kind="file" language="C++">
+    <compoundname>header.hpp</compoundname>
+    <includes local="no">cstdint</includes>
+    <includes local="no">cstring</includes>
+    <includedby refid="imu_8hpp" local="yes">packages/conduit_types/include/conduit_types/derived/imu.hpp</includedby>
+    <includedby refid="odometry_8hpp" local="yes">packages/conduit_types/include/conduit_types/derived/odometry.hpp</includedby>
+    <includedby refid="pose2d_8hpp" local="yes">packages/conduit_types/include/conduit_types/derived/pose2d.hpp</includedby>
+    <includedby refid="pose3d_8hpp" local="yes">packages/conduit_types/include/conduit_types/derived/pose3d.hpp</includedby>
+    <includedby refid="twist_8hpp" local="yes">packages/conduit_types/include/conduit_types/derived/twist.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>packages/conduit_types/include/conduit_types/header.hpp</label>
+        <link refid="header_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstdint</label>
+      </node>
+      <node id="3">
+        <label>cstring</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>packages/conduit_types/include/conduit_types/derived/imu.hpp</label>
+        <link refid="imu_8hpp_source"/>
+      </node>
+      <node id="3">
+        <label>packages/conduit_types/include/conduit_types/derived/odometry.hpp</label>
+        <link refid="odometry_8hpp_source"/>
+      </node>
+      <node id="4">
+        <label>packages/conduit_types/include/conduit_types/derived/pose2d.hpp</label>
+        <link refid="pose2d_8hpp_source"/>
+      </node>
+      <node id="5">
+        <label>packages/conduit_types/include/conduit_types/derived/pose3d.hpp</label>
+        <link refid="pose3d_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>packages/conduit_types/include/conduit_types/derived/twist.hpp</label>
+        <link refid="twist_8hpp_source"/>
+      </node>
+      <node id="1">
+        <label>packages/conduit_types/include/conduit_types/header.hpp</label>
+        <link refid="header_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structconduit_1_1Header" prot="public">conduit::Header</innerclass>
+    <innernamespace refid="namespaceconduit">conduit</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">conduit<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="structconduit_1_1Header" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structconduit_1_1Header" kindref="compound">Header</ref><sp/>{</highlight></codeline>
+<codeline lineno="10" refid="structconduit_1_1Header_1a583221ab1771ba2950733f0e5f5b23cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="structconduit_1_1Header_1a583221ab1771ba2950733f0e5f5b23cc" kindref="member">timestamp_ns</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="11" refid="structconduit_1_1Header_1a41daf0e7ec183adb5e50bbe20139f7ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structconduit_1_1Header_1a41daf0e7ec183adb5e50bbe20139f7ef" kindref="member">frame</ref>[64];<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>set_frame(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>(&amp;dst)[64],<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>src)<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>std::strncpy(dst,<sp/>src,<sp/>63);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>dst[63]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>conduit</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="packages/conduit_types/include/conduit_types/header.hpp"/>
+  </compounddef>
+</doxygen>

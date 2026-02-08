@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classconduit_1_1ReadBuffer" kind="class" language="C++" prot="public">
+    <compoundname>conduit::ReadBuffer</compoundname>
+    <includes refid="buffer_8hpp" local="no">buffer.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classconduit_1_1ReadBuffer_1af3d3929afab63e5d3ca04b4ae92a52f9" prot="private" static="no" mutable="no">
+        <type>const uint8_t *</type>
+        <definition>const uint8_t* conduit::ReadBuffer::ptr_</definition>
+        <argsstring></argsstring>
+        <name>ptr_</name>
+        <qualifiedname>conduit::ReadBuffer::ptr_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/buffer.hpp" line="98" column="19" bodyfile="packages/conduit_types/include/conduit_types/buffer.hpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classconduit_1_1ReadBuffer_1a80c7c7c9ae3202832ef817a0ce945170" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>conduit::ReadBuffer::ReadBuffer</definition>
+        <argsstring>(const uint8_t *data, size_t size)</argsstring>
+        <name>ReadBuffer</name>
+        <qualifiedname>conduit::ReadBuffer::ReadBuffer</qualifiedname>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Construct a read buffer over the given data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the input buffer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Total buffer size in bytes (used for bounds context). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/buffer.hpp" line="70" column="5" bodyfile="packages/conduit_types/include/conduit_types/buffer.hpp" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1ReadBuffer_1af9e51e407680111baafdf6366ca8aab2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T conduit::ReadBuffer::read</definition>
+        <argsstring>()</argsstring>
+        <name>read</name>
+        <qualifiedname>conduit::ReadBuffer::read</qualifiedname>
+        <briefdescription>
+<para>Read the next value from the buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For std::string, reads a uint32_t length prefix followed by that many characters. For trivially copyable types, reads sizeof(T) bytes.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type to read (std::string or trivially copyable). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The deserialized value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/buffer.hpp" line="80" column="7" bodyfile="packages/conduit_types/include/conduit_types/buffer.hpp" bodystart="80" bodyend="95"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Sequential binary reader for deserializing message fields. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Reads values contiguously from a byte buffer. Strings are read as length-prefixed (uint32_t). Trivially copyable types are read via memcpy.</para>
+<para><simplesect kind="see"><para><ref refid="classconduit_1_1WriteBuffer" kindref="compound">WriteBuffer</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="packages/conduit_types/include/conduit_types/buffer.hpp" line="65" column="1" bodyfile="packages/conduit_types/include/conduit_types/buffer.hpp" bodystart="65" bodyend="99"/>
+    <listofallmembers>
+      <member refid="classconduit_1_1ReadBuffer_1af3d3929afab63e5d3ca04b4ae92a52f9" prot="private" virt="non-virtual"><scope>conduit::ReadBuffer</scope><name>ptr_</name></member>
+      <member refid="classconduit_1_1ReadBuffer_1af9e51e407680111baafdf6366ca8aab2" prot="public" virt="non-virtual"><scope>conduit::ReadBuffer</scope><name>read</name></member>
+      <member refid="classconduit_1_1ReadBuffer_1a80c7c7c9ae3202832ef817a0ce945170" prot="public" virt="non-virtual"><scope>conduit::ReadBuffer</scope><name>ReadBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

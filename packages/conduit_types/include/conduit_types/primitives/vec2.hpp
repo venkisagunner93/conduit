@@ -4,9 +4,10 @@
 
 namespace conduit {
 
+/// @brief Fixed-size 2D vector message type.
 struct Vec2 : FixedMessageType {
-    double x;
-    double y;
+    double x;  ///< X component.
+    double y;  ///< Y component.
 };
 
 }  // namespace conduit

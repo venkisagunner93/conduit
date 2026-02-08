@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1Imu" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::Imu</compoundname>
+    <basecompoundref refid="structconduit_1_1FixedMessageType" prot="public" virt="non-virtual">conduit::FixedMessageType</basecompoundref>
+    <includes refid="imu_8hpp" local="no">imu.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1Imu_1ae793d3ddec3d5b3f98d3e996f8f7993e" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Header" kindref="compound">Header</ref></type>
+        <definition>Header conduit::Imu::header</definition>
+        <argsstring></argsstring>
+        <name>header</name>
+        <qualifiedname>conduit::Imu::header</qualifiedname>
+        <briefdescription>
+<para>Timestamp and coordinate frame. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/imu.hpp" line="12" column="12" bodyfile="packages/conduit_types/include/conduit_types/derived/imu.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Imu_1a4d03e45b348189571dfa4bceb8a326f7" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Orientation" kindref="compound">Orientation</ref></type>
+        <definition>Orientation conduit::Imu::orientation</definition>
+        <argsstring></argsstring>
+        <name>orientation</name>
+        <qualifiedname>conduit::Imu::orientation</qualifiedname>
+        <briefdescription>
+<para>Quaternion orientation estimate. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/imu.hpp" line="13" column="17" bodyfile="packages/conduit_types/include/conduit_types/derived/imu.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Imu_1aa854aea4c8bd3ae755f8c2f0da3923f1" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Vec3" kindref="compound">Vec3</ref></type>
+        <definition>Vec3 conduit::Imu::angular_velocity</definition>
+        <argsstring></argsstring>
+        <name>angular_velocity</name>
+        <qualifiedname>conduit::Imu::angular_velocity</qualifiedname>
+        <briefdescription>
+<para>Angular velocity (rad/s). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/imu.hpp" line="14" column="10" bodyfile="packages/conduit_types/include/conduit_types/derived/imu.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Imu_1a16fa802133abe2f7fe53abdeddb37aee" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Vec3" kindref="compound">Vec3</ref></type>
+        <definition>Vec3 conduit::Imu::linear_acceleration</definition>
+        <argsstring></argsstring>
+        <name>linear_acceleration</name>
+        <qualifiedname>conduit::Imu::linear_acceleration</qualifiedname>
+        <briefdescription>
+<para>Linear acceleration (m/s^2). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/imu.hpp" line="15" column="10" bodyfile="packages/conduit_types/include/conduit_types/derived/imu.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Inertial Measurement Unit data (orientation, angular velocity, linear acceleration). </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Imu</label>
+        <link refid="structconduit_1_1Imu"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="3">
+        <label>conduit::Header</label>
+        <link refid="structconduit_1_1Header"/>
+      </node>
+      <node id="1">
+        <label>conduit::Imu</label>
+        <link refid="structconduit_1_1Imu"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>orientation</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>angular_velocity</edgelabel>
+          <edgelabel>linear_acceleration</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>conduit::Orientation</label>
+        <link refid="structconduit_1_1Orientation"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>conduit::Vec3</label>
+        <link refid="structconduit_1_1Vec3"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="packages/conduit_types/include/conduit_types/derived/imu.hpp" line="11" column="1" bodyfile="packages/conduit_types/include/conduit_types/derived/imu.hpp" bodystart="11" bodyend="16"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1Imu_1aa854aea4c8bd3ae755f8c2f0da3923f1" prot="public" virt="non-virtual"><scope>conduit::Imu</scope><name>angular_velocity</name></member>
+      <member refid="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" prot="protected" virt="non-virtual"><scope>conduit::Imu</scope><name>FixedMessageType</name></member>
+      <member refid="structconduit_1_1Imu_1ae793d3ddec3d5b3f98d3e996f8f7993e" prot="public" virt="non-virtual"><scope>conduit::Imu</scope><name>header</name></member>
+      <member refid="structconduit_1_1Imu_1a16fa802133abe2f7fe53abdeddb37aee" prot="public" virt="non-virtual"><scope>conduit::Imu</scope><name>linear_acceleration</name></member>
+      <member refid="structconduit_1_1Imu_1a4d03e45b348189571dfa4bceb8a326f7" prot="public" virt="non-virtual"><scope>conduit::Imu</scope><name>orientation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

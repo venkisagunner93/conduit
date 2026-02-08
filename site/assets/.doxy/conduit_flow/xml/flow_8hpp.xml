@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="flow_8hpp" kind="file" language="C++">
+    <compoundname>flow.hpp</compoundname>
+    <includes local="no">chrono</includes>
+    <includes local="no">map</includes>
+    <includes local="no">string</includes>
+    <includes local="no">variant</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="executor_8hpp" local="yes">packages/conduit_flow/include/conduit_flow/executor.hpp</includedby>
+    <includedby refid="parser_8hpp" local="yes">packages/conduit_flow/include/conduit_flow/parser.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>packages/conduit_flow/include/conduit_flow/flow.hpp</label>
+        <link refid="flow_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>chrono</label>
+      </node>
+      <node id="3">
+        <label>map</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>variant</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>packages/conduit_flow/include/conduit_flow/executor.hpp</label>
+        <link refid="executor_8hpp_source"/>
+      </node>
+      <node id="1">
+        <label>packages/conduit_flow/include/conduit_flow/flow.hpp</label>
+        <link refid="flow_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>packages/conduit_flow/include/conduit_flow/parser.hpp</label>
+        <link refid="parser_8hpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structconduit_1_1flow_1_1NodeConfig" prot="public">conduit::flow::NodeConfig</innerclass>
+    <innerclass refid="structconduit_1_1flow_1_1WaitDuration" prot="public">conduit::flow::WaitDuration</innerclass>
+    <innerclass refid="structconduit_1_1flow_1_1WaitTopics" prot="public">conduit::flow::WaitTopics</innerclass>
+    <innerclass refid="structconduit_1_1flow_1_1Group" prot="public">conduit::flow::Group</innerclass>
+    <innerclass refid="structconduit_1_1flow_1_1FlowConfig" prot="public">conduit::flow::FlowConfig</innerclass>
+    <innernamespace refid="namespaceconduit">conduit</innernamespace>
+    <innernamespace refid="namespaceconduit_1_1flow">conduit::flow</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;variant&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">conduit::flow<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="structconduit_1_1flow_1_1NodeConfig" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structconduit_1_1flow_1_1NodeConfig" kindref="compound">NodeConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="13" refid="structconduit_1_1flow_1_1NodeConfig_1ae8b3f6695d91f4703598fde37b02839d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structconduit_1_1flow_1_1NodeConfig_1ae8b3f6695d91f4703598fde37b02839d" kindref="member">name</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="14" refid="structconduit_1_1flow_1_1NodeConfig_1af9c69e7b19e3986e28e65a58e4b4acb4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structconduit_1_1flow_1_1NodeConfig_1af9c69e7b19e3986e28e65a58e4b4acb4" kindref="member">exec</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="15" refid="structconduit_1_1flow_1_1NodeConfig_1afb1496df1a048e4d2f0a86a2c87c96bb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="structconduit_1_1flow_1_1NodeConfig_1afb1496df1a048e4d2f0a86a2c87c96bb" kindref="member">args</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16" refid="structconduit_1_1flow_1_1NodeConfig_1af3ab185f52b004d3480f5ba9ed35ce82" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="structconduit_1_1flow_1_1NodeConfig_1af3ab185f52b004d3480f5ba9ed35ce82" kindref="member">env</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="17" refid="structconduit_1_1flow_1_1NodeConfig_1a53645b6013dca3d82afd3afc6f3ac08d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="structconduit_1_1flow_1_1NodeConfig_1a53645b6013dca3d82afd3afc6f3ac08d" kindref="member">working_dir</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="structconduit_1_1flow_1_1WaitDuration" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structconduit_1_1flow_1_1WaitDuration" kindref="compound">WaitDuration</ref><sp/>{</highlight></codeline>
+<codeline lineno="22" refid="structconduit_1_1flow_1_1WaitDuration_1a2c2945c686ba64e3414bee5a1298366b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::milliseconds<sp/><ref refid="structconduit_1_1flow_1_1WaitDuration_1a2c2945c686ba64e3414bee5a1298366b" kindref="member">duration</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="structconduit_1_1flow_1_1WaitTopics" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structconduit_1_1flow_1_1WaitTopics" kindref="compound">WaitTopics</ref><sp/>{</highlight></codeline>
+<codeline lineno="27" refid="structconduit_1_1flow_1_1WaitTopics_1a751c2b9f6ddf559c57118ff48f02d4c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="structconduit_1_1flow_1_1WaitTopics_1a751c2b9f6ddf559c57118ff48f02d4c3" kindref="member">topics</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28" refid="structconduit_1_1flow_1_1WaitTopics_1a3f2a40c2c33bcfe1e8e164ea1f787ede" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::milliseconds<sp/><ref refid="structconduit_1_1flow_1_1WaitTopics_1a3f2a40c2c33bcfe1e8e164ea1f787ede" kindref="member">timeout</ref>{30000};<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="structconduit_1_1flow_1_1Group" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structconduit_1_1flow_1_1Group" kindref="compound">Group</ref><sp/>{</highlight></codeline>
+<codeline lineno="33" refid="structconduit_1_1flow_1_1Group_1a0fc4e8c2d66e0f275fb893580b553189" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;NodeConfig&gt;<sp/><ref refid="structconduit_1_1flow_1_1Group_1a0fc4e8c2d66e0f275fb893580b553189" kindref="member">nodes</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="keyword">using<sp/></highlight><highlight class="normal">Step<sp/>=<sp/>std::variant&lt;NodeConfig,<sp/>WaitDuration,<sp/>WaitTopics,<sp/>Group&gt;;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="structconduit_1_1flow_1_1FlowConfig" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structconduit_1_1flow_1_1FlowConfig" kindref="compound">FlowConfig</ref><sp/>{</highlight></codeline>
+<codeline lineno="41" refid="structconduit_1_1flow_1_1FlowConfig_1a77ddebe5d83e9f37fae79898f316bc9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Step&gt;<sp/><ref refid="structconduit_1_1flow_1_1FlowConfig_1a77ddebe5d83e9f37fae79898f316bc9b" kindref="member">startup</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42" refid="structconduit_1_1flow_1_1FlowConfig_1ab03d7cf9c97e45659794bbb210b9748b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Step&gt;<sp/><ref refid="structconduit_1_1flow_1_1FlowConfig_1ab03d7cf9c97e45659794bbb210b9748b" kindref="member">shutdown</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>conduit::flow</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="packages/conduit_flow/include/conduit_flow/flow.hpp"/>
+  </compounddef>
+</doxygen>

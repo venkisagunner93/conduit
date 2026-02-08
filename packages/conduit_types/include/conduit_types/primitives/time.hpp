@@ -6,8 +6,9 @@
 
 namespace conduit {
 
+/// @brief Fixed-size timestamp message type.
 struct Time : public FixedMessageType {
-    uint64_t nanoseconds;
+    uint64_t nanoseconds;  ///< Time in nanoseconds.
 };
 
 }  // namespace conduit

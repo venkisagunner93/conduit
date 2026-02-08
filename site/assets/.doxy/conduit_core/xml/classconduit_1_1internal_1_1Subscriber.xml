@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classconduit_1_1internal_1_1Subscriber" kind="class" language="C++" prot="public">
+    <compoundname>conduit::internal::Subscriber</compoundname>
+    <includes refid="subscriber_8hpp" local="no">subscriber.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1Subscriber_1a37da8447fef0fae0d48726189e716324" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string conduit::internal::Subscriber::topic_</definition>
+        <argsstring></argsstring>
+        <name>topic_</name>
+        <qualifiedname>conduit::internal::Subscriber::topic_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="79" column="17" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1Subscriber_1a857953c7d40b882fbe0ed2a081856656" prot="private" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref></type>
+        <definition>ShmRegion conduit::internal::Subscriber::shm_</definition>
+        <argsstring></argsstring>
+        <name>shm_</name>
+        <qualifiedname>conduit::internal::Subscriber::shm_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="80" column="15" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1Subscriber_1a90bb63546ba0034df82d15b9e2be1551" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classconduit_1_1internal_1_1RingBufferReader" kindref="compound">RingBufferReader</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;RingBufferReader&gt; conduit::internal::Subscriber::reader_</definition>
+        <argsstring></argsstring>
+        <name>reader_</name>
+        <qualifiedname>conduit::internal::Subscriber::reader_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="81" column="21" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1Subscriber_1ae1041a1b922bcddfafb771dbece8e6af" prot="private" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">int</ref></type>
+        <definition>int conduit::internal::Subscriber::slot_</definition>
+        <argsstring></argsstring>
+        <name>slot_</name>
+        <qualifiedname>conduit::internal::Subscriber::slot_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="82" column="9" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classconduit_1_1internal_1_1Subscriber_1ab517f696f21358525ffb7526cd0fad68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::internal::Subscriber::Subscriber</definition>
+        <argsstring>(const std::string &amp;topic, const SubscriberOptions &amp;options={})</argsstring>
+        <name>Subscriber</name>
+        <qualifiedname>conduit::internal::Subscriber::Subscriber</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> std::string &amp;</type>
+          <declname>topic</declname>
+        </param>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> <ref refid="structconduit_1_1SubscriberOptions" kindref="compound">SubscriberOptions</ref> &amp;</type>
+          <declname>options</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Construct a subscriber for the given topic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>topic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Topic name of the shared memory region to open. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classconduit_1_1internal_1_1Subscriber" kindref="compound">Subscriber</ref> configuration (reserved for future use). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classconduit_1_1SubscriberError" kindref="compound">SubscriberError</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If shared memory cannot be opened or no reader slots available. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="47" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1Subscriber_1a3dbe7cb03da1a1136d4ad18cf9a9f444" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>conduit::internal::Subscriber::Subscriber</definition>
+        <argsstring>(Subscriber &amp;&amp;) noexcept</argsstring>
+        <name>Subscriber</name>
+        <qualifiedname>conduit::internal::Subscriber::Subscriber</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Subscriber" kindref="compound">Subscriber</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="50" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1Subscriber_1a3680f816fe2613a81faadaa7f77fc455" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Subscriber" kindref="compound">Subscriber</ref> &amp;</type>
+        <definition>Subscriber &amp; conduit::internal::Subscriber::operator=</definition>
+        <argsstring>(Subscriber &amp;&amp;) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>conduit::internal::Subscriber::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Subscriber" kindref="compound">Subscriber</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="52" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1Subscriber_1a1fefda82bd2fe1d8e8ec7b5770ac0f5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::internal::Subscriber::Subscriber</definition>
+        <argsstring>(const Subscriber &amp;)=delete</argsstring>
+        <name>Subscriber</name>
+        <qualifiedname>conduit::internal::Subscriber::Subscriber</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> <ref refid="classconduit_1_1internal_1_1Subscriber" kindref="compound">Subscriber</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="53" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1Subscriber_1a36d4066772fda548e109c266f693b043" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Subscriber" kindref="compound">Subscriber</ref> &amp;</type>
+        <definition>Subscriber &amp; conduit::internal::Subscriber::operator=</definition>
+        <argsstring>(const Subscriber &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>conduit::internal::Subscriber::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> <ref refid="classconduit_1_1internal_1_1Subscriber" kindref="compound">Subscriber</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="54" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1Subscriber_1acaa8e290a5a34c4effcc910be339bf68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::internal::Subscriber::~Subscriber</definition>
+        <argsstring>()</argsstring>
+        <name>~Subscriber</name>
+        <qualifiedname>conduit::internal::Subscriber::~Subscriber</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="56" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1Subscriber_1a7a466820ee028cb1c9d498974b400dc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="structconduit_1_1Message" kindref="compound">Message</ref> &gt;</type>
+        <definition>std::optional&lt; Message &gt; conduit::internal::Subscriber::take</definition>
+        <argsstring>()</argsstring>
+        <name>take</name>
+        <qualifiedname>conduit::internal::Subscriber::take</qualifiedname>
+        <briefdescription>
+<para>Non-blocking read of the next message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The next message, or std::nullopt if no new message is available. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="60" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1Subscriber_1a378d58ed9238f589fa28902a1db769c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structconduit_1_1Message" kindref="compound">Message</ref></type>
+        <definition>Message conduit::internal::Subscriber::wait</definition>
+        <argsstring>()</argsstring>
+        <name>wait</name>
+        <qualifiedname>conduit::internal::Subscriber::wait</qualifiedname>
+        <briefdescription>
+<para>Block until a message is available. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses futex-based signaling for zero CPU usage while idle.</para>
+<para><simplesect kind="return"><para>The next message. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="67" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1Subscriber_1ae5c5d51e3b153a15b44ab3a208739ec8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="structconduit_1_1Message" kindref="compound">Message</ref> &gt;</type>
+        <definition>std::optional&lt; Message &gt; conduit::internal::Subscriber::wait_for</definition>
+        <argsstring>(std::chrono::nanoseconds timeout)</argsstring>
+        <name>wait_for</name>
+        <qualifiedname>conduit::internal::Subscriber::wait_for</qualifiedname>
+        <param>
+          <type>std::chrono::nanoseconds</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Block until a message is available or timeout expires. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum time to wait. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The next message, or std::nullopt on timeout. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="72" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1Subscriber_1a9f974d2a9e835207daf4ff64def79d6d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> std::string &amp;</type>
+        <definition>const std::string &amp; conduit::internal::Subscriber::topic</definition>
+        <argsstring>() const</argsstring>
+        <name>topic</name>
+        <qualifiedname>conduit::internal::Subscriber::topic</qualifiedname>
+        <briefdescription>
+<para>Get the topic name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to the topic string. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="76" column="23" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="76" bodyend="76"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Low-level subscriber that reads raw bytes from a shared memory ring buffer. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Opens an existing shared memory region and claims a reader slot in the lock-free SPMC ring buffer. Use the typed Subscriber&lt;T&gt; wrapper for automatic deserialization.</para>
+<para><simplesect kind="see"><para>conduit::Subscriber </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="41" column="1" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="41" bodyend="83"/>
+    <listofallmembers>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1a3680f816fe2613a81faadaa7f77fc455" prot="public" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>operator=</name></member>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1a36d4066772fda548e109c266f693b043" prot="public" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>operator=</name></member>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1a90bb63546ba0034df82d15b9e2be1551" prot="private" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>reader_</name></member>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1a857953c7d40b882fbe0ed2a081856656" prot="private" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>shm_</name></member>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1ae1041a1b922bcddfafb771dbece8e6af" prot="private" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>slot_</name></member>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1ab517f696f21358525ffb7526cd0fad68" prot="public" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>Subscriber</name></member>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1a3dbe7cb03da1a1136d4ad18cf9a9f444" prot="public" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>Subscriber</name></member>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1a1fefda82bd2fe1d8e8ec7b5770ac0f5b" prot="public" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>Subscriber</name></member>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1a7a466820ee028cb1c9d498974b400dc4" prot="public" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>take</name></member>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1a9f974d2a9e835207daf4ff64def79d6d" prot="public" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>topic</name></member>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1a37da8447fef0fae0d48726189e716324" prot="private" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>topic_</name></member>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1a378d58ed9238f589fa28902a1db769c1" prot="public" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>wait</name></member>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1ae5c5d51e3b153a15b44ab3a208739ec8" prot="public" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>wait_for</name></member>
+      <member refid="classconduit_1_1internal_1_1Subscriber_1acaa8e290a5a34c4effcc910be339bf68" prot="public" virt="non-virtual"><scope>conduit::internal::Subscriber</scope><name>~Subscriber</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

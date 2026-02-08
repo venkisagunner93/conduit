@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classconduit_1_1WriteBuffer" kind="class" language="C++" prot="public">
+    <compoundname>conduit::WriteBuffer</compoundname>
+    <includes refid="buffer_8hpp" local="no">buffer.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classconduit_1_1WriteBuffer_1a57c88958d7bc1dcaf31e98b265942125" prot="private" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* conduit::WriteBuffer::ptr_</definition>
+        <argsstring></argsstring>
+        <name>ptr_</name>
+        <qualifiedname>conduit::WriteBuffer::ptr_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/buffer.hpp" line="56" column="13" bodyfile="packages/conduit_types/include/conduit_types/buffer.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classconduit_1_1WriteBuffer_1adbf11eb5dfdef2799f6bde44bf4ed06b" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>conduit::WriteBuffer::WriteBuffer</definition>
+        <argsstring>(uint8_t *data)</argsstring>
+        <name>WriteBuffer</name>
+        <qualifiedname>conduit::WriteBuffer::WriteBuffer</qualifiedname>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Construct a write buffer starting at the given pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the output buffer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/buffer.hpp" line="21" column="14" bodyfile="packages/conduit_types/include/conduit_types/buffer.hpp" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1WriteBuffer_1aa7ad7cb100c4ebbe574005c98b0f30f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::WriteBuffer::write</definition>
+        <argsstring>(const std::string &amp;s)</argsstring>
+        <name>write</name>
+        <qualifiedname>conduit::WriteBuffer::write</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Write a length-prefixed string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to write. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/buffer.hpp" line="25" column="10" bodyfile="packages/conduit_types/include/conduit_types/buffer.hpp" bodystart="25" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1WriteBuffer_1a2e97a48200c04d69100d80465421eb05" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; std::is_trivially_copyable_v&lt; T &gt;, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void conduit::WriteBuffer::write</definition>
+        <argsstring>(const T &amp;val)</argsstring>
+        <name>write</name>
+        <qualifiedname>conduit::WriteBuffer::write</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Write a trivially copyable value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value type (must be trivially copyable). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to write. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/buffer.hpp" line="37" column="10" bodyfile="packages/conduit_types/include/conduit_types/buffer.hpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classconduit_1_1WriteBuffer_1ade231d4664bbd5bcf78b5c3f2a9fcf13" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>static size_t conduit::WriteBuffer::size_of</definition>
+        <argsstring>(const std::string &amp;s)</argsstring>
+        <name>size_of</name>
+        <qualifiedname>conduit::WriteBuffer::size_of</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Compute the serialized size of a string (4-byte length prefix + content). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Size in bytes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/buffer.hpp" line="45" column="19" bodyfile="packages/conduit_types/include/conduit_types/buffer.hpp" bodystart="45" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1WriteBuffer_1acfcbebe2144e55a03e34bdf083da7fb0" prot="public" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>std::enable_if_t&lt; std::is_trivially_copyable_v&lt; T &gt;, int &gt;</type>
+            <defval>0</defval>
+          </param>
+        </templateparamlist>
+        <type>constexpr size_t</type>
+        <definition>static constexpr size_t conduit::WriteBuffer::size_of</definition>
+        <argsstring>(const T &amp;)</argsstring>
+        <name>size_of</name>
+        <qualifiedname>conduit::WriteBuffer::size_of</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+        </param>
+        <briefdescription>
+<para>Compute the serialized size of a trivially copyable value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>sizeof(T). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/buffer.hpp" line="53" column="29" bodyfile="packages/conduit_types/include/conduit_types/buffer.hpp" bodystart="53" bodyend="53"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Sequential binary writer for serializing message fields. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Writes values contiguously into a pre-allocated byte buffer. Strings are length-prefixed (uint32_t). Trivially copyable types are written via memcpy.</para>
+<para><simplesect kind="see"><para><ref refid="classconduit_1_1ReadBuffer" kindref="compound">ReadBuffer</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="packages/conduit_types/include/conduit_types/buffer.hpp" line="17" column="1" bodyfile="packages/conduit_types/include/conduit_types/buffer.hpp" bodystart="17" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classconduit_1_1WriteBuffer_1a57c88958d7bc1dcaf31e98b265942125" prot="private" virt="non-virtual"><scope>conduit::WriteBuffer</scope><name>ptr_</name></member>
+      <member refid="classconduit_1_1WriteBuffer_1ade231d4664bbd5bcf78b5c3f2a9fcf13" prot="public" virt="non-virtual"><scope>conduit::WriteBuffer</scope><name>size_of</name></member>
+      <member refid="classconduit_1_1WriteBuffer_1acfcbebe2144e55a03e34bdf083da7fb0" prot="public" virt="non-virtual"><scope>conduit::WriteBuffer</scope><name>size_of</name></member>
+      <member refid="classconduit_1_1WriteBuffer_1aa7ad7cb100c4ebbe574005c98b0f30f3" prot="public" virt="non-virtual"><scope>conduit::WriteBuffer</scope><name>write</name></member>
+      <member refid="classconduit_1_1WriteBuffer_1a2e97a48200c04d69100d80465421eb05" prot="public" virt="non-virtual"><scope>conduit::WriteBuffer</scope><name>write</name></member>
+      <member refid="classconduit_1_1WriteBuffer_1adbf11eb5dfdef2799f6bde44bf4ed06b" prot="public" virt="non-virtual"><scope>conduit::WriteBuffer</scope><name>WriteBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1FixedMessageType" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::FixedMessageType</compoundname>
+    <derivedcompoundref refid="structconduit_1_1Bool" prot="public" virt="non-virtual">conduit::Bool</derivedcompoundref>
+    <derivedcompoundref refid="structconduit_1_1Double" prot="public" virt="non-virtual">conduit::Double</derivedcompoundref>
+    <derivedcompoundref refid="structconduit_1_1Imu" prot="public" virt="non-virtual">conduit::Imu</derivedcompoundref>
+    <derivedcompoundref refid="structconduit_1_1Int" prot="public" virt="non-virtual">conduit::Int</derivedcompoundref>
+    <derivedcompoundref refid="structconduit_1_1Odometry" prot="public" virt="non-virtual">conduit::Odometry</derivedcompoundref>
+    <derivedcompoundref refid="structconduit_1_1Orientation" prot="public" virt="non-virtual">conduit::Orientation</derivedcompoundref>
+    <derivedcompoundref refid="structconduit_1_1Pose2D" prot="public" virt="non-virtual">conduit::Pose2D</derivedcompoundref>
+    <derivedcompoundref refid="structconduit_1_1Pose3D" prot="public" virt="non-virtual">conduit::Pose3D</derivedcompoundref>
+    <derivedcompoundref refid="structconduit_1_1Time" prot="public" virt="non-virtual">conduit::Time</derivedcompoundref>
+    <derivedcompoundref refid="structconduit_1_1Twist" prot="public" virt="non-virtual">conduit::Twist</derivedcompoundref>
+    <derivedcompoundref refid="structconduit_1_1Uint" prot="public" virt="non-virtual">conduit::Uint</derivedcompoundref>
+    <derivedcompoundref refid="structconduit_1_1Vec2" prot="public" virt="non-virtual">conduit::Vec2</derivedcompoundref>
+    <derivedcompoundref refid="structconduit_1_1Vec3" prot="public" virt="non-virtual">conduit::Vec3</derivedcompoundref>
+    <includes refid="fixed__message__type_8hpp" local="no">fixed_message_type.hpp</includes>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::FixedMessageType::FixedMessageType</definition>
+        <argsstring>()=default</argsstring>
+        <name>FixedMessageType</name>
+        <qualifiedname>conduit::FixedMessageType::FixedMessageType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/fixed_message_type.hpp" line="27" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for fixed-size, trivially copyable message types. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Derive from this to create messages that are transmitted via zero-copy memcpy. The type must be trivially copyable and standard layout.</para>
+<para><simplesect kind="see"><para><ref refid="fixed__message__type_8hpp_1a5369e69c2b3ae877fca3955c8bb3216e" kindref="member">validate_fixed_message_type</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>conduit::Bool</label>
+        <link refid="structconduit_1_1Bool"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>conduit::Double</label>
+        <link refid="structconduit_1_1Double"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="4">
+        <label>conduit::Imu</label>
+        <link refid="structconduit_1_1Imu"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>conduit::Int</label>
+        <link refid="structconduit_1_1Int"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>conduit::Odometry</label>
+        <link refid="structconduit_1_1Odometry"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>conduit::Orientation</label>
+        <link refid="structconduit_1_1Orientation"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>conduit::Pose2D</label>
+        <link refid="structconduit_1_1Pose2D"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>conduit::Pose3D</label>
+        <link refid="structconduit_1_1Pose3D"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>conduit::Time</label>
+        <link refid="structconduit_1_1Time"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>conduit::Twist</label>
+        <link refid="structconduit_1_1Twist"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>conduit::Uint</label>
+        <link refid="structconduit_1_1Uint"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>conduit::Vec2</label>
+        <link refid="structconduit_1_1Vec2"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>conduit::Vec3</label>
+        <link refid="structconduit_1_1Vec3"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="packages/conduit_types/include/conduit_types/fixed_message_type.hpp" line="25" column="1" bodyfile="packages/conduit_types/include/conduit_types/fixed_message_type.hpp" bodystart="25" bodyend="28"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" prot="protected" virt="non-virtual"><scope>conduit::FixedMessageType</scope><name>FixedMessageType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_288fb1ab69c9ae4a94f91c5befae3aa0" kind="dir">
+    <compoundname>packages/conduit_flow/include/conduit_flow</compoundname>
+    <innerfile refid="executor_8hpp">executor.hpp</innerfile>
+    <innerfile refid="flow_8hpp">flow.hpp</innerfile>
+    <innerfile refid="parser_8hpp">parser.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_flow/include/conduit_flow/"/>
+  </compounddef>
+</doxygen>

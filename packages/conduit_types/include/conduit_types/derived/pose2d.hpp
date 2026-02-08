@@ -7,10 +7,11 @@
 
 namespace conduit {
 
+/// @brief 2D pose with position and orientation.
 struct Pose2D : FixedMessageType {
-    Header header;
-    Vec2 position;
-    Orientation orientation;
+    Header header;            ///< Timestamp and coordinate frame.
+    Vec2 position;            ///< 2D position (x, y).
+    Orientation orientation;  ///< Quaternion orientation (typically yaw-only for 2D).
 };
 
 }  // namespace conduit

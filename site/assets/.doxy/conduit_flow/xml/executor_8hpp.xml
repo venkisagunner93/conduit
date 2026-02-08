@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="executor_8hpp" kind="file" language="C++">
+    <compoundname>executor.hpp</compoundname>
+    <includes refid="flow_8hpp" local="yes">conduit_flow/flow.hpp</includes>
+    <includes local="no">memory</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>packages/conduit_flow/include/conduit_flow/executor.hpp</label>
+        <link refid="executor_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>conduit_flow/flow.hpp</label>
+        <link refid="flow_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>map</label>
+      </node>
+      <node id="8">
+        <label>memory</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>variant</label>
+      </node>
+      <node id="7">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structconduit_1_1flow_1_1ExecutorOptions" prot="public">conduit::flow::ExecutorOptions</innerclass>
+    <innerclass refid="classconduit_1_1flow_1_1Executor" prot="public">conduit::flow::Executor</innerclass>
+    <innernamespace refid="namespaceconduit">conduit</innernamespace>
+    <innernamespace refid="namespaceconduit_1_1flow">conduit::flow</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;conduit_flow/flow.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">conduit::flow<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="structconduit_1_1flow_1_1ExecutorOptions" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structconduit_1_1flow_1_1ExecutorOptions" kindref="compound">ExecutorOptions</ref><sp/>{</highlight></codeline>
+<codeline lineno="10" refid="structconduit_1_1flow_1_1ExecutorOptions_1ac01f85a1cb45758707146deab92d0238" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structconduit_1_1flow_1_1ExecutorOptions_1ac01f85a1cb45758707146deab92d0238" kindref="member">verbose</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/><sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="classconduit_1_1flow_1_1Executor" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classconduit_1_1flow_1_1Executor" kindref="compound">Executor</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21" refid="classconduit_1_1flow_1_1Executor_1abebc348df098f2187b529e9909d0d7c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1flow_1_1Executor_1abebc348df098f2187b529e9909d0d7c8" kindref="member">Executor</ref>(<ref refid="structconduit_1_1flow_1_1ExecutorOptions" kindref="compound">ExecutorOptions</ref><sp/>options<sp/>=<sp/>{});</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classconduit_1_1flow_1_1Executor" kindref="compound">~Executor</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classconduit_1_1flow_1_1Executor" kindref="compound">Executor</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1flow_1_1Executor" kindref="compound">Executor</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classconduit_1_1flow_1_1Executor" kindref="compound">Executor</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1flow_1_1Executor" kindref="compound">Executor</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classconduit_1_1flow_1_1Executor_1a5f258f5f9e79d0d1bb2b56ec71a8d10d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1flow_1_1Executor_1a5f258f5f9e79d0d1bb2b56ec71a8d10d" kindref="member">run</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structconduit_1_1flow_1_1FlowConfig" kindref="compound">FlowConfig</ref>&amp;<sp/>config);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classconduit_1_1flow_1_1Executor_1ab94eb1623ff71956b796c6cef022f148" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1flow_1_1Executor_1ab94eb1623ff71956b796c6cef022f148" kindref="member">shutdown</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classconduit_1_1flow_1_1Executor_1a6dc4165315b646e13175caa9fa0eee3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1flow_1_1Executor_1a6dc4165315b646e13175caa9fa0eee3f" kindref="member">running</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Impl;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;Impl&gt;<sp/>impl_;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>conduit::flow</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="packages/conduit_flow/include/conduit_flow/executor.hpp"/>
+  </compounddef>
+</doxygen>

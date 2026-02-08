@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_6c611f3cf964ed6f858fc2fcf2f339e5" kind="dir">
+    <compoundname>packages/conduit_types/include/conduit_types/derived</compoundname>
+    <innerfile refid="imu_8hpp">imu.hpp</innerfile>
+    <innerfile refid="odometry_8hpp">odometry.hpp</innerfile>
+    <innerfile refid="orientation_8hpp">orientation.hpp</innerfile>
+    <innerfile refid="pose2d_8hpp">pose2d.hpp</innerfile>
+    <innerfile refid="pose3d_8hpp">pose3d.hpp</innerfile>
+    <innerfile refid="twist_8hpp">twist.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_types/include/conduit_types/derived/"/>
+  </compounddef>
+</doxygen>

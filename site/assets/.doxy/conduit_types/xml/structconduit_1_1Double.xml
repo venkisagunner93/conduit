@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1Double" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::Double</compoundname>
+    <basecompoundref refid="structconduit_1_1FixedMessageType" prot="public" virt="non-virtual">conduit::FixedMessageType</basecompoundref>
+    <includes refid="double_8hpp" local="no">double.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1Double_1a3d0c45fdbb3bd9a3bd983018e0088253" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double conduit::Double::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>conduit::Double::value</qualifiedname>
+        <briefdescription>
+<para>Double-precision value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/primitives/double.hpp" line="9" column="12" bodyfile="packages/conduit_types/include/conduit_types/primitives/double.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Fixed-size double-precision floating point message type. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>conduit::Double</label>
+        <link refid="structconduit_1_1Double"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>conduit::Double</label>
+        <link refid="structconduit_1_1Double"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+    </collaborationgraph>
+    <location file="packages/conduit_types/include/conduit_types/primitives/double.hpp" line="8" column="1" bodyfile="packages/conduit_types/include/conduit_types/primitives/double.hpp" bodystart="8" bodyend="10"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" prot="protected" virt="non-virtual"><scope>conduit::Double</scope><name>FixedMessageType</name></member>
+      <member refid="structconduit_1_1Double_1a3d0c45fdbb3bd9a3bd983018e0088253" prot="public" virt="non-virtual"><scope>conduit::Double</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

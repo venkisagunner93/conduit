@@ -26,6 +26,37 @@ theme:
     - search.highlight
     - content.code.copy
 
+plugins:
+  - search
+  - mkdoxy:
+      projects:
+        conduit_core:
+          src-dirs: packages/conduit_core/include
+          full-doc: True
+          doxy-cfg:
+            FILE_PATTERNS: "*.hpp"
+            RECURSIVE: True
+            EXTRACT_ALL: False
+            HIDE_UNDOC_MEMBERS: True
+        conduit_types:
+          src-dirs: packages/conduit_types/include
+          full-doc: True
+          doxy-cfg:
+            FILE_PATTERNS: "*.hpp"
+            RECURSIVE: True
+        conduit_tank:
+          src-dirs: packages/conduit_tank/include
+          full-doc: True
+          doxy-cfg:
+            FILE_PATTERNS: "*.hpp"
+            RECURSIVE: True
+        conduit_flow:
+          src-dirs: packages/conduit_flow/include
+          full-doc: True
+          doxy-cfg:
+            FILE_PATTERNS: "*.hpp"
+            RECURSIVE: True
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -56,5 +87,6 @@ nav:
       - Subscriber: api/subscriber.md
       - Types: api/types.md
       - Loop: api/loop.md
+      - Reference: api/reference.md
   - CLI Tools: cli.md
   - Roadmap: roadmap.md

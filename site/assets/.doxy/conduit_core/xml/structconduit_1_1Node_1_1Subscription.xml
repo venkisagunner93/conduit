@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1Node_1_1Subscription" kind="struct" language="C++" prot="private">
+    <compoundname>conduit::Node::Subscription</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1Node_1_1Subscription_1a0bc78bcfb0dc09b91159f173075d4b89" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string conduit::Node::Subscription::topic</definition>
+        <argsstring></argsstring>
+        <name>topic</name>
+        <qualifiedname>conduit::Node::Subscription::topic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="113" column="21" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Node_1_1Subscription_1a01ea0d3a55e204615b0671d106b432dc" prot="public" static="no" mutable="no">
+        <type>std::function&lt; void(const <ref refid="structconduit_1_1Message" kindref="compound">Message</ref> &amp;)&gt;</type>
+        <definition>std::function&lt;void(const Message&amp;)&gt; conduit::Node::Subscription::callback</definition>
+        <argsstring></argsstring>
+        <name>callback</name>
+        <qualifiedname>conduit::Node::Subscription::callback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="114" column="23" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Node_1_1Subscription_1a32610e7e4cbea45642a0702a2198f322" prot="public" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="classconduit_1_1internal_1_1Subscriber" kindref="compound">internal::Subscriber</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;internal::Subscriber&gt; conduit::Node::Subscription::subscriber</definition>
+        <argsstring></argsstring>
+        <name>subscriber</name>
+        <qualifiedname>conduit::Node::Subscription::subscriber</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="115" column="25" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Node_1_1Subscription_1a282eed73c5b07f392feae61718c584f6" prot="public" static="no" mutable="no">
+        <type>std::thread</type>
+        <definition>std::thread conduit::Node::Subscription::thread</definition>
+        <argsstring></argsstring>
+        <name>thread</name>
+        <qualifiedname>conduit::Node::Subscription::thread</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/node.hpp" line="116" column="21" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/node.hpp" line="112" column="5" bodyfile="packages/conduit_core/include/conduit_core/node.hpp" bodystart="112" bodyend="117"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1Node_1_1Subscription_1a01ea0d3a55e204615b0671d106b432dc" prot="public" virt="non-virtual"><scope>conduit::Node::Subscription</scope><name>callback</name></member>
+      <member refid="structconduit_1_1Node_1_1Subscription_1a32610e7e4cbea45642a0702a2198f322" prot="public" virt="non-virtual"><scope>conduit::Node::Subscription</scope><name>subscriber</name></member>
+      <member refid="structconduit_1_1Node_1_1Subscription_1a282eed73c5b07f392feae61718c584f6" prot="public" virt="non-virtual"><scope>conduit::Node::Subscription</scope><name>thread</name></member>
+      <member refid="structconduit_1_1Node_1_1Subscription_1a0bc78bcfb0dc09b91159f173075d4b89" prot="public" virt="non-virtual"><scope>conduit::Node::Subscription</scope><name>topic</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

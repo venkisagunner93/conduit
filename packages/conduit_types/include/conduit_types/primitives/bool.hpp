@@ -4,8 +4,9 @@
 
 namespace conduit {
 
+/// @brief Fixed-size boolean message type.
 struct Bool : public FixedMessageType {
-    bool value;
+    bool value;  ///< Boolean value.
 };
 
 }  // namespace conduit

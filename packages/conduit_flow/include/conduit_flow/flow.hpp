@@ -8,38 +8,38 @@
 
 namespace conduit::flow {
 
-// Node configuration
+/// @brief Configuration for a single node in a flow.
 struct NodeConfig {
-    std::string name;
-    std::string exec;
-    std::vector<std::string> args;
-    std::map<std::string, std::string> env;
-    std::string working_dir;
+    std::string name;                            ///< Logical node name.
+    std::string exec;                            ///< Executable path or command.
+    std::vector<std::string> args;               ///< Command-line arguments.
+    std::map<std::string, std::string> env;      ///< Environment variable overrides.
+    std::string working_dir;                     ///< Working directory for the process.
 };
 
-// Wait for duration
+/// @brief Wait step: pause for a fixed duration.
 struct WaitDuration {
-    std::chrono::milliseconds duration;
+    std::chrono::milliseconds duration;  ///< Time to wait.
 };
 
-// Wait for topics to exist
+/// @brief Wait step: block until specified topics exist in shared memory.
 struct WaitTopics {
-    std::vector<std::string> topics;
-    std::chrono::milliseconds timeout{30000};
+    std::vector<std::string> topics;             ///< Topic names to wait for.
+    std::chrono::milliseconds timeout{30000};    ///< Maximum wait time (default 30s).
 };
 
-// Parallel group
+/// @brief Parallel group: start multiple nodes simultaneously.
 struct Group {
-    std::vector<NodeConfig> nodes;
+    std::vector<NodeConfig> nodes;  ///< Nodes to launch in parallel.
 };
 
-// A step in the flow
+/// @brief A single step in a flow sequence.
 using Step = std::variant<NodeConfig, WaitDuration, WaitTopics, Group>;
 
-// Complete flow configuration
+/// @brief Complete flow configuration with startup and shutdown sequences.
 struct FlowConfig {
-    std::vector<Step> startup;
-    std::vector<Step> shutdown;
+    std::vector<Step> startup;   ///< Ordered startup steps.
+    std::vector<Step> shutdown;  ///< Ordered shutdown steps (default: reverse of startup).
 };
 
 }  // namespace conduit::flow

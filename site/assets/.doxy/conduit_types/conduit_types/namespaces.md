@@ -1,0 +1,9 @@
+
+# Namespace List
+
+Here is a list of all namespaces with brief descriptions:
+
+
+* **namespace** [**conduit**](namespaceconduit.md)     
+    * **namespace** [**detail**](namespaceconduit_1_1detail.md) 
+

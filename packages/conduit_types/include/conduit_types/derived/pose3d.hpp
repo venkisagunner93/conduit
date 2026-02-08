@@ -7,10 +7,11 @@
 
 namespace conduit {
 
+/// @brief 3D pose with position and orientation.
 struct Pose3D : FixedMessageType {
-    Header header;
-    Vec3 position;
-    Orientation orientation;
+    Header header;            ///< Timestamp and coordinate frame.
+    Vec3 position;            ///< 3D position (x, y, z).
+    Orientation orientation;  ///< Quaternion orientation.
 };
 
 }  // namespace conduit

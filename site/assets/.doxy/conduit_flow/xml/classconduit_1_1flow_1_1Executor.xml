@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classconduit_1_1flow_1_1Executor" kind="class" language="C++" prot="public">
+    <compoundname>conduit::flow::Executor</compoundname>
+    <includes refid="executor_8hpp" local="no">executor.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classconduit_1_1flow_1_1Executor_1a5b224d7ecb3d4c3fc52ff305b324b592" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; Impl &gt;</type>
+        <definition>std::unique_ptr&lt;Impl&gt; conduit::flow::Executor::impl_</definition>
+        <argsstring></argsstring>
+        <name>impl_</name>
+        <qualifiedname>conduit::flow::Executor::impl_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/executor.hpp" line="41" column="21" bodyfile="packages/conduit_flow/include/conduit_flow/executor.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classconduit_1_1flow_1_1Executor_1abebc348df098f2187b529e9909d0d7c8" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::flow::Executor::Executor</definition>
+        <argsstring>(ExecutorOptions options={})</argsstring>
+        <name>Executor</name>
+        <qualifiedname>conduit::flow::Executor::Executor</qualifiedname>
+        <param>
+          <type><ref refid="structconduit_1_1flow_1_1ExecutorOptions" kindref="compound">ExecutorOptions</ref></type>
+          <declname>options</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Construct an executor with the given options. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Execution options. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/executor.hpp" line="21" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1flow_1_1Executor_1ad91423b4e8c6a29da763fa8294586c8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::flow::Executor::~Executor</definition>
+        <argsstring>()</argsstring>
+        <name>~Executor</name>
+        <qualifiedname>conduit::flow::Executor::~Executor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/executor.hpp" line="22" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1flow_1_1Executor_1afc1492bc8b7aa5452d61b718a83f002e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::flow::Executor::Executor</definition>
+        <argsstring>(const Executor &amp;)=delete</argsstring>
+        <name>Executor</name>
+        <qualifiedname>conduit::flow::Executor::Executor</qualifiedname>
+        <param>
+          <type>const <ref refid="classconduit_1_1flow_1_1Executor" kindref="compound">Executor</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/executor.hpp" line="24" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1flow_1_1Executor_1aded739f246cfbbd7072d957a7598d8bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1flow_1_1Executor" kindref="compound">Executor</ref> &amp;</type>
+        <definition>Executor &amp; conduit::flow::Executor::operator=</definition>
+        <argsstring>(const Executor &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>conduit::flow::Executor::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classconduit_1_1flow_1_1Executor" kindref="compound">Executor</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/executor.hpp" line="25" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1flow_1_1Executor_1a5f258f5f9e79d0d1bb2b56ec71a8d10d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int conduit::flow::Executor::run</definition>
+        <argsstring>(const FlowConfig &amp;config)</argsstring>
+        <name>run</name>
+        <qualifiedname>conduit::flow::Executor::run</qualifiedname>
+        <param>
+          <type>const <ref refid="structconduit_1_1flow_1_1FlowConfig" kindref="compound">FlowConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Run the flow (blocks until shutdown completes). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The flow configuration to execute. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Exit code (0 on clean shutdown). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/executor.hpp" line="30" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1flow_1_1Executor_1ab94eb1623ff71956b796c6cef022f148" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::flow::Executor::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <qualifiedname>conduit::flow::Executor::shutdown</qualifiedname>
+        <briefdescription>
+<para>Request graceful shutdown of all running nodes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/executor.hpp" line="33" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1flow_1_1Executor_1a6dc4165315b646e13175caa9fa0eee3f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool conduit::flow::Executor::running</definition>
+        <argsstring>() const</argsstring>
+        <name>running</name>
+        <qualifiedname>conduit::flow::Executor::running</qualifiedname>
+        <briefdescription>
+<para>Check if the executor is currently running a flow. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if <ref refid="classconduit_1_1flow_1_1Executor_1a5f258f5f9e79d0d1bb2b56ec71a8d10d" kindref="member">run()</ref> is active. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/executor.hpp" line="37" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Executes a flow configuration (startup and shutdown sequences). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Launches nodes as child processes, handles wait steps and parallel groups, and manages graceful shutdown on SIGINT/SIGTERM. </para>
+    </detaileddescription>
+    <location file="packages/conduit_flow/include/conduit_flow/executor.hpp" line="17" column="1" bodyfile="packages/conduit_flow/include/conduit_flow/executor.hpp" bodystart="17" bodyend="42"/>
+    <listofallmembers>
+      <member refid="classconduit_1_1flow_1_1Executor_1abebc348df098f2187b529e9909d0d7c8" prot="public" virt="non-virtual"><scope>conduit::flow::Executor</scope><name>Executor</name></member>
+      <member refid="classconduit_1_1flow_1_1Executor_1afc1492bc8b7aa5452d61b718a83f002e" prot="public" virt="non-virtual"><scope>conduit::flow::Executor</scope><name>Executor</name></member>
+      <member refid="classconduit_1_1flow_1_1Executor_1a5b224d7ecb3d4c3fc52ff305b324b592" prot="private" virt="non-virtual"><scope>conduit::flow::Executor</scope><name>impl_</name></member>
+      <member refid="classconduit_1_1flow_1_1Executor_1aded739f246cfbbd7072d957a7598d8bc" prot="public" virt="non-virtual"><scope>conduit::flow::Executor</scope><name>operator=</name></member>
+      <member refid="classconduit_1_1flow_1_1Executor_1a5f258f5f9e79d0d1bb2b56ec71a8d10d" prot="public" virt="non-virtual"><scope>conduit::flow::Executor</scope><name>run</name></member>
+      <member refid="classconduit_1_1flow_1_1Executor_1a6dc4165315b646e13175caa9fa0eee3f" prot="public" virt="non-virtual"><scope>conduit::flow::Executor</scope><name>running</name></member>
+      <member refid="classconduit_1_1flow_1_1Executor_1ab94eb1623ff71956b796c6cef022f148" prot="public" virt="non-virtual"><scope>conduit::flow::Executor</scope><name>shutdown</name></member>
+      <member refid="classconduit_1_1flow_1_1Executor_1ad91423b4e8c6a29da763fa8294586c8c" prot="public" virt="non-virtual"><scope>conduit::flow::Executor</scope><name>~Executor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

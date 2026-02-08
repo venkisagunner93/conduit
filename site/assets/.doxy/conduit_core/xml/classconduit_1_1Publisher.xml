@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classconduit_1_1Publisher" kind="class" language="C++" prot="private">
+    <compoundname>conduit::Publisher</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classconduit_1_1Publisher_1a702b821c7976e7bf6d7b132e4c39c80b" prot="private" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">internal::Publisher</ref></type>
+        <definition>internal::Publisher conduit::Publisher&lt; T &gt;::impl_</definition>
+        <argsstring></argsstring>
+        <name>impl_</name>
+        <qualifiedname>conduit::Publisher::impl_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="133" column="25" bodyfile="packages/conduit_core/include/conduit_core/publisher.hpp" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1Publisher_1a28854be590fc6517d64492908e142ca7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; uint8_t &gt;</type>
+        <definition>std::vector&lt;uint8_t&gt; conduit::Publisher&lt; T &gt;::buffer_</definition>
+        <argsstring></argsstring>
+        <name>buffer_</name>
+        <qualifiedname>conduit::Publisher::buffer_</qualifiedname>
+        <briefdescription>
+<para>Serialization scratch space for variable types. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="134" column="17" bodyfile="packages/conduit_core/include/conduit_core/publisher.hpp" bodystart="134" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classconduit_1_1Publisher_1a5739e0a4e6984bafd77876d661d15949" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>conduit::Publisher&lt; T &gt;::Publisher</definition>
+        <argsstring>(const std::string &amp;topic, const PublisherOptions &amp;options={})</argsstring>
+        <name>Publisher</name>
+        <qualifiedname>conduit::Publisher::Publisher</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>topic</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structconduit_1_1PublisherOptions" kindref="compound">PublisherOptions</ref> &amp;</type>
+          <declname>options</declname>
+          <defval>{}</defval>
+        </param>
+        <briefdescription>
+<para>Construct a typed publisher for the given topic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>topic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Topic name used to create the shared memory region. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ring buffer configuration. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="94" column="5" bodyfile="packages/conduit_core/include/conduit_core/publisher.hpp" bodystart="94" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Publisher_1ac5ab29404b5012bbce640627675dd1ef" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>conduit::Publisher&lt; T &gt;::Publisher</definition>
+        <argsstring>(Publisher &amp;&amp;) noexcept=default</argsstring>
+        <name>Publisher</name>
+        <qualifiedname>conduit::Publisher::Publisher</qualifiedname>
+        <param>
+          <type>Publisher &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="100" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Publisher_1a86e57616b2fbbd500feaa405be1a6773" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>Publisher &amp;</type>
+        <definition>Publisher &amp; conduit::Publisher&lt; T &gt;::operator=</definition>
+        <argsstring>(Publisher &amp;&amp;) noexcept=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>conduit::Publisher::operator=</qualifiedname>
+        <param>
+          <type>Publisher &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="102" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Publisher_1ab03907e55de69129b46ae06743b6b34d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::Publisher&lt; T &gt;::Publisher</definition>
+        <argsstring>(const Publisher &amp;)=delete</argsstring>
+        <name>Publisher</name>
+        <qualifiedname>conduit::Publisher::Publisher</qualifiedname>
+        <param>
+          <type>const Publisher &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="103" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Publisher_1a62b32b729077aab0a212f2f927d63dd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Publisher &amp;</type>
+        <definition>Publisher &amp; conduit::Publisher&lt; T &gt;::operator=</definition>
+        <argsstring>(const Publisher &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>conduit::Publisher::operator=</qualifiedname>
+        <param>
+          <type>const Publisher &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="104" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Publisher_1a2719a105838bda89639967fd425001a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool conduit::Publisher&lt; T &gt;::publish</definition>
+        <argsstring>(const T &amp;msg)</argsstring>
+        <name>publish</name>
+        <qualifiedname>conduit::Publisher::publish</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Publish a typed message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Fixed types are published via memcpy. Variable types are serialized into an internal buffer first.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message to publish. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the message was written, false if it exceeds max_message_size. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="113" column="10" bodyfile="packages/conduit_core/include/conduit_core/publisher.hpp" bodystart="113" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Publisher_1a9051f4ec1f67da24caef34e3c4a52e68" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string &amp; conduit::Publisher&lt; T &gt;::topic</definition>
+        <argsstring>() const</argsstring>
+        <name>topic</name>
+        <qualifiedname>conduit::Publisher::topic</qualifiedname>
+        <briefdescription>
+<para>Get the topic name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to the topic string. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="126" column="23" bodyfile="packages/conduit_core/include/conduit_core/publisher.hpp" bodystart="126" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1Publisher_1a3cbe23c1fd93aea19238d4e54c78ddc0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t conduit::Publisher&lt; T &gt;::max_message_size</definition>
+        <argsstring>() const</argsstring>
+        <name>max_message_size</name>
+        <qualifiedname>conduit::Publisher::max_message_size</qualifiedname>
+        <briefdescription>
+<para>Get the maximum allowed message size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Maximum payload size in bytes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="130" column="14" bodyfile="packages/conduit_core/include/conduit_core/publisher.hpp" bodystart="130" bodyend="130"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classconduit_1_1Publisher_1aee9137c6e755d9bd7b02e7782bcaba46" prot="private" static="yes" constexpr="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>constexpr void</type>
+        <definition>static constexpr void conduit::Publisher&lt; T &gt;::validate</definition>
+        <argsstring>()</argsstring>
+        <name>validate</name>
+        <qualifiedname>conduit::Publisher::validate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="136" column="27" bodyfile="packages/conduit_core/include/conduit_core/publisher.hpp" bodystart="136" bodyend="142"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Type-safe publisher that serializes messages of type T. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>For FixedMessageType derivatives, messages are published via memcpy. For VariableMessageType derivatives, serialize() is called into an internal buffer before publishing.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structconduit_1_1Message" kindref="compound">Message</ref> type (must derive from FixedMessageType or VariableMessageType). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="structconduit_1_1PublisherOptions" kindref="compound">PublisherOptions</ref>, <ref refid="classconduit_1_1Node_1adaecfc36a0e4cc6075e1354b51cd4140" kindref="member">Node::advertise</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="89" column="1" bodyfile="packages/conduit_core/include/conduit_core/publisher.hpp" bodystart="89" bodyend="143"/>
+    <listofallmembers>
+      <member refid="classconduit_1_1Publisher_1a28854be590fc6517d64492908e142ca7" prot="private" virt="non-virtual"><scope>conduit::Publisher</scope><name>buffer_</name></member>
+      <member refid="classconduit_1_1Publisher_1a702b821c7976e7bf6d7b132e4c39c80b" prot="private" virt="non-virtual"><scope>conduit::Publisher</scope><name>impl_</name></member>
+      <member refid="classconduit_1_1Publisher_1a3cbe23c1fd93aea19238d4e54c78ddc0" prot="public" virt="non-virtual"><scope>conduit::Publisher</scope><name>max_message_size</name></member>
+      <member refid="classconduit_1_1Publisher_1a86e57616b2fbbd500feaa405be1a6773" prot="public" virt="non-virtual"><scope>conduit::Publisher</scope><name>operator=</name></member>
+      <member refid="classconduit_1_1Publisher_1a62b32b729077aab0a212f2f927d63dd9" prot="public" virt="non-virtual"><scope>conduit::Publisher</scope><name>operator=</name></member>
+      <member refid="classconduit_1_1Publisher_1a2719a105838bda89639967fd425001a5" prot="public" virt="non-virtual"><scope>conduit::Publisher</scope><name>publish</name></member>
+      <member refid="classconduit_1_1Publisher_1a5739e0a4e6984bafd77876d661d15949" prot="public" virt="non-virtual"><scope>conduit::Publisher</scope><name>Publisher</name></member>
+      <member refid="classconduit_1_1Publisher_1ac5ab29404b5012bbce640627675dd1ef" prot="public" virt="non-virtual"><scope>conduit::Publisher</scope><name>Publisher</name></member>
+      <member refid="classconduit_1_1Publisher_1ab03907e55de69129b46ae06743b6b34d" prot="public" virt="non-virtual"><scope>conduit::Publisher</scope><name>Publisher</name></member>
+      <member refid="classconduit_1_1Publisher_1a9051f4ec1f67da24caef34e3c4a52e68" prot="public" virt="non-virtual"><scope>conduit::Publisher</scope><name>topic</name></member>
+      <member refid="classconduit_1_1Publisher_1aee9137c6e755d9bd7b02e7782bcaba46" prot="private" virt="non-virtual"><scope>conduit::Publisher</scope><name>validate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

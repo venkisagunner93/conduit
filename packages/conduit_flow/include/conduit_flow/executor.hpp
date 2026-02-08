@@ -5,27 +5,35 @@
 
 namespace conduit::flow {
 
-// Execution options
+/// @brief Options for the flow executor.
 struct ExecutorOptions {
-    bool verbose = true;
+    bool verbose = true;  ///< Print startup/shutdown progress to stdout.
 };
 
-// Executor class
+/// @brief Executes a flow configuration (startup and shutdown sequences).
+///
+/// Launches nodes as child processes, handles wait steps and parallel groups,
+/// and manages graceful shutdown on SIGINT/SIGTERM.
 class Executor {
 public:
+    /// @brief Construct an executor with the given options.
+    /// @param options Execution options.
     explicit Executor(ExecutorOptions options = {});
     ~Executor();
 
     Executor(const Executor&) = delete;
     Executor& operator=(const Executor&) = delete;
 
-    // Run the flow (blocks until shutdown)
+    /// @brief Run the flow (blocks until shutdown completes).
+    /// @param config The flow configuration to execute.
+    /// @return Exit code (0 on clean shutdown).
     int run(const FlowConfig& config);
 
-    // Request shutdown
+    /// @brief Request graceful shutdown of all running nodes.
     void shutdown();
 
-    // Check if running
+    /// @brief Check if the executor is currently running a flow.
+    /// @return true if run() is active.
     bool running() const;
 
 private:
