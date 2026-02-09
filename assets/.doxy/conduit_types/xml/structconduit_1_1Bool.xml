@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1Bool" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::Bool</compoundname>
+    <basecompoundref refid="structconduit_1_1FixedMessageType" prot="public" virt="non-virtual">conduit::FixedMessageType</basecompoundref>
+    <includes refid="bool_8hpp" local="no">bool.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1Bool_1a7ca14d5ba32ce6824289f41c89262819" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool conduit::Bool::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>conduit::Bool::value</qualifiedname>
+        <briefdescription>
+<para>Boolean value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/primitives/bool.hpp" line="9" column="10" bodyfile="packages/conduit_types/include/conduit_types/primitives/bool.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Fixed-size boolean message type. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>conduit::Bool</label>
+        <link refid="structconduit_1_1Bool"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>conduit::Bool</label>
+        <link refid="structconduit_1_1Bool"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+    </collaborationgraph>
+    <location file="packages/conduit_types/include/conduit_types/primitives/bool.hpp" line="8" column="1" bodyfile="packages/conduit_types/include/conduit_types/primitives/bool.hpp" bodystart="8" bodyend="10"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" prot="protected" virt="non-virtual"><scope>conduit::Bool</scope><name>FixedMessageType</name></member>
+      <member refid="structconduit_1_1Bool_1a7ca14d5ba32ce6824289f41c89262819" prot="public" virt="non-virtual"><scope>conduit::Bool</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

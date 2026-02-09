@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceconduit_1_1internal" kind="namespace" language="C++">
+    <compoundname>conduit::internal</compoundname>
+    <innerclass refid="structconduit_1_1internal_1_1AlignedAtomicU64" prot="public">conduit::internal::AlignedAtomicU64</innerclass>
+    <innerclass refid="classconduit_1_1internal_1_1Publisher" prot="public">conduit::internal::Publisher</innerclass>
+    <innerclass refid="structconduit_1_1internal_1_1ReadResult" prot="public">conduit::internal::ReadResult</innerclass>
+    <innerclass refid="structconduit_1_1internal_1_1RingBufferConfig" prot="public">conduit::internal::RingBufferConfig</innerclass>
+    <innerclass refid="structconduit_1_1internal_1_1RingBufferHeader" prot="public">conduit::internal::RingBufferHeader</innerclass>
+    <innerclass refid="classconduit_1_1internal_1_1RingBufferReader" prot="public">conduit::internal::RingBufferReader</innerclass>
+    <innerclass refid="classconduit_1_1internal_1_1RingBufferWriter" prot="public">conduit::internal::RingBufferWriter</innerclass>
+    <innerclass refid="classconduit_1_1internal_1_1ShmRegion" prot="public">conduit::internal::ShmRegion</innerclass>
+    <innerclass refid="classconduit_1_1internal_1_1Subscriber" prot="public">conduit::internal::Subscriber</innerclass>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceconduit_1_1internal_1af3f01a02e3f07f5561230c16cb4adb89" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">constexpr</ref> <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">size_t</ref></type>
+        <definition>constexpr size_t conduit::internal::CACHE_LINE_SIZE</definition>
+        <argsstring></argsstring>
+        <name>CACHE_LINE_SIZE</name>
+        <qualifiedname>conduit::internal::CACHE_LINE_SIZE</qualifiedname>
+        <initializer>= 64</initializer>
+        <briefdescription>
+<para>CPU cache line size used for alignment to prevent false sharing. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="13" column="18" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconduit_1_1internal_1ad714e89d05b37bf832695cc0de378597" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">constexpr</ref> <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">size_t</ref></type>
+        <definition>constexpr size_t conduit::internal::MAX_SUBSCRIBERS</definition>
+        <argsstring></argsstring>
+        <name>MAX_SUBSCRIBERS</name>
+        <qualifiedname>conduit::internal::MAX_SUBSCRIBERS</qualifiedname>
+        <initializer>= 16</initializer>
+        <briefdescription>
+<para>Maximum number of concurrent subscriber reader slots. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="16" column="18" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceconduit_1_1internal_1a8d1e87939f7f3f541feca1bd3aba20fc" prot="public" static="no" constexpr="yes" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">constexpr</ref> <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">size_t</ref></type>
+        <definition>constexpr size_t conduit::internal::SLOT_HEADER_SIZE</definition>
+        <argsstring></argsstring>
+        <name>SLOT_HEADER_SIZE</name>
+        <qualifiedname>conduit::internal::SLOT_HEADER_SIZE</qualifiedname>
+        <initializer>= <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">sizeof</ref>(<ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref>) + <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">sizeof</ref>(<ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint64_t</ref>) + <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">sizeof</ref>(<ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint64_t</ref>)</initializer>
+        <briefdescription>
+<para>Size of each slot&apos;s header in bytes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Slot header layout: <programlisting><codeline><highlight class="normal"><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">┌────────────┬──────────────┬────────────────┐</ref></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">│</ref><sp/>size<sp/>(4<ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">B</ref>)<sp/><sp/>│<sp/>sequence<sp/>(8<ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">B</ref>)│<sp/><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">timestamp</ref><sp/>(8<ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">B</ref>)<sp/><sp/>│<sp/><sp/>=<sp/>20<sp/><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">bytes</ref></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">└────────────┴──────────────┴────────────────┘</ref></highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="26" column="18" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceconduit_1_1internal_1ab4bb06901936a137d31fed77f2dcbad3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">bool</ref></type>
+        <definition>bool conduit::internal::futex_wait</definition>
+        <argsstring>(std::atomic&lt; uint32_t &gt; *futex_word, uint32_t expected_value, std::optional&lt; std::chrono::nanoseconds &gt; timeout=std::nullopt)</argsstring>
+        <name>futex_wait</name>
+        <qualifiedname>conduit::internal::futex_wait</qualifiedname>
+        <param>
+          <type>std::atomic&lt; <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref> &gt; *</type>
+          <declname>futex_word</declname>
+        </param>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref></type>
+          <declname>expected_value</declname>
+        </param>
+        <param>
+          <type>std::optional&lt; std::chrono::nanoseconds &gt;</type>
+          <declname>timeout</declname>
+          <defval>std::nullopt</defval>
+        </param>
+        <briefdescription>
+<para>Wait until the futex word changes from the expected value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Wraps the Linux <computeroutput>futex(FUTEX_WAIT)</computeroutput> syscall. The calling thread sleeps (consuming zero CPU) until another thread calls <ref refid="namespaceconduit_1_1internal_1a707ff1f3ddcf16bebc728a4914d399a7" kindref="member">futex_wake()</ref> on the same word, or the optional timeout expires. A spurious wakeup is possible if the futex word has already changed by the time the syscall executes.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>futex_word</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the atomic futex word in shared memory. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expected_value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value that triggered the wait; if the current value differs, the call returns immediately. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional maximum wait duration. std::nullopt means wait forever. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if woken by <ref refid="namespaceconduit_1_1internal_1a707ff1f3ddcf16bebc728a4914d399a7" kindref="member">futex_wake()</ref>, false on timeout. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/futex.hpp" line="23" column="6" declfile="packages/conduit_core/include/conduit_core/internal/futex.hpp" declline="23" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1internal_1a707ff1f3ddcf16bebc728a4914d399a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">int</ref></type>
+        <definition>int conduit::internal::futex_wake</definition>
+        <argsstring>(std::atomic&lt; uint32_t &gt; *futex_word, int count=1)</argsstring>
+        <name>futex_wake</name>
+        <qualifiedname>conduit::internal::futex_wake</qualifiedname>
+        <param>
+          <type>std::atomic&lt; <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref> &gt; *</type>
+          <declname>futex_word</declname>
+        </param>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">int</ref></type>
+          <declname>count</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Wake up to <computeroutput>count</computeroutput> threads waiting on the futex word. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Wraps the Linux <computeroutput>futex(FUTEX_WAKE)</computeroutput> syscall.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>futex_word</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the atomic futex word. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum number of waiters to wake (default 1). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Number of waiters actually woken. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/futex.hpp" line="36" column="5" declfile="packages/conduit_core/include/conduit_core/internal/futex.hpp" declline="36" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1internal_1a37cdf86a9eee23f64cfeaa81431eacbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">int</ref></type>
+        <definition>int conduit::internal::futex_wake_all</definition>
+        <argsstring>(std::atomic&lt; uint32_t &gt; *futex_word)</argsstring>
+        <name>futex_wake_all</name>
+        <qualifiedname>conduit::internal::futex_wake_all</qualifiedname>
+        <param>
+          <type>std::atomic&lt; <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref> &gt; *</type>
+          <declname>futex_word</declname>
+        </param>
+        <briefdescription>
+<para>Wake all threads waiting on the futex word. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>futex_word</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the atomic futex word. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Number of waiters actually woken. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/futex.hpp" line="41" column="5" declfile="packages/conduit_core/include/conduit_core/internal/futex.hpp" declline="41" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1internal_1adadeab43abe9b42d8954f55b4aa19038" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">bool</ref></type>
+        <definition>bool conduit::internal::is_power_of_two</definition>
+        <argsstring>(uint32_t n)</argsstring>
+        <name>is_power_of_two</name>
+        <qualifiedname>conduit::internal::is_power_of_two</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Check if n is a power of two. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if n is a power of two. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="96" column="13" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1internal_1a10d90ece079a9d6f04d9372aec8e1f40" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">size_t</ref></type>
+        <definition>size_t conduit::internal::calculate_region_size</definition>
+        <argsstring>(const RingBufferConfig &amp;config)</argsstring>
+        <name>calculate_region_size</name>
+        <qualifiedname>conduit::internal::calculate_region_size</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> <ref refid="structconduit_1_1internal_1_1RingBufferConfig" kindref="compound">RingBufferConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Calculate total shared memory region size for the given config. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ring buffer configuration. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Total size in bytes (header + all slots). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="103" column="15" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="103" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1internal_1a73bc38e2edfccd87049534e115a55f28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t conduit::internal::get_timestamp_ns</definition>
+        <argsstring>()</argsstring>
+        <name>get_timestamp_ns</name>
+        <qualifiedname>conduit::internal::get_timestamp_ns</qualifiedname>
+        <briefdescription>
+<para>Get the current timestamp in nanoseconds from CLOCK_MONOTONIC_RAW. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Nanoseconds since an arbitrary epoch (monotonic, not wall-clock). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/time.hpp" line="9" column="10" declfile="packages/conduit_core/include/conduit_core/internal/time.hpp" declline="9" declcolumn="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Internal implementation details for conduit. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/internal/futex.hpp" line="9" column="1"/>
+  </compounddef>
+</doxygen>

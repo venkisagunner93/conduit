@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceconduit" kind="namespace" language="C++">
+    <compoundname>conduit</compoundname>
+    <innerclass refid="classconduit_1_1ConduitError" prot="public">conduit::ConduitError</innerclass>
+    <innerclass refid="structconduit_1_1Message" prot="public">conduit::Message</innerclass>
+    <innerclass refid="classconduit_1_1Node" prot="public">conduit::Node</innerclass>
+    <innerclass refid="classconduit_1_1NodeError" prot="public">conduit::NodeError</innerclass>
+    <innerclass refid="classconduit_1_1Publisher" prot="private">conduit::Publisher</innerclass>
+    <innerclass refid="classconduit_1_1PublisherError" prot="public">conduit::PublisherError</innerclass>
+    <innerclass refid="structconduit_1_1PublisherOptions" prot="public">conduit::PublisherOptions</innerclass>
+    <innerclass refid="classconduit_1_1RingBufferError" prot="public">conduit::RingBufferError</innerclass>
+    <innerclass refid="classconduit_1_1ShmError" prot="public">conduit::ShmError</innerclass>
+    <innerclass refid="classconduit_1_1Subscriber" prot="private">conduit::Subscriber</innerclass>
+    <innerclass refid="classconduit_1_1SubscriberError" prot="public">conduit::SubscriberError</innerclass>
+    <innerclass refid="structconduit_1_1SubscriberOptions" prot="public">conduit::SubscriberOptions</innerclass>
+    <innerclass refid="classconduit_1_1TankError" prot="public">conduit::TankError</innerclass>
+    <innerclass refid="structconduit_1_1TypedMessage" prot="private">conduit::TypedMessage</innerclass>
+    <innernamespace refid="namespaceconduit_1_1internal">conduit::internal</innernamespace>
+    <innernamespace refid="namespaceconduit_1_1log">conduit::log</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/exceptions.hpp" line="6" column="1"/>
+  </compounddef>
+</doxygen>

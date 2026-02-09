@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1Orientation" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::Orientation</compoundname>
+    <basecompoundref refid="structconduit_1_1FixedMessageType" prot="public" virt="non-virtual">conduit::FixedMessageType</basecompoundref>
+    <includes refid="orientation_8hpp" local="no">orientation.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1Orientation_1a174295753adb3356beba860099451c38" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double conduit::Orientation::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>conduit::Orientation::x</qualifiedname>
+        <briefdescription>
+<para>Quaternion X component. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/orientation.hpp" line="18" column="12" bodyfile="packages/conduit_types/include/conduit_types/derived/orientation.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Orientation_1aeaf1722bab803f251547ab186d8fe9ed" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double conduit::Orientation::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>conduit::Orientation::y</qualifiedname>
+        <briefdescription>
+<para>Quaternion Y component. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/orientation.hpp" line="19" column="12" bodyfile="packages/conduit_types/include/conduit_types/derived/orientation.hpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Orientation_1a131d80a9d4d017a0f27829c5ce600cd8" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double conduit::Orientation::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <qualifiedname>conduit::Orientation::z</qualifiedname>
+        <briefdescription>
+<para>Quaternion Z component. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/orientation.hpp" line="20" column="12" bodyfile="packages/conduit_types/include/conduit_types/derived/orientation.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Orientation_1a54d2f1f620fd916432d84bdf1fa9800b" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double conduit::Orientation::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <qualifiedname>conduit::Orientation::w</qualifiedname>
+        <briefdescription>
+<para>Quaternion W (scalar) component. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/orientation.hpp" line="21" column="12" bodyfile="packages/conduit_types/include/conduit_types/derived/orientation.hpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structconduit_1_1Orientation_1af58d62555c141519b9e6156edd722712" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structconduit_1_1Orientation" kindref="compound">Orientation</ref></type>
+        <definition>static Orientation conduit::Orientation::from_euler</definition>
+        <argsstring>(double roll, double pitch, double yaw, EulerOrder order=EulerOrder::ZYX)</argsstring>
+        <name>from_euler</name>
+        <qualifiedname>conduit::Orientation::from_euler</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>roll</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>pitch</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>yaw</declname>
+        </param>
+        <param>
+          <type>EulerOrder</type>
+          <declname>order</declname>
+          <defval>EulerOrder::ZYX</defval>
+        </param>
+        <briefdescription>
+<para>Create a quaternion from Euler angles (roll, pitch, yaw). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>roll</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rotation about X axis in radians. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pitch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rotation about Y axis in radians. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yaw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rotation about Z axis in radians. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Euler angle convention (default ZYX). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Unit quaternion representing the rotation. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/orientation.hpp" line="29" column="24" bodyfile="packages/conduit_types/include/conduit_types/derived/orientation.hpp" bodystart="29" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="structconduit_1_1Orientation_1a7479f9e5b6ce9fd27650bfd7ea019d06" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structconduit_1_1Orientation" kindref="compound">Orientation</ref></type>
+        <definition>static Orientation conduit::Orientation::from_yaw</definition>
+        <argsstring>(double yaw)</argsstring>
+        <name>from_yaw</name>
+        <qualifiedname>conduit::Orientation::from_yaw</qualifiedname>
+        <param>
+          <type>double</type>
+          <declname>yaw</declname>
+        </param>
+        <briefdescription>
+<para>Create a quaternion from a yaw-only rotation (convenience for 2D). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>yaw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rotation about Z axis in radians. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Unit quaternion representing the rotation. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/orientation.hpp" line="53" column="24" bodyfile="packages/conduit_types/include/conduit_types/derived/orientation.hpp" bodystart="53" bodyend="58"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structconduit_1_1Orientation_1a7e6fbddd5bd9ddb496ca2ea876cf9d1a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structconduit_1_1Vec3" kindref="compound">Vec3</ref></type>
+        <definition>Vec3 conduit::Orientation::to_euler</definition>
+        <argsstring>(EulerOrder order=EulerOrder::ZYX) const</argsstring>
+        <name>to_euler</name>
+        <qualifiedname>conduit::Orientation::to_euler</qualifiedname>
+        <param>
+          <type>EulerOrder</type>
+          <declname>order</declname>
+          <defval>EulerOrder::ZYX</defval>
+        </param>
+        <briefdescription>
+<para>Convert quaternion to Euler angles. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>order</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Euler angle convention (default ZYX). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="structconduit_1_1Vec3" kindref="compound">Vec3</ref> with x=roll, y=pitch, z=yaw in radians. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/orientation.hpp" line="63" column="10" bodyfile="packages/conduit_types/include/conduit_types/derived/orientation.hpp" bodystart="63" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="structconduit_1_1Orientation_1a5c5af7de71f756e33a406c06208fc8df" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double conduit::Orientation::to_yaw</definition>
+        <argsstring>() const</argsstring>
+        <name>to_yaw</name>
+        <qualifiedname>conduit::Orientation::to_yaw</qualifiedname>
+        <briefdescription>
+<para>Extract the yaw angle from the quaternion (convenience for 2D). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Yaw angle in radians. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/orientation.hpp" line="81" column="12" bodyfile="packages/conduit_types/include/conduit_types/derived/orientation.hpp" bodystart="81" bodyend="83"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Quaternion orientation (x, y, z, w) with Euler angle conversions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Represents a 3D rotation as a unit quaternion. Provides factory methods for constructing from Euler angles and extracting them back. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Orientation</label>
+        <link refid="structconduit_1_1Orientation"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Orientation</label>
+        <link refid="structconduit_1_1Orientation"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="packages/conduit_types/include/conduit_types/derived/orientation.hpp" line="17" column="1" bodyfile="packages/conduit_types/include/conduit_types/derived/orientation.hpp" bodystart="17" bodyend="84"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" prot="protected" virt="non-virtual"><scope>conduit::Orientation</scope><name>FixedMessageType</name></member>
+      <member refid="structconduit_1_1Orientation_1af58d62555c141519b9e6156edd722712" prot="public" virt="non-virtual"><scope>conduit::Orientation</scope><name>from_euler</name></member>
+      <member refid="structconduit_1_1Orientation_1a7479f9e5b6ce9fd27650bfd7ea019d06" prot="public" virt="non-virtual"><scope>conduit::Orientation</scope><name>from_yaw</name></member>
+      <member refid="structconduit_1_1Orientation_1a7e6fbddd5bd9ddb496ca2ea876cf9d1a" prot="public" virt="non-virtual"><scope>conduit::Orientation</scope><name>to_euler</name></member>
+      <member refid="structconduit_1_1Orientation_1a5c5af7de71f756e33a406c06208fc8df" prot="public" virt="non-virtual"><scope>conduit::Orientation</scope><name>to_yaw</name></member>
+      <member refid="structconduit_1_1Orientation_1a54d2f1f620fd916432d84bdf1fa9800b" prot="public" virt="non-virtual"><scope>conduit::Orientation</scope><name>w</name></member>
+      <member refid="structconduit_1_1Orientation_1a174295753adb3356beba860099451c38" prot="public" virt="non-virtual"><scope>conduit::Orientation</scope><name>x</name></member>
+      <member refid="structconduit_1_1Orientation_1aeaf1722bab803f251547ab186d8fe9ed" prot="public" virt="non-virtual"><scope>conduit::Orientation</scope><name>y</name></member>
+      <member refid="structconduit_1_1Orientation_1a131d80a9d4d017a0f27829c5ce600cd8" prot="public" virt="non-virtual"><scope>conduit::Orientation</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="classconduit_1_1Tank" kind="class"><name>conduit::Tank</name>
+    <member refid="classconduit_1_1Tank_1a2026fbbba23783d8f27569ad38265034" kind="variable"><name>impl_</name></member>
+    <member refid="classconduit_1_1Tank_1ab4841e6383b7d7bb9e6fa3ce9f08154a" kind="function"><name>Tank</name></member>
+    <member refid="classconduit_1_1Tank_1ab5011e95045d45cdfe2d77680a729a4e" kind="function"><name>~Tank</name></member>
+    <member refid="classconduit_1_1Tank_1a0473a3fc1a31bd95154a899828199a91" kind="function"><name>Tank</name></member>
+    <member refid="classconduit_1_1Tank_1a2702302cb3c041085cb6771fee1dc2d8" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1Tank_1afb186a8a7e55d9d2689d31c9bfae1d4e" kind="function"><name>Tank</name></member>
+    <member refid="classconduit_1_1Tank_1a82d1b7f659ca1eb11b0d45e40d42e2b3" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1Tank_1a607630052ef0e6b283c30bae0a75bbfc" kind="function"><name>add_topic</name></member>
+    <member refid="classconduit_1_1Tank_1a934a74deb7e4f39de7f6c8d58432d3be" kind="function"><name>start</name></member>
+    <member refid="classconduit_1_1Tank_1ab7017627548e19f331f5d1d014091830" kind="function"><name>stop</name></member>
+    <member refid="classconduit_1_1Tank_1a6314c565351cef4e6d9ee4ba5f12097a" kind="function"><name>recording</name></member>
+    <member refid="classconduit_1_1Tank_1ad71417c8f16d8d11e10683e2c4d212c0" kind="function"><name>message_count</name></member>
+  </compound>
+  <compound refid="namespaceconduit" kind="namespace"><name>conduit</name>
+  </compound>
+  <compound refid="tank_8hpp" kind="file"><name>tank.hpp</name>
+  </compound>
+  <compound refid="dir_54377b39698324c476f35b30c1643219" kind="dir"><name>packages/conduit_tank</name>
+  </compound>
+  <compound refid="dir_81a44e27c6bd9edd39a953e81d05e4bb" kind="dir"><name>packages/conduit_tank/include/conduit_tank</name>
+  </compound>
+  <compound refid="dir_d2ca71ae5994f61a5fce416b805b40c7" kind="dir"><name>packages/conduit_tank/include</name>
+  </compound>
+  <compound refid="dir_93501a11e921083efbd154e0cdff5f10" kind="dir"><name>packages</name>
+  </compound>
+</doxygenindex>

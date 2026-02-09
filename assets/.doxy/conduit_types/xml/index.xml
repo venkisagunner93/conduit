@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="structconduit_1_1Bool" kind="struct"><name>conduit::Bool</name>
+    <member refid="structconduit_1_1Bool_1a7ca14d5ba32ce6824289f41c89262819" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Double" kind="struct"><name>conduit::Double</name>
+    <member refid="structconduit_1_1Double_1a3d0c45fdbb3bd9a3bd983018e0088253" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structconduit_1_1FixedMessageType" kind="struct"><name>conduit::FixedMessageType</name>
+    <member refid="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" kind="function"><name>FixedMessageType</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Header" kind="struct"><name>conduit::Header</name>
+    <member refid="structconduit_1_1Header_1a583221ab1771ba2950733f0e5f5b23cc" kind="variable"><name>timestamp_ns</name></member>
+    <member refid="structconduit_1_1Header_1a41daf0e7ec183adb5e50bbe20139f7ef" kind="variable"><name>frame</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Imu" kind="struct"><name>conduit::Imu</name>
+    <member refid="structconduit_1_1Imu_1ae793d3ddec3d5b3f98d3e996f8f7993e" kind="variable"><name>header</name></member>
+    <member refid="structconduit_1_1Imu_1a4d03e45b348189571dfa4bceb8a326f7" kind="variable"><name>orientation</name></member>
+    <member refid="structconduit_1_1Imu_1aa854aea4c8bd3ae755f8c2f0da3923f1" kind="variable"><name>angular_velocity</name></member>
+    <member refid="structconduit_1_1Imu_1a16fa802133abe2f7fe53abdeddb37aee" kind="variable"><name>linear_acceleration</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Int" kind="struct"><name>conduit::Int</name>
+    <member refid="structconduit_1_1Int_1accca55f462545ed87677b4d8a219fa59" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Odometry" kind="struct"><name>conduit::Odometry</name>
+    <member refid="structconduit_1_1Odometry_1a8014c74ffae925f910218b71055692da" kind="variable"><name>header</name></member>
+    <member refid="structconduit_1_1Odometry_1ae322d688043159ab5f89b1099047ab43" kind="variable"><name>child_frame</name></member>
+    <member refid="structconduit_1_1Odometry_1a45c194810722157a8f23ad70d42ab6cb" kind="variable"><name>pose</name></member>
+    <member refid="structconduit_1_1Odometry_1a6f466f64cbf86efa688f1ed1d8e0381a" kind="variable"><name>linear_velocity</name></member>
+    <member refid="structconduit_1_1Odometry_1a98b22c0ff691a68cd00dc030072ae27d" kind="variable"><name>angular_velocity</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Orientation" kind="struct"><name>conduit::Orientation</name>
+    <member refid="structconduit_1_1Orientation_1a174295753adb3356beba860099451c38" kind="variable"><name>x</name></member>
+    <member refid="structconduit_1_1Orientation_1aeaf1722bab803f251547ab186d8fe9ed" kind="variable"><name>y</name></member>
+    <member refid="structconduit_1_1Orientation_1a131d80a9d4d017a0f27829c5ce600cd8" kind="variable"><name>z</name></member>
+    <member refid="structconduit_1_1Orientation_1a54d2f1f620fd916432d84bdf1fa9800b" kind="variable"><name>w</name></member>
+    <member refid="structconduit_1_1Orientation_1af58d62555c141519b9e6156edd722712" kind="function"><name>from_euler</name></member>
+    <member refid="structconduit_1_1Orientation_1a7479f9e5b6ce9fd27650bfd7ea019d06" kind="function"><name>from_yaw</name></member>
+    <member refid="structconduit_1_1Orientation_1a7e6fbddd5bd9ddb496ca2ea876cf9d1a" kind="function"><name>to_euler</name></member>
+    <member refid="structconduit_1_1Orientation_1a5c5af7de71f756e33a406c06208fc8df" kind="function"><name>to_yaw</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Pose2D" kind="struct"><name>conduit::Pose2D</name>
+    <member refid="structconduit_1_1Pose2D_1a64d2577f8896a2023e246e8358bba3fd" kind="variable"><name>header</name></member>
+    <member refid="structconduit_1_1Pose2D_1aba46d9ca6ce775e400606dcbd0c5b354" kind="variable"><name>position</name></member>
+    <member refid="structconduit_1_1Pose2D_1a68c46e21f7ee2127d4245cbaf8b51e4b" kind="variable"><name>orientation</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Pose3D" kind="struct"><name>conduit::Pose3D</name>
+    <member refid="structconduit_1_1Pose3D_1a4edfdc08fe67f96fdaeb1f2c487d6ee7" kind="variable"><name>header</name></member>
+    <member refid="structconduit_1_1Pose3D_1a1eb8aed52b0b04c8ca7d0ca57c674053" kind="variable"><name>position</name></member>
+    <member refid="structconduit_1_1Pose3D_1aeef3b166792451dec3ac85facb8baf9b" kind="variable"><name>orientation</name></member>
+  </compound>
+  <compound refid="classconduit_1_1ReadBuffer" kind="class"><name>conduit::ReadBuffer</name>
+    <member refid="classconduit_1_1ReadBuffer_1af3d3929afab63e5d3ca04b4ae92a52f9" kind="variable"><name>ptr_</name></member>
+    <member refid="classconduit_1_1ReadBuffer_1a80c7c7c9ae3202832ef817a0ce945170" kind="function"><name>ReadBuffer</name></member>
+    <member refid="classconduit_1_1ReadBuffer_1af9e51e407680111baafdf6366ca8aab2" kind="function"><name>read</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Time" kind="struct"><name>conduit::Time</name>
+    <member refid="structconduit_1_1Time_1a1f1b975198b772d4f01e434478b8fd54" kind="variable"><name>nanoseconds</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Twist" kind="struct"><name>conduit::Twist</name>
+    <member refid="structconduit_1_1Twist_1ac4304f8e1a9241446e82cecda9b959b5" kind="variable"><name>header</name></member>
+    <member refid="structconduit_1_1Twist_1a5b51b73e66a56b476a5ea3293edcd375" kind="variable"><name>linear</name></member>
+    <member refid="structconduit_1_1Twist_1adbee3f6333d0ed10e66a66c37428cf1b" kind="variable"><name>angular</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Uint" kind="struct"><name>conduit::Uint</name>
+    <member refid="structconduit_1_1Uint_1a1ba2dc620d54d717ac7d6e8836f298c7" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="classconduit_1_1VariableMessageType" kind="class"><name>conduit::VariableMessageType</name>
+    <member refid="classconduit_1_1VariableMessageType_1ad18dc0047f0e966253217cd7443d4889" kind="function"><name>~VariableMessageType</name></member>
+    <member refid="classconduit_1_1VariableMessageType_1a9e57c0c024be6052eb0b08fee02ae1f4" kind="function"><name>serialized_size</name></member>
+    <member refid="classconduit_1_1VariableMessageType_1a65015df9c98e2adfad4d5b7c89559f04" kind="function"><name>serialize</name></member>
+    <member refid="classconduit_1_1VariableMessageType_1a3da33d42418e3b54bc8118082fc9bf2d" kind="function"><name>VariableMessageType</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Vec2" kind="struct"><name>conduit::Vec2</name>
+    <member refid="structconduit_1_1Vec2_1a84bde3724f8fce6a05121cbcf8bd5a12" kind="variable"><name>x</name></member>
+    <member refid="structconduit_1_1Vec2_1a835e9f817d9ba82737c8201379996c82" kind="variable"><name>y</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Vec3" kind="struct"><name>conduit::Vec3</name>
+    <member refid="structconduit_1_1Vec3_1ae045ae32cb999bd75ca5906f27bf4770" kind="variable"><name>x</name></member>
+    <member refid="structconduit_1_1Vec3_1abee7012bacc421b75000e13255228788" kind="variable"><name>y</name></member>
+    <member refid="structconduit_1_1Vec3_1a6fe1d07690e4a7ddc9ec68523cd5e7c2" kind="variable"><name>z</name></member>
+  </compound>
+  <compound refid="classconduit_1_1WriteBuffer" kind="class"><name>conduit::WriteBuffer</name>
+    <member refid="classconduit_1_1WriteBuffer_1a57c88958d7bc1dcaf31e98b265942125" kind="variable"><name>ptr_</name></member>
+    <member refid="classconduit_1_1WriteBuffer_1adbf11eb5dfdef2799f6bde44bf4ed06b" kind="function"><name>WriteBuffer</name></member>
+    <member refid="classconduit_1_1WriteBuffer_1aa7ad7cb100c4ebbe574005c98b0f30f3" kind="function"><name>write</name></member>
+    <member refid="classconduit_1_1WriteBuffer_1a2e97a48200c04d69100d80465421eb05" kind="function"><name>write</name></member>
+    <member refid="classconduit_1_1WriteBuffer_1ade231d4664bbd5bcf78b5c3f2a9fcf13" kind="function"><name>size_of</name></member>
+    <member refid="classconduit_1_1WriteBuffer_1acfcbebe2144e55a03e34bdf083da7fb0" kind="function"><name>size_of</name></member>
+  </compound>
+  <compound refid="namespaceconduit" kind="namespace"><name>conduit</name>
+    <member refid="orientation_8hpp_1a72d90665a67785e9ce6ccb444e4385ae" kind="enum"><name>EulerOrder</name></member>
+    <member refid="orientation_8hpp_1a72d90665a67785e9ce6ccb444e4385aea6811254e01b3550bdb2dc46f204730dc" kind="enumvalue"><name>ZYX</name></member>
+    <member refid="orientation_8hpp_1a72d90665a67785e9ce6ccb444e4385aeae65075d550f9b5bf9992fa1d71a131be" kind="enumvalue"><name>XYZ</name></member>
+    <member refid="fixed__message__type_8hpp_1a5369e69c2b3ae877fca3955c8bb3216e" kind="function"><name>validate_fixed_message_type</name></member>
+    <member refid="header_8hpp_1a2c5fb6d99dc659086d3b850b86baa705" kind="function"><name>set_frame</name></member>
+    <member refid="variable__message__type_8hpp_1ab13bf844046921b5072dbb092ee0e0d6" kind="function"><name>validate_variable_message_type</name></member>
+  </compound>
+  <compound refid="namespaceconduit_1_1detail" kind="namespace"><name>conduit::detail</name>
+  </compound>
+  <compound refid="buffer_8hpp" kind="file"><name>buffer.hpp</name>
+  </compound>
+  <compound refid="imu_8hpp" kind="file"><name>imu.hpp</name>
+  </compound>
+  <compound refid="odometry_8hpp" kind="file"><name>odometry.hpp</name>
+  </compound>
+  <compound refid="orientation_8hpp" kind="file"><name>orientation.hpp</name>
+  </compound>
+  <compound refid="pose2d_8hpp" kind="file"><name>pose2d.hpp</name>
+  </compound>
+  <compound refid="pose3d_8hpp" kind="file"><name>pose3d.hpp</name>
+  </compound>
+  <compound refid="twist_8hpp" kind="file"><name>twist.hpp</name>
+  </compound>
+  <compound refid="fixed__message__type_8hpp" kind="file"><name>fixed_message_type.hpp</name>
+  </compound>
+  <compound refid="header_8hpp" kind="file"><name>header.hpp</name>
+  </compound>
+  <compound refid="bool_8hpp" kind="file"><name>bool.hpp</name>
+  </compound>
+  <compound refid="double_8hpp" kind="file"><name>double.hpp</name>
+  </compound>
+  <compound refid="int_8hpp" kind="file"><name>int.hpp</name>
+  </compound>
+  <compound refid="time_8hpp" kind="file"><name>time.hpp</name>
+  </compound>
+  <compound refid="uint_8hpp" kind="file"><name>uint.hpp</name>
+  </compound>
+  <compound refid="vec2_8hpp" kind="file"><name>vec2.hpp</name>
+  </compound>
+  <compound refid="vec3_8hpp" kind="file"><name>vec3.hpp</name>
+  </compound>
+  <compound refid="variable__message__type_8hpp" kind="file"><name>variable_message_type.hpp</name>
+  </compound>
+  <compound refid="dir_2f8116ad873fa9f4ab4bc95e5e2c7e48" kind="dir"><name>packages/conduit_types</name>
+  </compound>
+  <compound refid="dir_5c67974ec98d7ff0f95b9e09c6bc682d" kind="dir"><name>packages/conduit_types/include/conduit_types</name>
+  </compound>
+  <compound refid="dir_6c611f3cf964ed6f858fc2fcf2f339e5" kind="dir"><name>packages/conduit_types/include/conduit_types/derived</name>
+  </compound>
+  <compound refid="dir_b494fed11488e6772c8fe9a92fd0e861" kind="dir"><name>packages/conduit_types/include</name>
+  </compound>
+  <compound refid="dir_93501a11e921083efbd154e0cdff5f10" kind="dir"><name>packages</name>
+  </compound>
+  <compound refid="dir_5abad28eb9f480620bca24dc64f0d7e4" kind="dir"><name>packages/conduit_types/include/conduit_types/primitives</name>
+  </compound>
+</doxygenindex>

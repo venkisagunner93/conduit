@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1PublisherOptions" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::PublisherOptions</compoundname>
+    <includes refid="publisher_8hpp" local="no">publisher.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1PublisherOptions_1a6e6eb7c25a2b4dfc4fb1f600f41f7374" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t conduit::PublisherOptions::depth</definition>
+        <argsstring></argsstring>
+        <name>depth</name>
+        <qualifiedname>conduit::PublisherOptions::depth</qualifiedname>
+        <initializer>= 16</initializer>
+        <briefdescription>
+<para>Number of message slots in the ring buffer (must be power of 2). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="18" column="14" bodyfile="packages/conduit_core/include/conduit_core/publisher.hpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1PublisherOptions_1aada0f879b66b5221eb5e28daac95cba1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t conduit::PublisherOptions::max_message_size</definition>
+        <argsstring></argsstring>
+        <name>max_message_size</name>
+        <qualifiedname>conduit::PublisherOptions::max_message_size</qualifiedname>
+        <initializer>= 4096</initializer>
+        <briefdescription>
+<para>Maximum payload size in bytes. Messages exceeding this are rejected. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="20" column="14" bodyfile="packages/conduit_core/include/conduit_core/publisher.hpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration for topic publisher and ring buffer sizing. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/publisher.hpp" line="16" column="1" bodyfile="packages/conduit_core/include/conduit_core/publisher.hpp" bodystart="16" bodyend="21"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1PublisherOptions_1a6e6eb7c25a2b4dfc4fb1f600f41f7374" prot="public" virt="non-virtual"><scope>conduit::PublisherOptions</scope><name>depth</name></member>
+      <member refid="structconduit_1_1PublisherOptions_1aada0f879b66b5221eb5e28daac95cba1" prot="public" virt="non-virtual"><scope>conduit::PublisherOptions</scope><name>max_message_size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

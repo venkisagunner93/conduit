@@ -1,0 +1,30 @@
+
+
+# File imu.hpp
+
+[**File List**](files.md) **>** [**conduit\_types**](dir_2f8116ad873fa9f4ab4bc95e5e2c7e48.md) **>** [**include**](dir_b494fed11488e6772c8fe9a92fd0e861.md) **>** [**conduit\_types**](dir_5c67974ec98d7ff0f95b9e09c6bc682d.md) **>** [**derived**](dir_6c611f3cf964ed6f858fc2fcf2f339e5.md) **>** [**imu.hpp**](imu_8hpp.md)
+
+[Go to the documentation of this file](imu_8hpp.md)
+
+
+```C++
+#pragma once
+
+#include "conduit_types/derived/orientation.hpp"
+#include "conduit_types/fixed_message_type.hpp"
+#include "conduit_types/header.hpp"
+#include "conduit_types/primitives/vec3.hpp"
+
+namespace conduit {
+
+struct Imu : FixedMessageType {
+    Header header;                
+    Orientation orientation;      
+    Vec3 angular_velocity;        
+    Vec3 linear_acceleration;     
+};
+
+}  // namespace conduit
+```
+
+

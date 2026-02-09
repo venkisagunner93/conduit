@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classconduit_1_1ConduitError" kind="class" language="C++" prot="public">
+    <compoundname>conduit::ConduitError</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::runtime_error</basecompoundref>
+    <derivedcompoundref refid="classconduit_1_1NodeError" prot="public" virt="non-virtual">conduit::NodeError</derivedcompoundref>
+    <derivedcompoundref refid="classconduit_1_1PublisherError" prot="public" virt="non-virtual">conduit::PublisherError</derivedcompoundref>
+    <derivedcompoundref refid="classconduit_1_1RingBufferError" prot="public" virt="non-virtual">conduit::RingBufferError</derivedcompoundref>
+    <derivedcompoundref refid="classconduit_1_1ShmError" prot="public" virt="non-virtual">conduit::ShmError</derivedcompoundref>
+    <derivedcompoundref refid="classconduit_1_1SubscriberError" prot="public" virt="non-virtual">conduit::SubscriberError</derivedcompoundref>
+    <derivedcompoundref refid="classconduit_1_1TankError" prot="public" virt="non-virtual">conduit::TankError</derivedcompoundref>
+    <includes refid="exceptions_8hpp" local="no">exceptions.hpp</includes>
+    <briefdescription>
+<para>Base exception for all conduit errors. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>conduit::ConduitError</label>
+        <link refid="classconduit_1_1ConduitError"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>conduit::NodeError</label>
+        <link refid="classconduit_1_1NodeError"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>conduit::PublisherError</label>
+        <link refid="classconduit_1_1PublisherError"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>conduit::RingBufferError</label>
+        <link refid="classconduit_1_1RingBufferError"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>conduit::ShmError</label>
+        <link refid="classconduit_1_1ShmError"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>conduit::SubscriberError</label>
+        <link refid="classconduit_1_1SubscriberError"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>conduit::TankError</label>
+        <link refid="classconduit_1_1TankError"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::runtime_error</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>conduit::ConduitError</label>
+        <link refid="classconduit_1_1ConduitError"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::runtime_error</label>
+      </node>
+    </collaborationgraph>
+    <location file="packages/conduit_core/include/conduit_core/exceptions.hpp" line="9" column="1" bodyfile="packages/conduit_core/include/conduit_core/exceptions.hpp" bodystart="9" bodyend="12"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

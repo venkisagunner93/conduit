@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1Message" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::Message</compoundname>
+    <includes refid="subscriber_8hpp" local="no">subscriber.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1Message_1afc4843196a6b730d986bc983b4cd1e6c" prot="public" static="no" mutable="no">
+        <type>const void *</type>
+        <definition>const void* conduit::Message::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>conduit::Message::data</qualifiedname>
+        <briefdescription>
+<para>Pointer to payload in shared memory (transient). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="26" column="16" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Message_1ac537791149a6e1cade6f404599eb49f0" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t conduit::Message::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>conduit::Message::size</qualifiedname>
+        <briefdescription>
+<para>Payload size in bytes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="27" column="12" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Message_1aa582bb7b1fbf1ef04269f7f3d2ebcd99" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t conduit::Message::sequence</definition>
+        <argsstring></argsstring>
+        <name>sequence</name>
+        <qualifiedname>conduit::Message::sequence</qualifiedname>
+        <briefdescription>
+<para>Monotonically increasing message sequence number. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="28" column="14" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Message_1af29f81c5e2f20ea8465eee456412702c" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t conduit::Message::timestamp_ns</definition>
+        <argsstring></argsstring>
+        <name>timestamp_ns</name>
+        <qualifiedname>conduit::Message::timestamp_ns</qualifiedname>
+        <briefdescription>
+<para>CLOCK_MONOTONIC_RAW timestamp in nanoseconds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="29" column="14" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Raw message received from a topic. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Contains a pointer into shared memory that is only valid until the next call to take()/wait()/wait_for() on the same subscriber. </para>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="25" column="1" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="25" bodyend="30"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1Message_1afc4843196a6b730d986bc983b4cd1e6c" prot="public" virt="non-virtual"><scope>conduit::Message</scope><name>data</name></member>
+      <member refid="structconduit_1_1Message_1aa582bb7b1fbf1ef04269f7f3d2ebcd99" prot="public" virt="non-virtual"><scope>conduit::Message</scope><name>sequence</name></member>
+      <member refid="structconduit_1_1Message_1ac537791149a6e1cade6f404599eb49f0" prot="public" virt="non-virtual"><scope>conduit::Message</scope><name>size</name></member>
+      <member refid="structconduit_1_1Message_1af29f81c5e2f20ea8465eee456412702c" prot="public" virt="non-virtual"><scope>conduit::Message</scope><name>timestamp_ns</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

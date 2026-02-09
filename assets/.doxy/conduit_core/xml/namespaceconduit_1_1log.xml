@@ -1,0 +1,452 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceconduit_1_1log" kind="namespace" language="C++">
+    <compoundname>conduit::log</compoundname>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceconduit_1_1log_1a9efec7bb92e85e00d48ad7d0a71df9d7" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Level</name>
+        <qualifiedname>conduit::log::Level</qualifiedname>
+        <enumvalue id="namespaceconduit_1_1log_1a9efec7bb92e85e00d48ad7d0a71df9d7aa603905470e2a5b8c13e96b579ef0dba" prot="public">
+          <name>Debug</name>
+          <briefdescription>
+<para>Verbose diagnostic output. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceconduit_1_1log_1a9efec7bb92e85e00d48ad7d0a71df9d7a4059b0251f66a18cb56f544728796875" prot="public">
+          <name>Info</name>
+          <briefdescription>
+<para>Normal operational messages. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceconduit_1_1log_1a9efec7bb92e85e00d48ad7d0a71df9d7a56525ae64d370c0b448ac0d60710ef17" prot="public">
+          <name>Warn</name>
+          <briefdescription>
+<para>Potential issues that do not prevent operation. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceconduit_1_1log_1a9efec7bb92e85e00d48ad7d0a71df9d7a902b0d55fddef6f8d651fe1035b7d4bd" prot="public">
+          <name>Error</name>
+          <briefdescription>
+<para>Errors that may prevent correct operation. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Log severity levels. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/log.hpp" line="10" column="1" bodyfile="packages/conduit_core/include/conduit_core/log.hpp" bodystart="10" bodyend="15"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceconduit_1_1log_1a5acba263ccd3a2cd345d6306b84c4cfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::log::set_level</definition>
+        <argsstring>(Level level)</argsstring>
+        <name>set_level</name>
+        <qualifiedname>conduit::log::set_level</qualifiedname>
+        <param>
+          <type><ref refid="namespaceconduit_1_1log_1a9efec7bb92e85e00d48ad7d0a71df9d7" kindref="member">Level</ref></type>
+          <declname>level</declname>
+        </param>
+        <briefdescription>
+<para>Set the global log level. Messages below this level are suppressed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum severity level to output. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/log.hpp" line="19" column="6" declfile="packages/conduit_core/include/conduit_core/log.hpp" declline="19" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1log_1a6781dea3ac4a750346917b12a8dab6fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespaceconduit_1_1log_1a9efec7bb92e85e00d48ad7d0a71df9d7" kindref="member">Level</ref></type>
+        <definition>Level conduit::log::get_level</definition>
+        <argsstring>()</argsstring>
+        <name>get_level</name>
+        <qualifiedname>conduit::log::get_level</qualifiedname>
+        <briefdescription>
+<para>Get the current global log level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The active log level. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/log.hpp" line="23" column="7" declfile="packages/conduit_core/include/conduit_core/log.hpp" declline="23" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1log_1a38a89002a348d64f8e126982bd84c339" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::log::debug</definition>
+        <argsstring>(std::string_view msg)</argsstring>
+        <name>debug</name>
+        <qualifiedname>conduit::log::debug</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Log a debug message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structconduit_1_1Message" kindref="compound">Message</ref> string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/log.hpp" line="27" column="6" declfile="packages/conduit_core/include/conduit_core/log.hpp" declline="27" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1log_1a24eefacb9d9bae6dbd27d46bc4db63ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::log::info</definition>
+        <argsstring>(std::string_view msg)</argsstring>
+        <name>info</name>
+        <qualifiedname>conduit::log::info</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Log an informational message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structconduit_1_1Message" kindref="compound">Message</ref> string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/log.hpp" line="31" column="6" declfile="packages/conduit_core/include/conduit_core/log.hpp" declline="31" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1log_1a9c9bac4d662eccd04fee65ef9fee0fec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::log::warn</definition>
+        <argsstring>(std::string_view msg)</argsstring>
+        <name>warn</name>
+        <qualifiedname>conduit::log::warn</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Log a warning message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structconduit_1_1Message" kindref="compound">Message</ref> string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/log.hpp" line="35" column="6" declfile="packages/conduit_core/include/conduit_core/log.hpp" declline="35" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1log_1ad51d9d8a3f353bbb3a1117b0e590a58e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::log::error</definition>
+        <argsstring>(std::string_view msg)</argsstring>
+        <name>error</name>
+        <qualifiedname>conduit::log::error</qualifiedname>
+        <param>
+          <type>std::string_view</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Log an error message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="structconduit_1_1Message" kindref="compound">Message</ref> string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/log.hpp" line="39" column="6" declfile="packages/conduit_core/include/conduit_core/log.hpp" declline="39" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1log_1ada29c0001ac46db95e2f2fa6b187d393" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void conduit::log::debug</definition>
+        <argsstring>(fmt::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)</argsstring>
+        <name>debug</name>
+        <qualifiedname>conduit::log::debug</qualifiedname>
+        <param>
+          <type>fmt::format_string&lt; Args... &gt;</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Log a formatted debug message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format argument types. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format string (fmt library syntax). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/log.hpp" line="46" column="6" bodyfile="packages/conduit_core/include/conduit_core/log.hpp" bodystart="46" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1log_1abc4e71a0d6a0622c81f7acabdbad0d85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void conduit::log::info</definition>
+        <argsstring>(fmt::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)</argsstring>
+        <name>info</name>
+        <qualifiedname>conduit::log::info</qualifiedname>
+        <param>
+          <type>fmt::format_string&lt; Args... &gt;</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Log a formatted informational message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format argument types. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format string (fmt library syntax). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/log.hpp" line="55" column="6" bodyfile="packages/conduit_core/include/conduit_core/log.hpp" bodystart="55" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1log_1a36bf093f9ce9f8a5a8ef5b554863729b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void conduit::log::warn</definition>
+        <argsstring>(fmt::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)</argsstring>
+        <name>warn</name>
+        <qualifiedname>conduit::log::warn</qualifiedname>
+        <param>
+          <type>fmt::format_string&lt; Args... &gt;</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Log a formatted warning message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format argument types. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format string (fmt library syntax). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/log.hpp" line="64" column="6" bodyfile="packages/conduit_core/include/conduit_core/log.hpp" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceconduit_1_1log_1ad24a11a93efd755cf335673992e33e71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void conduit::log::error</definition>
+        <argsstring>(fmt::format_string&lt; Args... &gt; fmt, Args &amp;&amp;... args)</argsstring>
+        <name>error</name>
+        <qualifiedname>conduit::log::error</qualifiedname>
+        <param>
+          <type>fmt::format_string&lt; Args... &gt;</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Log a formatted error message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format argument types. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fmt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format string (fmt library syntax). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Format arguments. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/log.hpp" line="73" column="6" bodyfile="packages/conduit_core/include/conduit_core/log.hpp" bodystart="73" bodyend="75"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Conduit logging utilities. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/log.hpp" line="7" column="1"/>
+  </compounddef>
+</doxygen>

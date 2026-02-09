@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1flow_1_1WaitDuration" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::flow::WaitDuration</compoundname>
+    <includes refid="flow_8hpp" local="no">flow.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1flow_1_1WaitDuration_1a2c2945c686ba64e3414bee5a1298366b" prot="public" static="no" mutable="no">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds conduit::flow::WaitDuration::duration</definition>
+        <argsstring></argsstring>
+        <name>duration</name>
+        <qualifiedname>conduit::flow::WaitDuration::duration</qualifiedname>
+        <briefdescription>
+<para>Time to wait. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/flow.hpp" line="22" column="31" bodyfile="packages/conduit_flow/include/conduit_flow/flow.hpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Wait step: pause for a fixed duration. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_flow/include/conduit_flow/flow.hpp" line="21" column="1" bodyfile="packages/conduit_flow/include/conduit_flow/flow.hpp" bodystart="21" bodyend="23"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1flow_1_1WaitDuration_1a2c2945c686ba64e3414bee5a1298366b" prot="public" virt="non-virtual"><scope>conduit::flow::WaitDuration</scope><name>duration</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

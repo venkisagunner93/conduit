@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1Vec2" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::Vec2</compoundname>
+    <basecompoundref refid="structconduit_1_1FixedMessageType" prot="public" virt="non-virtual">conduit::FixedMessageType</basecompoundref>
+    <includes refid="vec2_8hpp" local="no">vec2.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1Vec2_1a84bde3724f8fce6a05121cbcf8bd5a12" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double conduit::Vec2::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>conduit::Vec2::x</qualifiedname>
+        <briefdescription>
+<para>X component. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/primitives/vec2.hpp" line="9" column="12" bodyfile="packages/conduit_types/include/conduit_types/primitives/vec2.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Vec2_1a835e9f817d9ba82737c8201379996c82" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double conduit::Vec2::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>conduit::Vec2::y</qualifiedname>
+        <briefdescription>
+<para>Y component. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/primitives/vec2.hpp" line="10" column="12" bodyfile="packages/conduit_types/include/conduit_types/primitives/vec2.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Fixed-size 2D vector message type. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Vec2</label>
+        <link refid="structconduit_1_1Vec2"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Vec2</label>
+        <link refid="structconduit_1_1Vec2"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="packages/conduit_types/include/conduit_types/primitives/vec2.hpp" line="8" column="1" bodyfile="packages/conduit_types/include/conduit_types/primitives/vec2.hpp" bodystart="8" bodyend="11"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" prot="protected" virt="non-virtual"><scope>conduit::Vec2</scope><name>FixedMessageType</name></member>
+      <member refid="structconduit_1_1Vec2_1a84bde3724f8fce6a05121cbcf8bd5a12" prot="public" virt="non-virtual"><scope>conduit::Vec2</scope><name>x</name></member>
+      <member refid="structconduit_1_1Vec2_1a835e9f817d9ba82737c8201379996c82" prot="public" virt="non-virtual"><scope>conduit::Vec2</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
