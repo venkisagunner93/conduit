@@ -87,6 +87,5 @@ nav:
       - Subscriber: api/subscriber.md
       - Types: api/types.md
       - Loop: api/loop.md
-      - Reference: api/reference.md
   - CLI Tools: cli.md
   - Roadmap: roadmap.md
