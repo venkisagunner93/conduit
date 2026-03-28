@@ -1,4 +1,4 @@
-name: Publish conduit-forge to PyPI
+name: Publish conduit-tools-forge to PyPI
 
 on:
   push:

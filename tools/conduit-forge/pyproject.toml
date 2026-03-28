@@ -1,5 +1,5 @@
 [project]
-name = "conduit-forge"
+name = "conduit-tools-forge"
 version = "0.1.0"
 description = "Build tool for Conduit packages"
 requires-python = ">=3.10"
