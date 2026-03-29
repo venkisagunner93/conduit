@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="shm__region_8hpp" kind="file" language="C++">
+    <compoundname>shm_region.hpp</compoundname>
+    <includes local="no">atomic</includes>
+    <includes local="no">chrono</includes>
+    <includes local="no">cstddef</includes>
+    <includes local="no">string</includes>
+    <includedby refid="publisher_8hpp" local="yes">packages/conduit_core/include/conduit_core/publisher.hpp</includedby>
+    <includedby refid="subscriber_8hpp" local="yes">packages/conduit_core/include/conduit_core/subscriber.hpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>packages/conduit_core/include/conduit_core/internal/shm_region.hpp</label>
+        <link refid="shm__region_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>atomic</label>
+      </node>
+      <node id="3">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>cstddef</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>packages/conduit_core/include/conduit_core/internal/shm_region.hpp</label>
+        <link refid="shm__region_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>packages/conduit_core/include/conduit_core/node.hpp</label>
+        <link refid="node_8hpp_source"/>
+      </node>
+      <node id="2">
+        <label>packages/conduit_core/include/conduit_core/publisher.hpp</label>
+        <link refid="publisher_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>packages/conduit_core/include/conduit_core/subscriber.hpp</label>
+        <link refid="subscriber_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classconduit_1_1internal_1_1ShmRegion" prot="public">conduit::internal::ShmRegion</innerclass>
+    <innernamespace refid="namespaceconduit">conduit</innernamespace>
+    <innernamespace refid="namespaceconduit_1_1internal">conduit::internal</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstddef&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">conduit<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">internal<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classconduit_1_1internal_1_1ShmRegion" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27" refid="classconduit_1_1internal_1_1ShmRegion_1a5603048d194f6428be5b7fcc4ed5742f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1a5603048d194f6428be5b7fcc4ed5742f" kindref="member">create</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1adbeccd721b14b049ca1d9b1f08e2ac9d" kindref="member">name</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1a48470590e0d9fe096b7060e99b6d7847" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classconduit_1_1internal_1_1ShmRegion_1a4fba13e748de39adba16db961067d899" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1a4fba13e748de39adba16db961067d899" kindref="member">open</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1adbeccd721b14b049ca1d9b1f08e2ac9d" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classconduit_1_1internal_1_1ShmRegion_1ab4069f246a1cccaef8c481a88fb43d3e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1ab4069f246a1cccaef8c481a88fb43d3e" kindref="member">exists</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1adbeccd721b14b049ca1d9b1f08e2ac9d" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="classconduit_1_1internal_1_1ShmRegion_1ae48d83e8e41bc46df362a739c5d41537" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1ae48d83e8e41bc46df362a739c5d41537" kindref="member">wait_until_exists</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1adbeccd721b14b049ca1d9b1f08e2ac9d" kindref="member">name</ref>,</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::atomic&lt;bool&gt;&amp;<sp/>running,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::chrono::milliseconds<sp/><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">poll_interval</ref><sp/>=<sp/>std::chrono::milliseconds(100));</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classconduit_1_1internal_1_1ShmRegion_1a68a151e610e3516f4e9c94b08f1fa93d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1a68a151e610e3516f4e9c94b08f1fa93d" kindref="member">unlink</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1adbeccd721b14b049ca1d9b1f08e2ac9d" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classconduit_1_1internal_1_1ShmRegion_1a49f34e008e35a176b380605e5be20c64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1a49f34e008e35a176b380605e5be20c64" kindref="member">ShmRegion</ref>(<ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref>&amp;&amp;<sp/><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">other</ref>)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56" refid="classconduit_1_1internal_1_1ShmRegion_1a9daa8e653dcf787174f1ee1372193f60" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref>&amp;<sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1a9daa8e653dcf787174f1ee1372193f60" kindref="member">operator=</ref>(<ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref>&amp;&amp;<sp/><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">other</ref>)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref>&amp;<sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1a9daa8e653dcf787174f1ee1372193f60" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classconduit_1_1internal_1_1ShmRegion_1aff16b748ce100a0752bd99336cef2f28" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1aff16b748ce100a0752bd99336cef2f28" kindref="member">~ShmRegion</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="classconduit_1_1internal_1_1ShmRegion_1a2e4603e6944fe0fb2f3f528ff4c35117" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1a2e4603e6944fe0fb2f3f528ff4c35117" kindref="member">data</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data_;<sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="classconduit_1_1internal_1_1ShmRegion_1a77d492a1a9f3ee12db63c317f9b5524b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1a77d492a1a9f3ee12db63c317f9b5524b" kindref="member">data</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data_;<sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="classconduit_1_1internal_1_1ShmRegion_1a48470590e0d9fe096b7060e99b6d7847" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1a48470590e0d9fe096b7060e99b6d7847" kindref="member">size</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>size_;<sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="classconduit_1_1internal_1_1ShmRegion_1adbeccd721b14b049ca1d9b1f08e2ac9d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1adbeccd721b14b049ca1d9b1f08e2ac9d" kindref="member">name</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>name_;<sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1adbeccd721b14b049ca1d9b1f08e2ac9d" kindref="member">name</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1a2e4603e6944fe0fb2f3f528ff4c35117" kindref="member">data</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classconduit_1_1internal_1_1ShmRegion_1a48470590e0d9fe096b7060e99b6d7847" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>name_;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>data_;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size_;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>internal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>conduit</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp"/>
+  </compounddef>
+</doxygen>

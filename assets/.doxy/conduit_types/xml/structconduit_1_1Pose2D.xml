@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1Pose2D" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::Pose2D</compoundname>
+    <basecompoundref refid="structconduit_1_1FixedMessageType" prot="public" virt="non-virtual">conduit::FixedMessageType</basecompoundref>
+    <includes refid="pose2d_8hpp" local="no">pose2d.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1Pose2D_1a64d2577f8896a2023e246e8358bba3fd" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Header" kindref="compound">Header</ref></type>
+        <definition>Header conduit::Pose2D::header</definition>
+        <argsstring></argsstring>
+        <name>header</name>
+        <qualifiedname>conduit::Pose2D::header</qualifiedname>
+        <briefdescription>
+<para>Timestamp and coordinate frame. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/pose2d.hpp" line="12" column="12" bodyfile="packages/conduit_types/include/conduit_types/derived/pose2d.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Pose2D_1aba46d9ca6ce775e400606dcbd0c5b354" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Vec2" kindref="compound">Vec2</ref></type>
+        <definition>Vec2 conduit::Pose2D::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <qualifiedname>conduit::Pose2D::position</qualifiedname>
+        <briefdescription>
+<para>2D position (x, y). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/pose2d.hpp" line="13" column="10" bodyfile="packages/conduit_types/include/conduit_types/derived/pose2d.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Pose2D_1a68c46e21f7ee2127d4245cbaf8b51e4b" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Orientation" kindref="compound">Orientation</ref></type>
+        <definition>Orientation conduit::Pose2D::orientation</definition>
+        <argsstring></argsstring>
+        <name>orientation</name>
+        <qualifiedname>conduit::Pose2D::orientation</qualifiedname>
+        <briefdescription>
+<para>Quaternion orientation (typically yaw-only for 2D). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/pose2d.hpp" line="14" column="17" bodyfile="packages/conduit_types/include/conduit_types/derived/pose2d.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>2D pose with position and orientation. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Pose2D</label>
+        <link refid="structconduit_1_1Pose2D"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="3">
+        <label>conduit::Header</label>
+        <link refid="structconduit_1_1Header"/>
+      </node>
+      <node id="5">
+        <label>conduit::Orientation</label>
+        <link refid="structconduit_1_1Orientation"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>conduit::Pose2D</label>
+        <link refid="structconduit_1_1Pose2D"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>orientation</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>conduit::Vec2</label>
+        <link refid="structconduit_1_1Vec2"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="packages/conduit_types/include/conduit_types/derived/pose2d.hpp" line="11" column="1" bodyfile="packages/conduit_types/include/conduit_types/derived/pose2d.hpp" bodystart="11" bodyend="15"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" prot="protected" virt="non-virtual"><scope>conduit::Pose2D</scope><name>FixedMessageType</name></member>
+      <member refid="structconduit_1_1Pose2D_1a64d2577f8896a2023e246e8358bba3fd" prot="public" virt="non-virtual"><scope>conduit::Pose2D</scope><name>header</name></member>
+      <member refid="structconduit_1_1Pose2D_1a68c46e21f7ee2127d4245cbaf8b51e4b" prot="public" virt="non-virtual"><scope>conduit::Pose2D</scope><name>orientation</name></member>
+      <member refid="structconduit_1_1Pose2D_1aba46d9ca6ce775e400606dcbd0c5b354" prot="public" virt="non-virtual"><scope>conduit::Pose2D</scope><name>position</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1TypedMessage" kind="struct" language="C++" prot="private">
+    <compoundname>conduit::TypedMessage</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1TypedMessage_1a5c37667ed13568a8960bed89bc3d976e" prot="public" static="no" mutable="no">
+        <type>T</type>
+        <definition>T conduit::TypedMessage&lt; T &gt;::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>conduit::TypedMessage::data</qualifiedname>
+        <briefdescription>
+<para>Deserialized message payload. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="99" column="7" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1TypedMessage_1a0e218d419f9adf38aeeb213cdcf0572d" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t conduit::TypedMessage&lt; T &gt;::sequence</definition>
+        <argsstring></argsstring>
+        <name>sequence</name>
+        <qualifiedname>conduit::TypedMessage::sequence</qualifiedname>
+        <briefdescription>
+<para>Monotonically increasing message sequence number. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="100" column="14" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1TypedMessage_1aa9a22ffd488c526b2d7d5b3a90a86a52" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t conduit::TypedMessage&lt; T &gt;::timestamp_ns</definition>
+        <argsstring></argsstring>
+        <name>timestamp_ns</name>
+        <qualifiedname>conduit::TypedMessage::timestamp_ns</qualifiedname>
+        <briefdescription>
+<para>CLOCK_MONOTONIC_RAW timestamp in nanoseconds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="101" column="14" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Typed message with deserialized payload. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The message type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="98" column="1" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="98" bodyend="102"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1TypedMessage_1a5c37667ed13568a8960bed89bc3d976e" prot="public" virt="non-virtual"><scope>conduit::TypedMessage</scope><name>data</name></member>
+      <member refid="structconduit_1_1TypedMessage_1a0e218d419f9adf38aeeb213cdcf0572d" prot="public" virt="non-virtual"><scope>conduit::TypedMessage</scope><name>sequence</name></member>
+      <member refid="structconduit_1_1TypedMessage_1aa9a22ffd488c526b2d7d5b3a90a86a52" prot="public" virt="non-virtual"><scope>conduit::TypedMessage</scope><name>timestamp_ns</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

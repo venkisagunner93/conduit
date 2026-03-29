@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classconduit_1_1internal_1_1RingBufferReader" kind="class" language="C++" prot="public">
+    <compoundname>conduit::internal::RingBufferReader</compoundname>
+    <includes refid="ring__buffer_8hpp" local="no">ring_buffer.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1RingBufferReader_1acc06543fa872b22754d9bbbe0b2154a2" prot="private" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1internal_1_1RingBufferHeader" kindref="compound">RingBufferHeader</ref> *</type>
+        <definition>RingBufferHeader* conduit::internal::RingBufferReader::header_</definition>
+        <argsstring></argsstring>
+        <name>header_</name>
+        <qualifiedname>conduit::internal::RingBufferReader::header_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="194" column="22" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1RingBufferReader_1a61f02e647d2090ff4055e6b392c93c3f" prot="private" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint8_t</ref> *</type>
+        <definition>uint8_t* conduit::internal::RingBufferReader::slots_</definition>
+        <argsstring></argsstring>
+        <name>slots_</name>
+        <qualifiedname>conduit::internal::RingBufferReader::slots_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="195" column="13" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1RingBufferReader_1ae8f24d7c7c29da7963176db9a4bc5315" prot="private" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t conduit::internal::RingBufferReader::slot_size_</definition>
+        <argsstring></argsstring>
+        <name>slot_size_</name>
+        <qualifiedname>conduit::internal::RingBufferReader::slot_size_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="196" column="14" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1RingBufferReader_1a3426abf5f8b8dcc6aa0df3b813177196" prot="private" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t conduit::internal::RingBufferReader::slot_count_mask_</definition>
+        <argsstring></argsstring>
+        <name>slot_count_mask_</name>
+        <qualifiedname>conduit::internal::RingBufferReader::slot_count_mask_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="197" column="14" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="197" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classconduit_1_1internal_1_1RingBufferReader_1a8af99711ea8d5494ebcc39a3e1c809b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::internal::RingBufferReader::RingBufferReader</definition>
+        <argsstring>(void *region, size_t region_size)</argsstring>
+        <name>RingBufferReader</name>
+        <qualifiedname>conduit::internal::RingBufferReader::RingBufferReader</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">void</ref> *</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">size_t</ref></type>
+          <declname>region_size</declname>
+        </param>
+        <briefdescription>
+<para>Construct a reader over an existing shared memory region. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>region</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the shared memory region (must already be initialized). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>region_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Total size of the region in bytes. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="160" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1RingBufferReader_1a6a64780945bc4c45f368847fc54e2bcc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">int</ref></type>
+        <definition>int conduit::internal::RingBufferReader::claim_slot</definition>
+        <argsstring>()</argsstring>
+        <name>claim_slot</name>
+        <qualifiedname>conduit::internal::RingBufferReader::claim_slot</qualifiedname>
+        <briefdescription>
+<para>Claim a subscriber slot in the ring buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Slot index (0..MAX_SUBSCRIBERS-1), or -1 if all slots are taken. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="164" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1RingBufferReader_1afc92e53f16147c16771589f062ad3fba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">void</ref></type>
+        <definition>void conduit::internal::RingBufferReader::release_slot</definition>
+        <argsstring>(int slot)</argsstring>
+        <name>release_slot</name>
+        <qualifiedname>conduit::internal::RingBufferReader::release_slot</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">int</ref></type>
+          <declname>slot</declname>
+        </param>
+        <briefdescription>
+<para>Release a previously claimed subscriber slot. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>slot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Slot index to release. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="168" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1RingBufferReader_1a77e69ec02447491a3ba006128b7af6c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="structconduit_1_1internal_1_1ReadResult" kindref="compound">ReadResult</ref> &gt;</type>
+        <definition>std::optional&lt; ReadResult &gt; conduit::internal::RingBufferReader::try_read</definition>
+        <argsstring>(int slot)</argsstring>
+        <name>try_read</name>
+        <qualifiedname>conduit::internal::RingBufferReader::try_read</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">int</ref></type>
+          <declname>slot</declname>
+        </param>
+        <briefdescription>
+<para>Non-blocking read of the next message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>slot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reader slot index from <ref refid="classconduit_1_1internal_1_1RingBufferReader_1a6a64780945bc4c45f368847fc54e2bcc" kindref="member">claim_slot()</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The next message, or std::nullopt if no new message is available. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="173" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1RingBufferReader_1a34fa3e152a132e2b4e380d9989578949" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="structconduit_1_1internal_1_1ReadResult" kindref="compound">ReadResult</ref> &gt;</type>
+        <definition>std::optional&lt; ReadResult &gt; conduit::internal::RingBufferReader::wait</definition>
+        <argsstring>(int slot)</argsstring>
+        <name>wait</name>
+        <qualifiedname>conduit::internal::RingBufferReader::wait</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">int</ref></type>
+          <declname>slot</declname>
+        </param>
+        <briefdescription>
+<para>Block until a message is available (waits forever). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses futex-based signaling for zero CPU usage while idle.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>slot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reader slot index. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The next message, or std::nullopt on spurious wakeup. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="181" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1RingBufferReader_1a2d98aa08714ef13f98be2da282ddb6d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::optional&lt; <ref refid="structconduit_1_1internal_1_1ReadResult" kindref="compound">ReadResult</ref> &gt;</type>
+        <definition>std::optional&lt; ReadResult &gt; conduit::internal::RingBufferReader::wait_for</definition>
+        <argsstring>(int slot, std::chrono::nanoseconds timeout)</argsstring>
+        <name>wait_for</name>
+        <qualifiedname>conduit::internal::RingBufferReader::wait_for</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">int</ref></type>
+          <declname>slot</declname>
+        </param>
+        <param>
+          <type>std::chrono::nanoseconds</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Block until a message is available or timeout expires. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>slot</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reader slot index. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum time to wait. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The next message, or std::nullopt on timeout. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="187" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1RingBufferReader_1a742f05d82a28edd53d89b65efe1fb415" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structconduit_1_1internal_1_1RingBufferHeader" kindref="compound">RingBufferHeader</ref> *</type>
+        <definition>RingBufferHeader * conduit::internal::RingBufferReader::header</definition>
+        <argsstring>()</argsstring>
+        <name>header</name>
+        <qualifiedname>conduit::internal::RingBufferReader::header</qualifiedname>
+        <briefdescription>
+<para>Access the ring buffer header. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the header in shared memory. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="191" column="22" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="191" bodyend="191"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Reader side of the lock-free SPMC ring buffer. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Multiple readers can exist per topic (up to MAX_SUBSCRIBERS). Each reader claims a slot via <ref refid="classconduit_1_1internal_1_1RingBufferReader_1a6a64780945bc4c45f368847fc54e2bcc" kindref="member">claim_slot()</ref>, then reads messages independently. If the writer laps a reader, the reader detects the overwrite via sequence number validation and skips ahead.</para>
+<para><simplesect kind="see"><para><ref refid="classconduit_1_1internal_1_1RingBufferWriter" kindref="compound">RingBufferWriter</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="155" column="1" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="155" bodyend="198"/>
+    <listofallmembers>
+      <member refid="classconduit_1_1internal_1_1RingBufferReader_1a6a64780945bc4c45f368847fc54e2bcc" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferReader</scope><name>claim_slot</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferReader_1a742f05d82a28edd53d89b65efe1fb415" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferReader</scope><name>header</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferReader_1acc06543fa872b22754d9bbbe0b2154a2" prot="private" virt="non-virtual"><scope>conduit::internal::RingBufferReader</scope><name>header_</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferReader_1afc92e53f16147c16771589f062ad3fba" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferReader</scope><name>release_slot</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferReader_1a8af99711ea8d5494ebcc39a3e1c809b0" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferReader</scope><name>RingBufferReader</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferReader_1a3426abf5f8b8dcc6aa0df3b813177196" prot="private" virt="non-virtual"><scope>conduit::internal::RingBufferReader</scope><name>slot_count_mask_</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferReader_1ae8f24d7c7c29da7963176db9a4bc5315" prot="private" virt="non-virtual"><scope>conduit::internal::RingBufferReader</scope><name>slot_size_</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferReader_1a61f02e647d2090ff4055e6b392c93c3f" prot="private" virt="non-virtual"><scope>conduit::internal::RingBufferReader</scope><name>slots_</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferReader_1a77e69ec02447491a3ba006128b7af6c1" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferReader</scope><name>try_read</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferReader_1a34fa3e152a132e2b4e380d9989578949" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferReader</scope><name>wait</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferReader_1a2d98aa08714ef13f98be2da282ddb6d8" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferReader</scope><name>wait_for</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

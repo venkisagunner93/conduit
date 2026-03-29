@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1internal_1_1ReadResult" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::internal::ReadResult</compoundname>
+    <includes refid="ring__buffer_8hpp" local="no">ring_buffer.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1internal_1_1ReadResult_1af43509cd76cd539412101ae5f3a15886" prot="public" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">void</ref> *</type>
+        <definition>const void* conduit::internal::ReadResult::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>conduit::internal::ReadResult::data</qualifiedname>
+        <briefdescription>
+<para>Pointer to payload within the slot. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="36" column="16" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1internal_1_1ReadResult_1afa86d6796e652a70f125d1d78d8d0144" prot="public" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">size_t</ref></type>
+        <definition>size_t conduit::internal::ReadResult::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>conduit::internal::ReadResult::size</qualifiedname>
+        <briefdescription>
+<para>Payload size in bytes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="37" column="12" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1internal_1_1ReadResult_1abf034728dcb7adfac22d758d99893301" prot="public" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t conduit::internal::ReadResult::sequence</definition>
+        <argsstring></argsstring>
+        <name>sequence</name>
+        <qualifiedname>conduit::internal::ReadResult::sequence</qualifiedname>
+        <briefdescription>
+<para><ref refid="structconduit_1_1Message" kindref="compound">Message</ref> sequence number. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="38" column="14" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1internal_1_1ReadResult_1a3ea512d45b4939c0b666f90f850fb178" prot="public" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint64_t</ref></type>
+        <definition>uint64_t conduit::internal::ReadResult::timestamp_ns</definition>
+        <argsstring></argsstring>
+        <name>timestamp_ns</name>
+        <qualifiedname>conduit::internal::ReadResult::timestamp_ns</qualifiedname>
+        <briefdescription>
+<para>CLOCK_MONOTONIC_RAW timestamp in nanoseconds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="39" column="14" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Result of a successful ring buffer read. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="35" column="1" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="35" bodyend="40"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1internal_1_1ReadResult_1af43509cd76cd539412101ae5f3a15886" prot="public" virt="non-virtual"><scope>conduit::internal::ReadResult</scope><name>data</name></member>
+      <member refid="structconduit_1_1internal_1_1ReadResult_1abf034728dcb7adfac22d758d99893301" prot="public" virt="non-virtual"><scope>conduit::internal::ReadResult</scope><name>sequence</name></member>
+      <member refid="structconduit_1_1internal_1_1ReadResult_1afa86d6796e652a70f125d1d78d8d0144" prot="public" virt="non-virtual"><scope>conduit::internal::ReadResult</scope><name>size</name></member>
+      <member refid="structconduit_1_1internal_1_1ReadResult_1a3ea512d45b4939c0b666f90f850fb178" prot="public" virt="non-virtual"><scope>conduit::internal::ReadResult</scope><name>timestamp_ns</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

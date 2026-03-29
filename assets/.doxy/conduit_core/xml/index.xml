@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="structconduit_1_1internal_1_1AlignedAtomicU64" kind="struct"><name>conduit::internal::AlignedAtomicU64</name>
+    <member refid="structconduit_1_1internal_1_1AlignedAtomicU64_1ad7e4cc81d2cc05d73b28ae0ccbdd2979" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="classconduit_1_1ConduitError" kind="class"><name>conduit::ConduitError</name>
+  </compound>
+  <compound refid="structconduit_1_1Node_1_1Loop" kind="struct"><name>conduit::Node::Loop</name>
+    <member refid="structconduit_1_1Node_1_1Loop_1a7afa4848d7fbccb528bbfe3b970ba6ba" kind="variable"><name>rate_hz</name></member>
+    <member refid="structconduit_1_1Node_1_1Loop_1ac49cec40e5d2ab18a91f633ca5cf18b4" kind="variable"><name>period</name></member>
+    <member refid="structconduit_1_1Node_1_1Loop_1a3ed3890308cbf046f9f6c7de72606ea0" kind="variable"><name>callback</name></member>
+    <member refid="structconduit_1_1Node_1_1Loop_1a119e98559669af1104d58fd97ee95563" kind="variable"><name>thread</name></member>
+  </compound>
+  <compound refid="structconduit_1_1Message" kind="struct"><name>conduit::Message</name>
+    <member refid="structconduit_1_1Message_1afc4843196a6b730d986bc983b4cd1e6c" kind="variable"><name>data</name></member>
+    <member refid="structconduit_1_1Message_1ac537791149a6e1cade6f404599eb49f0" kind="variable"><name>size</name></member>
+    <member refid="structconduit_1_1Message_1aa582bb7b1fbf1ef04269f7f3d2ebcd99" kind="variable"><name>sequence</name></member>
+    <member refid="structconduit_1_1Message_1af29f81c5e2f20ea8465eee456412702c" kind="variable"><name>timestamp_ns</name></member>
+  </compound>
+  <compound refid="classconduit_1_1Node" kind="class"><name>conduit::Node</name>
+    <member refid="classconduit_1_1Node_1a3f1ec057af98e0db3566504d29b89062" kind="variable"><name>subscriptions_</name></member>
+    <member refid="classconduit_1_1Node_1a3cda257ee63440e5e76dbf2ea7bee38d" kind="variable"><name>loops_</name></member>
+    <member refid="classconduit_1_1Node_1aeccf622131b1902b1fb230aaee40699f" kind="variable"><name>running_</name></member>
+    <member refid="classconduit_1_1Node_1a29da40a951d3bb0496f04dae4e660695" kind="variable"><name>active_node_</name></member>
+    <member refid="classconduit_1_1Node_1ade1d7e5c0239fa5aa7cb90dbe028fc01" kind="function"><name>Node</name></member>
+    <member refid="classconduit_1_1Node_1a382d59a290d3afb1459f1d815b1836f3" kind="function"><name>~Node</name></member>
+    <member refid="classconduit_1_1Node_1a1726bb41ce8b81221278b86a5cbbd75e" kind="function"><name>Node</name></member>
+    <member refid="classconduit_1_1Node_1aba56f28759258ef658231f50be6923dc" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1Node_1a08df3667681681abeb7bee37b1a2f03a" kind="function"><name>Node</name></member>
+    <member refid="classconduit_1_1Node_1a865c24746f56439a40912abe474da14c" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1Node_1abe2f9a7950397c510ebce3b0202a240d" kind="function"><name>run</name></member>
+    <member refid="classconduit_1_1Node_1a31b8f4a55ce4421937cff2ccef67fb6c" kind="function"><name>stop</name></member>
+    <member refid="classconduit_1_1Node_1a44db8b05c77f3c7d846fa0db8a1e82f9" kind="function"><name>running</name></member>
+    <member refid="classconduit_1_1Node_1af7f198446a1c7f9575d531582b4007ac" kind="function"><name>subscribe</name></member>
+    <member refid="classconduit_1_1Node_1a0d2b960d81b49b92d9b195b398ea8b12" kind="function"><name>subscribe</name></member>
+    <member refid="classconduit_1_1Node_1a4254e0cdb2693ccfcdf57ea69a29ada4" kind="function"><name>subscribe</name></member>
+    <member refid="classconduit_1_1Node_1ac0f4890044b82638be5330fd80eb0990" kind="function"><name>loop</name></member>
+    <member refid="classconduit_1_1Node_1a1d9fdc67f2b26a8ca93ae57528dbbeb8" kind="function"><name>loop</name></member>
+    <member refid="classconduit_1_1Node_1adaecfc36a0e4cc6075e1354b51cd4140" kind="function"><name>advertise</name></member>
+    <member refid="classconduit_1_1Node_1a1be51c9617f9beb97067c4d98a418949" kind="function"><name>spin_subscription</name></member>
+    <member refid="classconduit_1_1Node_1a6090627391e9d59a5ff65cb3cf957bdb" kind="function"><name>spin_loop</name></member>
+    <member refid="classconduit_1_1Node_1aeaed0967706fc945e53a3d1cc2ed4840" kind="function"><name>install_signal_handlers</name></member>
+    <member refid="classconduit_1_1Node_1a60f8136e7be0e95fbef429b36da327ba" kind="function"><name>uninstall_signal_handlers</name></member>
+    <member refid="classconduit_1_1Node_1a0bdba8f4117a430d2bacf4f3c97d88b2" kind="function"><name>signal_handler</name></member>
+  </compound>
+  <compound refid="classconduit_1_1NodeError" kind="class"><name>conduit::NodeError</name>
+  </compound>
+  <compound refid="classconduit_1_1internal_1_1Publisher" kind="class"><name>conduit::internal::Publisher</name>
+    <member refid="classconduit_1_1internal_1_1Publisher_1aae94c446ec059eafa334b9967e4d14ef" kind="variable"><name>topic_</name></member>
+    <member refid="classconduit_1_1internal_1_1Publisher_1a2a563f32822f0b11f59a9be2f83be759" kind="variable"><name>max_message_size_</name></member>
+    <member refid="classconduit_1_1internal_1_1Publisher_1ad761beaa81c909fdf46aabaf093e58fa" kind="variable"><name>shm_</name></member>
+    <member refid="classconduit_1_1internal_1_1Publisher_1a62818c3cf3b614e7cc24b42c5434d19e" kind="variable"><name>writer_</name></member>
+    <member refid="classconduit_1_1internal_1_1Publisher_1a0f23d682d9a671e10cc12da8e600600b" kind="function"><name>Publisher</name></member>
+    <member refid="classconduit_1_1internal_1_1Publisher_1aba22221625b2b0163bb4b55c2910ab60" kind="function"><name>Publisher</name></member>
+    <member refid="classconduit_1_1internal_1_1Publisher_1a7f5c012cf62eb84bbf2df8286ba5a5be" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1internal_1_1Publisher_1a6393da93a08d360a480f1396b8804f8c" kind="function"><name>Publisher</name></member>
+    <member refid="classconduit_1_1internal_1_1Publisher_1a7902e5aab469c558280d7f507db770e2" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1internal_1_1Publisher_1ad2a2dfd4a1e365b92df057e706c01f29" kind="function"><name>~Publisher</name></member>
+    <member refid="classconduit_1_1internal_1_1Publisher_1a24e9d49c42398f104d0728187137608a" kind="function"><name>publish</name></member>
+    <member refid="classconduit_1_1internal_1_1Publisher_1abb82b938dff7dd91ba7846324c502156" kind="function"><name>topic</name></member>
+    <member refid="classconduit_1_1internal_1_1Publisher_1a150b05bedaa7687ae41b7461f964a1bc" kind="function"><name>max_message_size</name></member>
+  </compound>
+  <compound refid="classconduit_1_1Publisher" kind="class"><name>conduit::Publisher</name>
+    <member refid="classconduit_1_1Publisher_1a702b821c7976e7bf6d7b132e4c39c80b" kind="variable"><name>impl_</name></member>
+    <member refid="classconduit_1_1Publisher_1a28854be590fc6517d64492908e142ca7" kind="variable"><name>buffer_</name></member>
+    <member refid="classconduit_1_1Publisher_1a5739e0a4e6984bafd77876d661d15949" kind="function"><name>Publisher</name></member>
+    <member refid="classconduit_1_1Publisher_1ac5ab29404b5012bbce640627675dd1ef" kind="function"><name>Publisher</name></member>
+    <member refid="classconduit_1_1Publisher_1a86e57616b2fbbd500feaa405be1a6773" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1Publisher_1ab03907e55de69129b46ae06743b6b34d" kind="function"><name>Publisher</name></member>
+    <member refid="classconduit_1_1Publisher_1a62b32b729077aab0a212f2f927d63dd9" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1Publisher_1a2719a105838bda89639967fd425001a5" kind="function"><name>publish</name></member>
+    <member refid="classconduit_1_1Publisher_1a9051f4ec1f67da24caef34e3c4a52e68" kind="function"><name>topic</name></member>
+    <member refid="classconduit_1_1Publisher_1a3cbe23c1fd93aea19238d4e54c78ddc0" kind="function"><name>max_message_size</name></member>
+    <member refid="classconduit_1_1Publisher_1aee9137c6e755d9bd7b02e7782bcaba46" kind="function"><name>validate</name></member>
+  </compound>
+  <compound refid="classconduit_1_1PublisherError" kind="class"><name>conduit::PublisherError</name>
+  </compound>
+  <compound refid="structconduit_1_1PublisherOptions" kind="struct"><name>conduit::PublisherOptions</name>
+    <member refid="structconduit_1_1PublisherOptions_1a6e6eb7c25a2b4dfc4fb1f600f41f7374" kind="variable"><name>depth</name></member>
+    <member refid="structconduit_1_1PublisherOptions_1aada0f879b66b5221eb5e28daac95cba1" kind="variable"><name>max_message_size</name></member>
+  </compound>
+  <compound refid="structconduit_1_1internal_1_1ReadResult" kind="struct"><name>conduit::internal::ReadResult</name>
+    <member refid="structconduit_1_1internal_1_1ReadResult_1af43509cd76cd539412101ae5f3a15886" kind="variable"><name>data</name></member>
+    <member refid="structconduit_1_1internal_1_1ReadResult_1afa86d6796e652a70f125d1d78d8d0144" kind="variable"><name>size</name></member>
+    <member refid="structconduit_1_1internal_1_1ReadResult_1abf034728dcb7adfac22d758d99893301" kind="variable"><name>sequence</name></member>
+    <member refid="structconduit_1_1internal_1_1ReadResult_1a3ea512d45b4939c0b666f90f850fb178" kind="variable"><name>timestamp_ns</name></member>
+  </compound>
+  <compound refid="structconduit_1_1internal_1_1RingBufferConfig" kind="struct"><name>conduit::internal::RingBufferConfig</name>
+    <member refid="structconduit_1_1internal_1_1RingBufferConfig_1a49fa6b37279cb1492fede5a451a26441" kind="variable"><name>slot_count</name></member>
+    <member refid="structconduit_1_1internal_1_1RingBufferConfig_1abb5d38e48fe47bc8303c27891200515c" kind="variable"><name>slot_size</name></member>
+  </compound>
+  <compound refid="classconduit_1_1RingBufferError" kind="class"><name>conduit::RingBufferError</name>
+  </compound>
+  <compound refid="structconduit_1_1internal_1_1RingBufferHeader" kind="struct"><name>conduit::internal::RingBufferHeader</name>
+    <member refid="structconduit_1_1internal_1_1RingBufferHeader_1a0a799ca4cab2975d94c914198eac20a5" kind="variable"><name>slot_count</name></member>
+    <member refid="structconduit_1_1internal_1_1RingBufferHeader_1a0b023e4492dc5c1788c1c04b9c9d3709" kind="variable"><name>slot_size</name></member>
+    <member refid="structconduit_1_1internal_1_1RingBufferHeader_1a5bdf99ffc95d5724234a024f1ecb43fb" kind="variable"><name>max_subscribers</name></member>
+    <member refid="structconduit_1_1internal_1_1RingBufferHeader_1a66243cada5757533c36876af6f94182a" kind="variable"><name>padding0</name></member>
+    <member refid="structconduit_1_1internal_1_1RingBufferHeader_1a38294cb4f2556dbe58e613d3449f71be" kind="variable"><name>write_idx</name></member>
+    <member refid="structconduit_1_1internal_1_1RingBufferHeader_1ab9ec222a04c424e4259830c1596e37ed" kind="variable"><name>subscriber_mask</name></member>
+    <member refid="structconduit_1_1internal_1_1RingBufferHeader_1a44ccf4d1d4718e0574aeed1f66eaf4da" kind="variable"><name>futex_word</name></member>
+    <member refid="structconduit_1_1internal_1_1RingBufferHeader_1aff671b5815d43a320beefcf10ba7988e" kind="variable"><name>read_idx</name></member>
+  </compound>
+  <compound refid="classconduit_1_1internal_1_1RingBufferReader" kind="class"><name>conduit::internal::RingBufferReader</name>
+    <member refid="classconduit_1_1internal_1_1RingBufferReader_1acc06543fa872b22754d9bbbe0b2154a2" kind="variable"><name>header_</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferReader_1a61f02e647d2090ff4055e6b392c93c3f" kind="variable"><name>slots_</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferReader_1ae8f24d7c7c29da7963176db9a4bc5315" kind="variable"><name>slot_size_</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferReader_1a3426abf5f8b8dcc6aa0df3b813177196" kind="variable"><name>slot_count_mask_</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferReader_1a8af99711ea8d5494ebcc39a3e1c809b0" kind="function"><name>RingBufferReader</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferReader_1a6a64780945bc4c45f368847fc54e2bcc" kind="function"><name>claim_slot</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferReader_1afc92e53f16147c16771589f062ad3fba" kind="function"><name>release_slot</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferReader_1a77e69ec02447491a3ba006128b7af6c1" kind="function"><name>try_read</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferReader_1a34fa3e152a132e2b4e380d9989578949" kind="function"><name>wait</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferReader_1a2d98aa08714ef13f98be2da282ddb6d8" kind="function"><name>wait_for</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferReader_1a742f05d82a28edd53d89b65efe1fb415" kind="function"><name>header</name></member>
+  </compound>
+  <compound refid="classconduit_1_1internal_1_1RingBufferWriter" kind="class"><name>conduit::internal::RingBufferWriter</name>
+    <member refid="classconduit_1_1internal_1_1RingBufferWriter_1aa2dc51d1e12842e21335e9c6e24648b5" kind="variable"><name>header_</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferWriter_1afc11aa5351c2fc3748dc89bc43cca4f6" kind="variable"><name>slots_</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferWriter_1a5aed162aa75637da8d471f6d749f0783" kind="variable"><name>slot_size_</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferWriter_1a385ba3dc2ed0c06b38e81569e4432606" kind="variable"><name>slot_count_</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferWriter_1ae3b54fb5bac36257092206b34f4980e6" kind="variable"><name>slot_count_mask_</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferWriter_1a83a629b37ff7ed01a7fb28eb3281571b" kind="function"><name>RingBufferWriter</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferWriter_1a4a1ca5c05f841a9bd1b55694d466e48c" kind="function"><name>initialize</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferWriter_1a87cd1893123414235ab38ee342ea2f10" kind="function"><name>try_write</name></member>
+    <member refid="classconduit_1_1internal_1_1RingBufferWriter_1a0c52e5f17f0466179479b707e816ba96" kind="function"><name>header</name></member>
+  </compound>
+  <compound refid="classconduit_1_1ShmError" kind="class"><name>conduit::ShmError</name>
+  </compound>
+  <compound refid="classconduit_1_1internal_1_1ShmRegion" kind="class"><name>conduit::internal::ShmRegion</name>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1a513e9b91a62c0d395a35492758fd59b0" kind="variable"><name>name_</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1a386b66c87717e05d7778bbfccc93f5c3" kind="variable"><name>data_</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1a6bc975055c3dad93f31158cff93ac349" kind="variable"><name>size_</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1a5603048d194f6428be5b7fcc4ed5742f" kind="function"><name>create</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1a4fba13e748de39adba16db961067d899" kind="function"><name>open</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1ab4069f246a1cccaef8c481a88fb43d3e" kind="function"><name>exists</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1ae48d83e8e41bc46df362a739c5d41537" kind="function"><name>wait_until_exists</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1a68a151e610e3516f4e9c94b08f1fa93d" kind="function"><name>unlink</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1a49f34e008e35a176b380605e5be20c64" kind="function"><name>ShmRegion</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1a9daa8e653dcf787174f1ee1372193f60" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1a19dda57958a2bef69dc435f079de11c6" kind="function"><name>ShmRegion</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1aead09e56376c75644c686a3bd9931508" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1aff16b748ce100a0752bd99336cef2f28" kind="function"><name>~ShmRegion</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1a2e4603e6944fe0fb2f3f528ff4c35117" kind="function"><name>data</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1a77d492a1a9f3ee12db63c317f9b5524b" kind="function"><name>data</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1a48470590e0d9fe096b7060e99b6d7847" kind="function"><name>size</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1adbeccd721b14b049ca1d9b1f08e2ac9d" kind="function"><name>name</name></member>
+    <member refid="classconduit_1_1internal_1_1ShmRegion_1ae25e76bbd0f354dc70aa1d4ce1a7e3a4" kind="function"><name>ShmRegion</name></member>
+  </compound>
+  <compound refid="classconduit_1_1internal_1_1Subscriber" kind="class"><name>conduit::internal::Subscriber</name>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1a37da8447fef0fae0d48726189e716324" kind="variable"><name>topic_</name></member>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1a857953c7d40b882fbe0ed2a081856656" kind="variable"><name>shm_</name></member>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1a90bb63546ba0034df82d15b9e2be1551" kind="variable"><name>reader_</name></member>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1ae1041a1b922bcddfafb771dbece8e6af" kind="variable"><name>slot_</name></member>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1ab517f696f21358525ffb7526cd0fad68" kind="function"><name>Subscriber</name></member>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1a3dbe7cb03da1a1136d4ad18cf9a9f444" kind="function"><name>Subscriber</name></member>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1a3680f816fe2613a81faadaa7f77fc455" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1a1fefda82bd2fe1d8e8ec7b5770ac0f5b" kind="function"><name>Subscriber</name></member>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1a36d4066772fda548e109c266f693b043" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1acaa8e290a5a34c4effcc910be339bf68" kind="function"><name>~Subscriber</name></member>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1a7a466820ee028cb1c9d498974b400dc4" kind="function"><name>take</name></member>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1a378d58ed9238f589fa28902a1db769c1" kind="function"><name>wait</name></member>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1ae5c5d51e3b153a15b44ab3a208739ec8" kind="function"><name>wait_for</name></member>
+    <member refid="classconduit_1_1internal_1_1Subscriber_1a9f974d2a9e835207daf4ff64def79d6d" kind="function"><name>topic</name></member>
+  </compound>
+  <compound refid="classconduit_1_1Subscriber" kind="class"><name>conduit::Subscriber</name>
+    <member refid="classconduit_1_1Subscriber_1ac4dd3f655745a9e6427b32f243d3d8c1" kind="variable"><name>impl_</name></member>
+    <member refid="classconduit_1_1Subscriber_1a5f7bc24ac75fe0c0bffe94cecf78234e" kind="function"><name>Subscriber</name></member>
+    <member refid="classconduit_1_1Subscriber_1af34d43435431b22c371baa57fc59f5a7" kind="function"><name>Subscriber</name></member>
+    <member refid="classconduit_1_1Subscriber_1a3bf74969906d255bc47d17eb22ac5696" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1Subscriber_1aafeb17a135f4777ea41e036480890c48" kind="function"><name>Subscriber</name></member>
+    <member refid="classconduit_1_1Subscriber_1a5334345f14c9c4cc2465735847a35230" kind="function"><name>operator=</name></member>
+    <member refid="classconduit_1_1Subscriber_1af572e8e92ed97701c315c38a8459184d" kind="function"><name>take</name></member>
+    <member refid="classconduit_1_1Subscriber_1a34e5c43c81bf7f8289389e41b7181d7c" kind="function"><name>wait</name></member>
+    <member refid="classconduit_1_1Subscriber_1acc4378d2c7e0c0c7298d8b2d746ca125" kind="function"><name>wait_for</name></member>
+    <member refid="classconduit_1_1Subscriber_1ab335b0ce489fc493bae9f55d512dfefd" kind="function"><name>topic</name></member>
+    <member refid="classconduit_1_1Subscriber_1a8963716ed1772bac13c22ba07a5bbdd1" kind="function"><name>convert</name></member>
+    <member refid="classconduit_1_1Subscriber_1ad58e14b6baa787b70a794be4c041082f" kind="function"><name>validate</name></member>
+  </compound>
+  <compound refid="classconduit_1_1SubscriberError" kind="class"><name>conduit::SubscriberError</name>
+  </compound>
+  <compound refid="structconduit_1_1SubscriberOptions" kind="struct"><name>conduit::SubscriberOptions</name>
+  </compound>
+  <compound refid="structconduit_1_1Node_1_1Subscription" kind="struct"><name>conduit::Node::Subscription</name>
+    <member refid="structconduit_1_1Node_1_1Subscription_1a0bc78bcfb0dc09b91159f173075d4b89" kind="variable"><name>topic</name></member>
+    <member refid="structconduit_1_1Node_1_1Subscription_1a01ea0d3a55e204615b0671d106b432dc" kind="variable"><name>callback</name></member>
+    <member refid="structconduit_1_1Node_1_1Subscription_1a32610e7e4cbea45642a0702a2198f322" kind="variable"><name>subscriber</name></member>
+    <member refid="structconduit_1_1Node_1_1Subscription_1a282eed73c5b07f392feae61718c584f6" kind="variable"><name>thread</name></member>
+  </compound>
+  <compound refid="classconduit_1_1TankError" kind="class"><name>conduit::TankError</name>
+  </compound>
+  <compound refid="structconduit_1_1TypedMessage" kind="struct"><name>conduit::TypedMessage</name>
+    <member refid="structconduit_1_1TypedMessage_1a5c37667ed13568a8960bed89bc3d976e" kind="variable"><name>data</name></member>
+    <member refid="structconduit_1_1TypedMessage_1a0e218d419f9adf38aeeb213cdcf0572d" kind="variable"><name>sequence</name></member>
+    <member refid="structconduit_1_1TypedMessage_1aa9a22ffd488c526b2d7d5b3a90a86a52" kind="variable"><name>timestamp_ns</name></member>
+  </compound>
+  <compound refid="namespaceconduit" kind="namespace"><name>conduit</name>
+  </compound>
+  <compound refid="namespaceconduit_1_1internal" kind="namespace"><name>conduit::internal</name>
+    <member refid="namespaceconduit_1_1internal_1af3f01a02e3f07f5561230c16cb4adb89" kind="variable"><name>CACHE_LINE_SIZE</name></member>
+    <member refid="namespaceconduit_1_1internal_1ad714e89d05b37bf832695cc0de378597" kind="variable"><name>MAX_SUBSCRIBERS</name></member>
+    <member refid="namespaceconduit_1_1internal_1a8d1e87939f7f3f541feca1bd3aba20fc" kind="variable"><name>SLOT_HEADER_SIZE</name></member>
+    <member refid="namespaceconduit_1_1internal_1ab4bb06901936a137d31fed77f2dcbad3" kind="function"><name>futex_wait</name></member>
+    <member refid="namespaceconduit_1_1internal_1a707ff1f3ddcf16bebc728a4914d399a7" kind="function"><name>futex_wake</name></member>
+    <member refid="namespaceconduit_1_1internal_1a37cdf86a9eee23f64cfeaa81431eacbf" kind="function"><name>futex_wake_all</name></member>
+    <member refid="namespaceconduit_1_1internal_1adadeab43abe9b42d8954f55b4aa19038" kind="function"><name>is_power_of_two</name></member>
+    <member refid="namespaceconduit_1_1internal_1a10d90ece079a9d6f04d9372aec8e1f40" kind="function"><name>calculate_region_size</name></member>
+    <member refid="namespaceconduit_1_1internal_1a73bc38e2edfccd87049534e115a55f28" kind="function"><name>get_timestamp_ns</name></member>
+  </compound>
+  <compound refid="namespaceconduit_1_1log" kind="namespace"><name>conduit::log</name>
+    <member refid="namespaceconduit_1_1log_1a9efec7bb92e85e00d48ad7d0a71df9d7" kind="enum"><name>Level</name></member>
+    <member refid="namespaceconduit_1_1log_1a9efec7bb92e85e00d48ad7d0a71df9d7aa603905470e2a5b8c13e96b579ef0dba" kind="enumvalue"><name>Debug</name></member>
+    <member refid="namespaceconduit_1_1log_1a9efec7bb92e85e00d48ad7d0a71df9d7a4059b0251f66a18cb56f544728796875" kind="enumvalue"><name>Info</name></member>
+    <member refid="namespaceconduit_1_1log_1a9efec7bb92e85e00d48ad7d0a71df9d7a56525ae64d370c0b448ac0d60710ef17" kind="enumvalue"><name>Warn</name></member>
+    <member refid="namespaceconduit_1_1log_1a9efec7bb92e85e00d48ad7d0a71df9d7a902b0d55fddef6f8d651fe1035b7d4bd" kind="enumvalue"><name>Error</name></member>
+    <member refid="namespaceconduit_1_1log_1a5acba263ccd3a2cd345d6306b84c4cfd" kind="function"><name>set_level</name></member>
+    <member refid="namespaceconduit_1_1log_1a6781dea3ac4a750346917b12a8dab6fb" kind="function"><name>get_level</name></member>
+    <member refid="namespaceconduit_1_1log_1a38a89002a348d64f8e126982bd84c339" kind="function"><name>debug</name></member>
+    <member refid="namespaceconduit_1_1log_1a24eefacb9d9bae6dbd27d46bc4db63ef" kind="function"><name>info</name></member>
+    <member refid="namespaceconduit_1_1log_1a9c9bac4d662eccd04fee65ef9fee0fec" kind="function"><name>warn</name></member>
+    <member refid="namespaceconduit_1_1log_1ad51d9d8a3f353bbb3a1117b0e590a58e" kind="function"><name>error</name></member>
+    <member refid="namespaceconduit_1_1log_1ada29c0001ac46db95e2f2fa6b187d393" kind="function"><name>debug</name></member>
+    <member refid="namespaceconduit_1_1log_1abc4e71a0d6a0622c81f7acabdbad0d85" kind="function"><name>info</name></member>
+    <member refid="namespaceconduit_1_1log_1a36bf093f9ce9f8a5a8ef5b554863729b" kind="function"><name>warn</name></member>
+    <member refid="namespaceconduit_1_1log_1ad24a11a93efd755cf335673992e33e71" kind="function"><name>error</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="exceptions_8hpp" kind="file"><name>exceptions.hpp</name>
+  </compound>
+  <compound refid="futex_8hpp" kind="file"><name>futex.hpp</name>
+  </compound>
+  <compound refid="ring__buffer_8hpp" kind="file"><name>ring_buffer.hpp</name>
+  </compound>
+  <compound refid="shm__region_8hpp" kind="file"><name>shm_region.hpp</name>
+  </compound>
+  <compound refid="time_8hpp" kind="file"><name>time.hpp</name>
+  </compound>
+  <compound refid="log_8hpp" kind="file"><name>log.hpp</name>
+  </compound>
+  <compound refid="node_8hpp" kind="file"><name>node.hpp</name>
+  </compound>
+  <compound refid="publisher_8hpp" kind="file"><name>publisher.hpp</name>
+  </compound>
+  <compound refid="subscriber_8hpp" kind="file"><name>subscriber.hpp</name>
+  </compound>
+  <compound refid="dir_e8f2a2a6c23a8405cb81447580d9d2d9" kind="dir"><name>packages/conduit_core</name>
+  </compound>
+  <compound refid="dir_5b31385b73e3aff376fcc12a1f7e93dd" kind="dir"><name>packages/conduit_core/include/conduit_core</name>
+  </compound>
+  <compound refid="dir_e280fcca63980b3efd6dff25fbf50072" kind="dir"><name>packages/conduit_core/include</name>
+  </compound>
+  <compound refid="dir_ee09fc54beaf3ba0ab27276c1e0adb4c" kind="dir"><name>packages/conduit_core/include/conduit_core/internal</name>
+  </compound>
+  <compound refid="dir_93501a11e921083efbd154e0cdff5f10" kind="dir"><name>packages</name>
+  </compound>
+</doxygenindex>

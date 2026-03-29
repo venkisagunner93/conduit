@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_ee09fc54beaf3ba0ab27276c1e0adb4c" kind="dir">
+    <compoundname>packages/conduit_core/include/conduit_core/internal</compoundname>
+    <innerfile refid="futex_8hpp">futex.hpp</innerfile>
+    <innerfile refid="ring__buffer_8hpp">ring_buffer.hpp</innerfile>
+    <innerfile refid="shm__region_8hpp">shm_region.hpp</innerfile>
+    <innerfile refid="time_8hpp">time.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/internal/"/>
+  </compounddef>
+</doxygen>

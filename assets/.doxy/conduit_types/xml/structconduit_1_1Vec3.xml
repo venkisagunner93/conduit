@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1Vec3" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::Vec3</compoundname>
+    <basecompoundref refid="structconduit_1_1FixedMessageType" prot="public" virt="non-virtual">conduit::FixedMessageType</basecompoundref>
+    <includes refid="vec3_8hpp" local="no">vec3.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1Vec3_1ae045ae32cb999bd75ca5906f27bf4770" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double conduit::Vec3::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>conduit::Vec3::x</qualifiedname>
+        <briefdescription>
+<para>X component. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/primitives/vec3.hpp" line="9" column="12" bodyfile="packages/conduit_types/include/conduit_types/primitives/vec3.hpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Vec3_1abee7012bacc421b75000e13255228788" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double conduit::Vec3::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>conduit::Vec3::y</qualifiedname>
+        <briefdescription>
+<para>Y component. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/primitives/vec3.hpp" line="10" column="12" bodyfile="packages/conduit_types/include/conduit_types/primitives/vec3.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Vec3_1a6fe1d07690e4a7ddc9ec68523cd5e7c2" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double conduit::Vec3::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <qualifiedname>conduit::Vec3::z</qualifiedname>
+        <briefdescription>
+<para>Z component. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/primitives/vec3.hpp" line="11" column="12" bodyfile="packages/conduit_types/include/conduit_types/primitives/vec3.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Fixed-size 3D vector message type. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Vec3</label>
+        <link refid="structconduit_1_1Vec3"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Vec3</label>
+        <link refid="structconduit_1_1Vec3"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="packages/conduit_types/include/conduit_types/primitives/vec3.hpp" line="8" column="1" bodyfile="packages/conduit_types/include/conduit_types/primitives/vec3.hpp" bodystart="8" bodyend="12"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" prot="protected" virt="non-virtual"><scope>conduit::Vec3</scope><name>FixedMessageType</name></member>
+      <member refid="structconduit_1_1Vec3_1ae045ae32cb999bd75ca5906f27bf4770" prot="public" virt="non-virtual"><scope>conduit::Vec3</scope><name>x</name></member>
+      <member refid="structconduit_1_1Vec3_1abee7012bacc421b75000e13255228788" prot="public" virt="non-virtual"><scope>conduit::Vec3</scope><name>y</name></member>
+      <member refid="structconduit_1_1Vec3_1a6fe1d07690e4a7ddc9ec68523cd5e7c2" prot="public" virt="non-virtual"><scope>conduit::Vec3</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

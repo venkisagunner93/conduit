@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1flow_1_1Group" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::flow::Group</compoundname>
+    <includes refid="flow_8hpp" local="no">flow.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1flow_1_1Group_1a0fc4e8c2d66e0f275fb893580b553189" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structconduit_1_1flow_1_1NodeConfig" kindref="compound">NodeConfig</ref> &gt;</type>
+        <definition>std::vector&lt;NodeConfig&gt; conduit::flow::Group::nodes</definition>
+        <argsstring></argsstring>
+        <name>nodes</name>
+        <qualifiedname>conduit::flow::Group::nodes</qualifiedname>
+        <briefdescription>
+<para>Nodes to launch in parallel. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/flow.hpp" line="33" column="17" bodyfile="packages/conduit_flow/include/conduit_flow/flow.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Parallel group: start multiple nodes simultaneously. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_flow/include/conduit_flow/flow.hpp" line="32" column="1" bodyfile="packages/conduit_flow/include/conduit_flow/flow.hpp" bodystart="32" bodyend="34"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1flow_1_1Group_1a0fc4e8c2d66e0f275fb893580b553189" prot="public" virt="non-virtual"><scope>conduit::flow::Group</scope><name>nodes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

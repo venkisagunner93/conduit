@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1Time" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::Time</compoundname>
+    <basecompoundref refid="structconduit_1_1FixedMessageType" prot="public" virt="non-virtual">conduit::FixedMessageType</basecompoundref>
+    <includes refid="time_8hpp" local="no">time.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1Time_1a1f1b975198b772d4f01e434478b8fd54" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t conduit::Time::nanoseconds</definition>
+        <argsstring></argsstring>
+        <name>nanoseconds</name>
+        <qualifiedname>conduit::Time::nanoseconds</qualifiedname>
+        <briefdescription>
+<para><ref refid="structconduit_1_1Time" kindref="compound">Time</ref> in nanoseconds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/primitives/time.hpp" line="11" column="14" bodyfile="packages/conduit_types/include/conduit_types/primitives/time.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Fixed-size timestamp message type. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Time</label>
+        <link refid="structconduit_1_1Time"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Time</label>
+        <link refid="structconduit_1_1Time"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="packages/conduit_types/include/conduit_types/primitives/time.hpp" line="10" column="1" bodyfile="packages/conduit_types/include/conduit_types/primitives/time.hpp" bodystart="10" bodyend="12"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" prot="protected" virt="non-virtual"><scope>conduit::Time</scope><name>FixedMessageType</name></member>
+      <member refid="structconduit_1_1Time_1a1f1b975198b772d4f01e434478b8fd54" prot="public" virt="non-virtual"><scope>conduit::Time</scope><name>nanoseconds</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespaceconduit" kind="namespace" language="C++">
+    <compoundname>conduit</compoundname>
+    <innerclass refid="structconduit_1_1Bool" prot="public">conduit::Bool</innerclass>
+    <innerclass refid="structconduit_1_1Double" prot="public">conduit::Double</innerclass>
+    <innerclass refid="structconduit_1_1FixedMessageType" prot="public">conduit::FixedMessageType</innerclass>
+    <innerclass refid="structconduit_1_1Header" prot="public">conduit::Header</innerclass>
+    <innerclass refid="structconduit_1_1Imu" prot="public">conduit::Imu</innerclass>
+    <innerclass refid="structconduit_1_1Int" prot="public">conduit::Int</innerclass>
+    <innerclass refid="structconduit_1_1Odometry" prot="public">conduit::Odometry</innerclass>
+    <innerclass refid="structconduit_1_1Orientation" prot="public">conduit::Orientation</innerclass>
+    <innerclass refid="structconduit_1_1Pose2D" prot="public">conduit::Pose2D</innerclass>
+    <innerclass refid="structconduit_1_1Pose3D" prot="public">conduit::Pose3D</innerclass>
+    <innerclass refid="classconduit_1_1ReadBuffer" prot="public">conduit::ReadBuffer</innerclass>
+    <innerclass refid="structconduit_1_1Time" prot="public">conduit::Time</innerclass>
+    <innerclass refid="structconduit_1_1Twist" prot="public">conduit::Twist</innerclass>
+    <innerclass refid="structconduit_1_1Uint" prot="public">conduit::Uint</innerclass>
+    <innerclass refid="classconduit_1_1VariableMessageType" prot="public">conduit::VariableMessageType</innerclass>
+    <innerclass refid="structconduit_1_1Vec2" prot="public">conduit::Vec2</innerclass>
+    <innerclass refid="structconduit_1_1Vec3" prot="public">conduit::Vec3</innerclass>
+    <innerclass refid="classconduit_1_1WriteBuffer" prot="public">conduit::WriteBuffer</innerclass>
+    <innernamespace refid="namespaceconduit_1_1detail">conduit::detail</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="orientation_8hpp_1a72d90665a67785e9ce6ccb444e4385ae" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>EulerOrder</name>
+        <qualifiedname>conduit::EulerOrder</qualifiedname>
+        <enumvalue id="orientation_8hpp_1a72d90665a67785e9ce6ccb444e4385aea6811254e01b3550bdb2dc46f204730dc" prot="public">
+          <name>ZYX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="orientation_8hpp_1a72d90665a67785e9ce6ccb444e4385aeae65075d550f9b5bf9992fa1d71a131be" prot="public">
+          <name>XYZ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Euler angle rotation order. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/orientation.hpp" line="11" column="1" bodyfile="packages/conduit_types/include/conduit_types/derived/orientation.hpp" bodystart="11" bodyend="11"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="fixed__message__type_8hpp_1a5369e69c2b3ae877fca3955c8bb3216e" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr void</type>
+        <definition>constexpr void conduit::validate_fixed_message_type</definition>
+        <argsstring>()</argsstring>
+        <name>validate_fixed_message_type</name>
+        <qualifiedname>conduit::validate_fixed_message_type</qualifiedname>
+        <briefdescription>
+<para>Compile-time validation that T is a valid fixed message type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks that T derives from <ref refid="structconduit_1_1FixedMessageType" kindref="compound">FixedMessageType</ref>, is trivially copyable, is standard layout, and is non-empty.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to validate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/fixed_message_type.hpp" line="37" column="16" bodyfile="packages/conduit_types/include/conduit_types/fixed_message_type.hpp" bodystart="37" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="header_8hpp_1a2c5fb6d99dc659086d3b850b86baa705" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void conduit::set_frame</definition>
+        <argsstring>(char(&amp;dst)[64], const char *src)</argsstring>
+        <name>set_frame</name>
+        <qualifiedname>conduit::set_frame</qualifiedname>
+        <param>
+          <type>char(&amp;)</type>
+          <declname>dst</declname>
+          <array>[64]</array>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>src</declname>
+        </param>
+        <briefdescription>
+<para>Safely copy a frame string into a <ref refid="structconduit_1_1Header" kindref="compound">Header</ref> frame field. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination frame array (64 bytes, will be null-terminated). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source null-terminated string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/header.hpp" line="17" column="13" bodyfile="packages/conduit_types/include/conduit_types/header.hpp" bodystart="17" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="variable__message__type_8hpp_1ab13bf844046921b5072dbb092ee0e0d6" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>constexpr void</type>
+        <definition>constexpr void conduit::validate_variable_message_type</definition>
+        <argsstring>()</argsstring>
+        <name>validate_variable_message_type</name>
+        <qualifiedname>conduit::validate_variable_message_type</qualifiedname>
+        <briefdescription>
+<para>Compile-time validation that T is a valid variable message type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks that T derives from <ref refid="classconduit_1_1VariableMessageType" kindref="compound">VariableMessageType</ref>, is not trivially copyable, and provides a static <computeroutput>T deserialize(const uint8_t*, size_t)</computeroutput> method.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to validate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/variable_message_type.hpp" line="64" column="16" bodyfile="packages/conduit_types/include/conduit_types/variable_message_type.hpp" bodystart="64" bodyend="71"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_types/include/conduit_types/buffer.hpp" line="8" column="1"/>
+  </compounddef>
+</doxygen>

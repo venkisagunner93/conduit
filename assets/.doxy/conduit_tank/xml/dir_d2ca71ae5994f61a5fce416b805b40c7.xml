@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_d2ca71ae5994f61a5fce416b805b40c7" kind="dir">
+    <compoundname>packages/conduit_tank/include</compoundname>
+    <innerdir refid="dir_81a44e27c6bd9edd39a953e81d05e4bb">packages/conduit_tank/include/conduit_tank</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_tank/include/"/>
+  </compounddef>
+</doxygen>

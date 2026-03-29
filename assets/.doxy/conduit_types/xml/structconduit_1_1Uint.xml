@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1Uint" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::Uint</compoundname>
+    <basecompoundref refid="structconduit_1_1FixedMessageType" prot="public" virt="non-virtual">conduit::FixedMessageType</basecompoundref>
+    <includes refid="uint_8hpp" local="no">uint.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1Uint_1a1ba2dc620d54d717ac7d6e8836f298c7" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t conduit::Uint::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>conduit::Uint::value</qualifiedname>
+        <briefdescription>
+<para>Unsigned integer value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/primitives/uint.hpp" line="11" column="14" bodyfile="packages/conduit_types/include/conduit_types/primitives/uint.hpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Fixed-size unsigned 64-bit integer message type. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Uint</label>
+        <link refid="structconduit_1_1Uint"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Uint</label>
+        <link refid="structconduit_1_1Uint"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="packages/conduit_types/include/conduit_types/primitives/uint.hpp" line="10" column="1" bodyfile="packages/conduit_types/include/conduit_types/primitives/uint.hpp" bodystart="10" bodyend="12"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" prot="protected" virt="non-virtual"><scope>conduit::Uint</scope><name>FixedMessageType</name></member>
+      <member refid="structconduit_1_1Uint_1a1ba2dc620d54d717ac7d6e8836f298c7" prot="public" virt="non-virtual"><scope>conduit::Uint</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

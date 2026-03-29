@@ -1,0 +1,70 @@
+<svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="320" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#1e293b">Slot Memory Layout</text>
+  
+  <!-- Main slot container -->
+  <rect x="50" y="60" width="700" height="60" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" rx="4"/>
+  
+  <!-- Header section -->
+  <rect x="50" y="60" width="300" height="60" fill="#dbeafe" stroke="#3B82F6" stroke-width="2" rx="4"/>
+  
+  <!-- Size field -->
+  <rect x="50" y="60" width="80" height="60" fill="#bfdbfe" stroke="#3B82F6" stroke-width="2" rx="4"/>
+  <text x="90" y="87" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#1e40af">size</text>
+  <text x="90" y="104" text-anchor="middle" font-family="monospace" font-size="10" fill="#3B82F6">4 bytes</text>
+  
+  <!-- Sequence field -->
+  <rect x="130" y="60" width="110" height="60" fill="#bfdbfe" stroke="#3B82F6" stroke-width="2" rx="4"/>
+  <text x="185" y="87" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#1e40af">sequence</text>
+  <text x="185" y="104" text-anchor="middle" font-family="monospace" font-size="10" fill="#3B82F6">8 bytes</text>
+  
+  <!-- Timestamp field -->
+  <rect x="240" y="60" width="110" height="60" fill="#bfdbfe" stroke="#3B82F6" stroke-width="2" rx="4"/>
+  <text x="295" y="87" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="#1e40af">timestamp</text>
+  <text x="295" y="104" text-anchor="middle" font-family="monospace" font-size="10" fill="#3B82F6">8 bytes</text>
+  
+  <!-- Payload section -->
+  <rect x="350" y="60" width="400" height="60" fill="#d1fae5" stroke="#10B981" stroke-width="2" rx="4"/>
+  <text x="550" y="95" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#065f46">payload (your data)</text>
+  
+  <!-- Byte offset markers -->
+  <line x1="50" y1="120" x2="50" y2="135" stroke="#64748b" stroke-width="1"/>
+  <line x1="130" y1="120" x2="130" y2="135" stroke="#64748b" stroke-width="1"/>
+  <line x1="240" y1="120" x2="240" y2="135" stroke="#64748b" stroke-width="1"/>
+  <line x1="350" y1="120" x2="350" y2="135" stroke="#64748b" stroke-width="1"/>
+  <line x1="750" y1="120" x2="750" y2="135" stroke="#64748b" stroke-width="1"/>
+  
+  <text x="50" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="#64748b">0</text>
+  <text x="130" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="#64748b">4</text>
+  <text x="240" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="#64748b">12</text>
+  <text x="350" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="#64748b">20</text>
+  <text x="750" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="#64748b">slot_size</text>
+  
+  <!-- Labels -->
+  <text x="200" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#3B82F6">Header (20 bytes)</text>
+  <text x="550" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#10B981">Payload (slot_size - 20 bytes)</text>
+  
+  <!-- Example -->
+  <text x="400" y="220" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#374151">Example: IMU message #1000</text>
+  
+  <g transform="translate(50, 240)">
+    <rect x="0" y="0" width="80" height="50" fill="#dbeafe" stroke="#3B82F6" stroke-width="1" rx="3"/>
+    <text x="40" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#1e40af">24</text>
+    <text x="40" y="38" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b">(payload size)</text>
+    
+    <rect x="80" y="0" width="110" height="50" fill="#dbeafe" stroke="#3B82F6" stroke-width="1" rx="3"/>
+    <text x="135" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#1e40af">1000</text>
+    <text x="135" y="38" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b">(msg number)</text>
+    
+    <rect x="190" y="0" width="110" height="50" fill="#dbeafe" stroke="#3B82F6" stroke-width="1" rx="3"/>
+    <text x="245" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#1e40af">123456789</text>
+    <text x="245" y="38" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b">(nanoseconds)</text>
+    
+    <rect x="300" y="0" width="400" height="50" fill="#d1fae5" stroke="#10B981" stroke-width="1" rx="3"/>
+    <text x="500" y="20" text-anchor="middle" font-family="monospace" font-size="10" fill="#065f46">accel_x, accel_y, accel_z, gyro_x, gyro_y, gyro_z</text>
+    <text x="500" y="38" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b">(24 bytes of ImuData)</text>
+  </g>
+</svg>

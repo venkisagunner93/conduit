@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1flow_1_1WaitTopics" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::flow::WaitTopics</compoundname>
+    <includes refid="flow_8hpp" local="no">flow.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1flow_1_1WaitTopics_1a751c2b9f6ddf559c57118ff48f02d4c3" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; conduit::flow::WaitTopics::topics</definition>
+        <argsstring></argsstring>
+        <name>topics</name>
+        <qualifiedname>conduit::flow::WaitTopics::topics</qualifiedname>
+        <briefdescription>
+<para>Topic names to wait for. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/flow.hpp" line="27" column="17" bodyfile="packages/conduit_flow/include/conduit_flow/flow.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1flow_1_1WaitTopics_1a3f2a40c2c33bcfe1e8e164ea1f787ede" prot="public" static="no" mutable="no">
+        <type>std::chrono::milliseconds</type>
+        <definition>std::chrono::milliseconds conduit::flow::WaitTopics::timeout</definition>
+        <argsstring></argsstring>
+        <name>timeout</name>
+        <qualifiedname>conduit::flow::WaitTopics::timeout</qualifiedname>
+        <initializer>{30000}</initializer>
+        <briefdescription>
+<para>Maximum wait time (default 30s). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/flow.hpp" line="28" column="31" bodyfile="packages/conduit_flow/include/conduit_flow/flow.hpp" bodystart="28" bodyend="28"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Wait step: block until specified topics exist in shared memory. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_flow/include/conduit_flow/flow.hpp" line="26" column="1" bodyfile="packages/conduit_flow/include/conduit_flow/flow.hpp" bodystart="26" bodyend="29"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1flow_1_1WaitTopics_1a3f2a40c2c33bcfe1e8e164ea1f787ede" prot="public" virt="non-virtual"><scope>conduit::flow::WaitTopics</scope><name>timeout</name></member>
+      <member refid="structconduit_1_1flow_1_1WaitTopics_1a751c2b9f6ddf559c57118ff48f02d4c3" prot="public" virt="non-virtual"><scope>conduit::flow::WaitTopics</scope><name>topics</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

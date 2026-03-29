@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1Odometry" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::Odometry</compoundname>
+    <basecompoundref refid="structconduit_1_1FixedMessageType" prot="public" virt="non-virtual">conduit::FixedMessageType</basecompoundref>
+    <includes refid="odometry_8hpp" local="no">odometry.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1Odometry_1a8014c74ffae925f910218b71055692da" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Header" kindref="compound">Header</ref></type>
+        <definition>Header conduit::Odometry::header</definition>
+        <argsstring></argsstring>
+        <name>header</name>
+        <qualifiedname>conduit::Odometry::header</qualifiedname>
+        <briefdescription>
+<para>Timestamp and coordinate frame. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/odometry.hpp" line="12" column="12" bodyfile="packages/conduit_types/include/conduit_types/derived/odometry.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Odometry_1ae322d688043159ab5f89b1099047ab43" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char conduit::Odometry::child_frame[64]</definition>
+        <argsstring>[64]</argsstring>
+        <name>child_frame</name>
+        <qualifiedname>conduit::Odometry::child_frame</qualifiedname>
+        <briefdescription>
+<para>Child coordinate frame (null-terminated). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/odometry.hpp" line="13" column="10" bodyfile="packages/conduit_types/include/conduit_types/derived/odometry.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Odometry_1a45c194810722157a8f23ad70d42ab6cb" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Pose3D" kindref="compound">Pose3D</ref></type>
+        <definition>Pose3D conduit::Odometry::pose</definition>
+        <argsstring></argsstring>
+        <name>pose</name>
+        <qualifiedname>conduit::Odometry::pose</qualifiedname>
+        <briefdescription>
+<para>3D pose estimate. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/odometry.hpp" line="14" column="12" bodyfile="packages/conduit_types/include/conduit_types/derived/odometry.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Odometry_1a6f466f64cbf86efa688f1ed1d8e0381a" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Vec3" kindref="compound">Vec3</ref></type>
+        <definition>Vec3 conduit::Odometry::linear_velocity</definition>
+        <argsstring></argsstring>
+        <name>linear_velocity</name>
+        <qualifiedname>conduit::Odometry::linear_velocity</qualifiedname>
+        <briefdescription>
+<para>Linear velocity (m/s). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/odometry.hpp" line="15" column="10" bodyfile="packages/conduit_types/include/conduit_types/derived/odometry.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1Odometry_1a98b22c0ff691a68cd00dc030072ae27d" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1Vec3" kindref="compound">Vec3</ref></type>
+        <definition>Vec3 conduit::Odometry::angular_velocity</definition>
+        <argsstring></argsstring>
+        <name>angular_velocity</name>
+        <qualifiedname>conduit::Odometry::angular_velocity</qualifiedname>
+        <briefdescription>
+<para>Angular velocity (rad/s). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_types/include/conduit_types/derived/odometry.hpp" line="16" column="10" bodyfile="packages/conduit_types/include/conduit_types/derived/odometry.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="structconduit_1_1Odometry" kindref="compound">Odometry</ref> message with pose and velocity. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="1">
+        <label>conduit::Odometry</label>
+        <link refid="structconduit_1_1Odometry"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>conduit::FixedMessageType</label>
+        <link refid="structconduit_1_1FixedMessageType"/>
+      </node>
+      <node id="3">
+        <label>conduit::Header</label>
+        <link refid="structconduit_1_1Header"/>
+      </node>
+      <node id="1">
+        <label>conduit::Odometry</label>
+        <link refid="structconduit_1_1Odometry"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>pose</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>angular_velocity</edgelabel>
+          <edgelabel>linear_velocity</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>conduit::Orientation</label>
+        <link refid="structconduit_1_1Orientation"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>conduit::Pose3D</label>
+        <link refid="structconduit_1_1Pose3D"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>header</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>orientation</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>conduit::Vec3</label>
+        <link refid="structconduit_1_1Vec3"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="packages/conduit_types/include/conduit_types/derived/odometry.hpp" line="11" column="1" bodyfile="packages/conduit_types/include/conduit_types/derived/odometry.hpp" bodystart="11" bodyend="17"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1Odometry_1a98b22c0ff691a68cd00dc030072ae27d" prot="public" virt="non-virtual"><scope>conduit::Odometry</scope><name>angular_velocity</name></member>
+      <member refid="structconduit_1_1Odometry_1ae322d688043159ab5f89b1099047ab43" prot="public" virt="non-virtual"><scope>conduit::Odometry</scope><name>child_frame</name></member>
+      <member refid="structconduit_1_1FixedMessageType_1a80e2ee5e075aaae56c7c7ebd12d21532" prot="protected" virt="non-virtual"><scope>conduit::Odometry</scope><name>FixedMessageType</name></member>
+      <member refid="structconduit_1_1Odometry_1a8014c74ffae925f910218b71055692da" prot="public" virt="non-virtual"><scope>conduit::Odometry</scope><name>header</name></member>
+      <member refid="structconduit_1_1Odometry_1a6f466f64cbf86efa688f1ed1d8e0381a" prot="public" virt="non-virtual"><scope>conduit::Odometry</scope><name>linear_velocity</name></member>
+      <member refid="structconduit_1_1Odometry_1a45c194810722157a8f23ad70d42ab6cb" prot="public" virt="non-virtual"><scope>conduit::Odometry</scope><name>pose</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

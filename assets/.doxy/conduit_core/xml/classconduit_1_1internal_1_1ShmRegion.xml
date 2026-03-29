@@ -1,0 +1,480 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classconduit_1_1internal_1_1ShmRegion" kind="class" language="C++" prot="public">
+    <compoundname>conduit::internal::ShmRegion</compoundname>
+    <includes refid="shm__region_8hpp" local="no">shm_region.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1ShmRegion_1a513e9b91a62c0d395a35492758fd59b0" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string conduit::internal::ShmRegion::name_</definition>
+        <argsstring></argsstring>
+        <name>name_</name>
+        <qualifiedname>conduit::internal::ShmRegion::name_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="82" column="17" bodyfile="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1ShmRegion_1a386b66c87717e05d7778bbfccc93f5c3" prot="private" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">void</ref> *</type>
+        <definition>void* conduit::internal::ShmRegion::data_</definition>
+        <argsstring></argsstring>
+        <name>data_</name>
+        <qualifiedname>conduit::internal::ShmRegion::data_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="83" column="10" bodyfile="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1ShmRegion_1a6bc975055c3dad93f31158cff93ac349" prot="private" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">size_t</ref></type>
+        <definition>size_t conduit::internal::ShmRegion::size_</definition>
+        <argsstring></argsstring>
+        <name>size_</name>
+        <qualifiedname>conduit::internal::ShmRegion::size_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="84" column="12" bodyfile="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" bodystart="84" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1a5603048d194f6428be5b7fcc4ed5742f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref></type>
+        <definition>static ShmRegion conduit::internal::ShmRegion::create</definition>
+        <argsstring>(const std::string &amp;name, size_t size)</argsstring>
+        <name>create</name>
+        <qualifiedname>conduit::internal::ShmRegion::create</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">size_t</ref></type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Create a new shared memory region (used by publishers). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Region name (becomes <computeroutput>/dev/shm/conduit_{name}</computeroutput>). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size in bytes. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A mapped <ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref>. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classconduit_1_1ShmError" kindref="compound">ShmError</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If shm_open or mmap fails. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="27" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1a4fba13e748de39adba16db961067d899" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref></type>
+        <definition>static ShmRegion conduit::internal::ShmRegion::open</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>open</name>
+        <qualifiedname>conduit::internal::ShmRegion::open</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Open an existing shared memory region (used by subscribers). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Region name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A mapped <ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref>. </para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="classconduit_1_1ShmError" kindref="compound">ShmError</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the region does not exist or mmap fails. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="33" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1ab4069f246a1cccaef8c481a88fb43d3e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">bool</ref></type>
+        <definition>static bool conduit::internal::ShmRegion::exists</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>exists</name>
+        <qualifiedname>conduit::internal::ShmRegion::exists</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Check if a shared memory region exists. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Region name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the region exists. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="38" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1ae48d83e8e41bc46df362a739c5d41537" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">bool</ref></type>
+        <definition>static bool conduit::internal::ShmRegion::wait_until_exists</definition>
+        <argsstring>(const std::string &amp;name, const std::atomic&lt; bool &gt; &amp;running, std::chrono::milliseconds poll_interval=std::chrono::milliseconds(100))</argsstring>
+        <name>wait_until_exists</name>
+        <qualifiedname>conduit::internal::ShmRegion::wait_until_exists</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> std::atomic&lt; <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">bool</ref> &gt; &amp;</type>
+          <declname>running</declname>
+        </param>
+        <param>
+          <type>std::chrono::milliseconds</type>
+          <declname>poll_interval</declname>
+          <defval>std::chrono::milliseconds(100)</defval>
+        </param>
+        <briefdescription>
+<para>Poll until the shared memory region exists or running becomes false. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Region name. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>running</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Atomic flag checked each poll cycle; set to false to abort. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>poll_interval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time between existence checks. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the region now exists, false if stopped early. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="45" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1a68a151e610e3516f4e9c94b08f1fa93d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">void</ref></type>
+        <definition>static void conduit::internal::ShmRegion::unlink</definition>
+        <argsstring>(const std::string &amp;name)</argsstring>
+        <name>unlink</name>
+        <qualifiedname>conduit::internal::ShmRegion::unlink</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Remove the shared memory file from the filesystem. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Region name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="51" column="17"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1a49f34e008e35a176b380605e5be20c64" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>conduit::internal::ShmRegion::ShmRegion</definition>
+        <argsstring>(ShmRegion &amp;&amp;other) noexcept</argsstring>
+        <name>ShmRegion</name>
+        <qualifiedname>conduit::internal::ShmRegion::ShmRegion</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="54" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1a9daa8e653dcf787174f1ee1372193f60" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref> &amp;</type>
+        <definition>ShmRegion &amp; conduit::internal::ShmRegion::operator=</definition>
+        <argsstring>(ShmRegion &amp;&amp;other) noexcept</argsstring>
+        <name>operator=</name>
+        <qualifiedname>conduit::internal::ShmRegion::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="56" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1a19dda57958a2bef69dc435f079de11c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::internal::ShmRegion::ShmRegion</definition>
+        <argsstring>(const ShmRegion &amp;)=delete</argsstring>
+        <name>ShmRegion</name>
+        <qualifiedname>conduit::internal::ShmRegion::ShmRegion</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> <ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="57" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1aead09e56376c75644c686a3bd9931508" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref> &amp;</type>
+        <definition>ShmRegion &amp; conduit::internal::ShmRegion::operator=</definition>
+        <argsstring>(const ShmRegion &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>conduit::internal::ShmRegion::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> <ref refid="classconduit_1_1internal_1_1ShmRegion" kindref="compound">ShmRegion</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="58" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1aff16b748ce100a0752bd99336cef2f28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::internal::ShmRegion::~ShmRegion</definition>
+        <argsstring>()</argsstring>
+        <name>~ShmRegion</name>
+        <qualifiedname>conduit::internal::ShmRegion::~ShmRegion</qualifiedname>
+        <briefdescription>
+<para>Destructor. Unmaps the memory region (does <bold>not</bold> unlink). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="61" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1a2e4603e6944fe0fb2f3f528ff4c35117" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">void</ref> *</type>
+        <definition>void * conduit::internal::ShmRegion::data</definition>
+        <argsstring>()</argsstring>
+        <name>data</name>
+        <qualifiedname>conduit::internal::ShmRegion::data</qualifiedname>
+        <briefdescription>
+<para>Get a writable pointer to the mapped memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the start of the region. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="65" column="10" bodyfile="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1a77d492a1a9f3ee12db63c317f9b5524b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">void</ref> *</type>
+        <definition>const void * conduit::internal::ShmRegion::data</definition>
+        <argsstring>() const</argsstring>
+        <name>data</name>
+        <qualifiedname>conduit::internal::ShmRegion::data</qualifiedname>
+        <briefdescription>
+<para>Get a read-only pointer to the mapped memory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Const pointer to the start of the region. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="69" column="16" bodyfile="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1a48470590e0d9fe096b7060e99b6d7847" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">size_t</ref></type>
+        <definition>size_t conduit::internal::ShmRegion::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <qualifiedname>conduit::internal::ShmRegion::size</qualifiedname>
+        <briefdescription>
+<para>Get the size of the mapped region. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Size in bytes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="73" column="12" bodyfile="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1adbeccd721b14b049ca1d9b1f08e2ac9d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> std::string &amp;</type>
+        <definition>const std::string &amp; conduit::internal::ShmRegion::name</definition>
+        <argsstring>() const</argsstring>
+        <name>name</name>
+        <qualifiedname>conduit::internal::ShmRegion::name</qualifiedname>
+        <briefdescription>
+<para>Get the region name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to the name string. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="77" column="23" bodyfile="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" bodystart="77" bodyend="77"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classconduit_1_1internal_1_1ShmRegion_1ae25e76bbd0f354dc70aa1d4ce1a7e3a4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::internal::ShmRegion::ShmRegion</definition>
+        <argsstring>(const std::string &amp;name, void *data, size_t size)</argsstring>
+        <name>ShmRegion</name>
+        <qualifiedname>conduit::internal::ShmRegion::ShmRegion</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> std::string &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">void</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">size_t</ref></type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="80" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>RAII wrapper for a POSIX shared memory region. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides factory methods to create (publisher) or open (subscriber) a named shared memory region at <computeroutput>/dev/shm/conduit_{name}</computeroutput>. The region is memory-mapped on construction and unmapped on destruction, but the shared memory file is <bold>not</bold> unlinked automatically — call <ref refid="classconduit_1_1internal_1_1ShmRegion_1a68a151e610e3516f4e9c94b08f1fa93d" kindref="member">unlink()</ref> explicitly when the topic is retired.</para>
+<para><simplesect kind="see"><para><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">Publisher</ref>, <ref refid="classconduit_1_1internal_1_1Subscriber" kindref="compound">Subscriber</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" line="20" column="1" bodyfile="packages/conduit_core/include/conduit_core/internal/shm_region.hpp" bodystart="20" bodyend="85"/>
+    <listofallmembers>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1a5603048d194f6428be5b7fcc4ed5742f" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>create</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1a2e4603e6944fe0fb2f3f528ff4c35117" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>data</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1a77d492a1a9f3ee12db63c317f9b5524b" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>data</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1a386b66c87717e05d7778bbfccc93f5c3" prot="private" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>data_</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1ab4069f246a1cccaef8c481a88fb43d3e" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>exists</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1adbeccd721b14b049ca1d9b1f08e2ac9d" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>name</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1a513e9b91a62c0d395a35492758fd59b0" prot="private" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>name_</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1a4fba13e748de39adba16db961067d899" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>open</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1a9daa8e653dcf787174f1ee1372193f60" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>operator=</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1aead09e56376c75644c686a3bd9931508" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>operator=</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1a49f34e008e35a176b380605e5be20c64" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>ShmRegion</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1a19dda57958a2bef69dc435f079de11c6" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>ShmRegion</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1ae25e76bbd0f354dc70aa1d4ce1a7e3a4" prot="private" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>ShmRegion</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1a48470590e0d9fe096b7060e99b6d7847" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>size</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1a6bc975055c3dad93f31158cff93ac349" prot="private" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>size_</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1a68a151e610e3516f4e9c94b08f1fa93d" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>unlink</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1ae48d83e8e41bc46df362a739c5d41537" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>wait_until_exists</name></member>
+      <member refid="classconduit_1_1internal_1_1ShmRegion_1aff16b748ce100a0752bd99336cef2f28" prot="public" virt="non-virtual"><scope>conduit::internal::ShmRegion</scope><name>~ShmRegion</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

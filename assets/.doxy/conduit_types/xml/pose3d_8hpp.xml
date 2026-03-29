@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="pose3d_8hpp" kind="file" language="C++">
+    <compoundname>pose3d.hpp</compoundname>
+    <includes refid="orientation_8hpp" local="yes">conduit_types/derived/orientation.hpp</includes>
+    <includes refid="fixed__message__type_8hpp" local="yes">conduit_types/fixed_message_type.hpp</includes>
+    <includes refid="header_8hpp" local="yes">conduit_types/header.hpp</includes>
+    <includes refid="vec3_8hpp" local="yes">conduit_types/primitives/vec3.hpp</includes>
+    <includedby refid="odometry_8hpp" local="yes">packages/conduit_types/include/conduit_types/derived/odometry.hpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>conduit_types/derived/orientation.hpp</label>
+        <link refid="orientation_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>packages/conduit_types/include/conduit_types/derived/pose3d.hpp</label>
+        <link refid="pose3d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>conduit_types/fixed_message_type.hpp</label>
+        <link refid="fixed__message__type_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>conduit_types/header.hpp</label>
+        <link refid="header_8hpp_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>conduit_types/primitives/vec3.hpp</label>
+        <link refid="vec3_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cmath</label>
+      </node>
+      <node id="4">
+        <label>cstddef</label>
+      </node>
+      <node id="9">
+        <label>cstdint</label>
+      </node>
+      <node id="10">
+        <label>cstring</label>
+      </node>
+      <node id="5">
+        <label>type_traits</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>packages/conduit_types/include/conduit_types/derived/odometry.hpp</label>
+        <link refid="odometry_8hpp_source"/>
+      </node>
+      <node id="1">
+        <label>packages/conduit_types/include/conduit_types/derived/pose3d.hpp</label>
+        <link refid="pose3d_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structconduit_1_1Pose3D" prot="public">conduit::Pose3D</innerclass>
+    <innernamespace refid="namespaceconduit">conduit</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;conduit_types/derived/orientation.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fixed__message__type_8hpp" kindref="compound">conduit_types/fixed_message_type.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;conduit_types/header.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;conduit_types/primitives/vec3.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">conduit<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="structconduit_1_1Pose3D" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structconduit_1_1Pose3D" kindref="compound">Pose3D</ref><sp/>:<sp/><ref refid="structconduit_1_1FixedMessageType" kindref="compound">FixedMessageType</ref><sp/>{</highlight></codeline>
+<codeline lineno="12" refid="structconduit_1_1Pose3D_1a4edfdc08fe67f96fdaeb1f2c487d6ee7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structconduit_1_1Header" kindref="compound">Header</ref><sp/><ref refid="structconduit_1_1Pose3D_1a4edfdc08fe67f96fdaeb1f2c487d6ee7" kindref="member">header</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="13" refid="structconduit_1_1Pose3D_1a1eb8aed52b0b04c8ca7d0ca57c674053" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structconduit_1_1Vec3" kindref="compound">Vec3</ref><sp/><ref refid="structconduit_1_1Pose3D_1a1eb8aed52b0b04c8ca7d0ca57c674053" kindref="member">position</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="14" refid="structconduit_1_1Pose3D_1aeef3b166792451dec3ac85facb8baf9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structconduit_1_1Orientation" kindref="compound">Orientation</ref><sp/><ref refid="structconduit_1_1Pose3D_1aeef3b166792451dec3ac85facb8baf9b" kindref="member">orientation</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>conduit</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="packages/conduit_types/include/conduit_types/derived/pose3d.hpp"/>
+  </compounddef>
+</doxygen>

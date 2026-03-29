@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1flow_1_1ExecutorOptions" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::flow::ExecutorOptions</compoundname>
+    <includes refid="executor_8hpp" local="no">executor.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1flow_1_1ExecutorOptions_1ac01f85a1cb45758707146deab92d0238" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool conduit::flow::ExecutorOptions::verbose</definition>
+        <argsstring></argsstring>
+        <name>verbose</name>
+        <qualifiedname>conduit::flow::ExecutorOptions::verbose</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+<para>Print startup/shutdown progress to stdout. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/executor.hpp" line="10" column="10" bodyfile="packages/conduit_flow/include/conduit_flow/executor.hpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Options for the flow executor. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_flow/include/conduit_flow/executor.hpp" line="9" column="1" bodyfile="packages/conduit_flow/include/conduit_flow/executor.hpp" bodystart="9" bodyend="11"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1flow_1_1ExecutorOptions_1ac01f85a1cb45758707146deab92d0238" prot="public" virt="non-virtual"><scope>conduit::flow::ExecutorOptions</scope><name>verbose</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

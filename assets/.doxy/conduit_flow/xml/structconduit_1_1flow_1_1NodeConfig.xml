@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1flow_1_1NodeConfig" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::flow::NodeConfig</compoundname>
+    <includes refid="flow_8hpp" local="no">flow.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1flow_1_1NodeConfig_1ae8b3f6695d91f4703598fde37b02839d" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string conduit::flow::NodeConfig::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>conduit::flow::NodeConfig::name</qualifiedname>
+        <briefdescription>
+<para>Logical node name. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/flow.hpp" line="13" column="17" bodyfile="packages/conduit_flow/include/conduit_flow/flow.hpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1flow_1_1NodeConfig_1af9c69e7b19e3986e28e65a58e4b4acb4" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string conduit::flow::NodeConfig::exec</definition>
+        <argsstring></argsstring>
+        <name>exec</name>
+        <qualifiedname>conduit::flow::NodeConfig::exec</qualifiedname>
+        <briefdescription>
+<para>Executable path or command. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/flow.hpp" line="14" column="17" bodyfile="packages/conduit_flow/include/conduit_flow/flow.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1flow_1_1NodeConfig_1afb1496df1a048e4d2f0a86a2c87c96bb" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; conduit::flow::NodeConfig::args</definition>
+        <argsstring></argsstring>
+        <name>args</name>
+        <qualifiedname>conduit::flow::NodeConfig::args</qualifiedname>
+        <briefdescription>
+<para>Command-line arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/flow.hpp" line="15" column="17" bodyfile="packages/conduit_flow/include/conduit_flow/flow.hpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1flow_1_1NodeConfig_1af3ab185f52b004d3480f5ba9ed35ce82" prot="public" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::string &gt;</type>
+        <definition>std::map&lt;std::string, std::string&gt; conduit::flow::NodeConfig::env</definition>
+        <argsstring></argsstring>
+        <name>env</name>
+        <qualifiedname>conduit::flow::NodeConfig::env</qualifiedname>
+        <briefdescription>
+<para>Environment variable overrides. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/flow.hpp" line="16" column="14" bodyfile="packages/conduit_flow/include/conduit_flow/flow.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1flow_1_1NodeConfig_1a53645b6013dca3d82afd3afc6f3ac08d" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string conduit::flow::NodeConfig::working_dir</definition>
+        <argsstring></argsstring>
+        <name>working_dir</name>
+        <qualifiedname>conduit::flow::NodeConfig::working_dir</qualifiedname>
+        <briefdescription>
+<para>Working directory for the process. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_flow/include/conduit_flow/flow.hpp" line="17" column="17" bodyfile="packages/conduit_flow/include/conduit_flow/flow.hpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration for a single node in a flow. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_flow/include/conduit_flow/flow.hpp" line="12" column="1" bodyfile="packages/conduit_flow/include/conduit_flow/flow.hpp" bodystart="12" bodyend="18"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1flow_1_1NodeConfig_1afb1496df1a048e4d2f0a86a2c87c96bb" prot="public" virt="non-virtual"><scope>conduit::flow::NodeConfig</scope><name>args</name></member>
+      <member refid="structconduit_1_1flow_1_1NodeConfig_1af3ab185f52b004d3480f5ba9ed35ce82" prot="public" virt="non-virtual"><scope>conduit::flow::NodeConfig</scope><name>env</name></member>
+      <member refid="structconduit_1_1flow_1_1NodeConfig_1af9c69e7b19e3986e28e65a58e4b4acb4" prot="public" virt="non-virtual"><scope>conduit::flow::NodeConfig</scope><name>exec</name></member>
+      <member refid="structconduit_1_1flow_1_1NodeConfig_1ae8b3f6695d91f4703598fde37b02839d" prot="public" virt="non-virtual"><scope>conduit::flow::NodeConfig</scope><name>name</name></member>
+      <member refid="structconduit_1_1flow_1_1NodeConfig_1a53645b6013dca3d82afd3afc6f3ac08d" prot="public" virt="non-virtual"><scope>conduit::flow::NodeConfig</scope><name>working_dir</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

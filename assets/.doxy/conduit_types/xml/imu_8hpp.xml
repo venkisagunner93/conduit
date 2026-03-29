@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="imu_8hpp" kind="file" language="C++">
+    <compoundname>imu.hpp</compoundname>
+    <includes refid="orientation_8hpp" local="yes">conduit_types/derived/orientation.hpp</includes>
+    <includes refid="fixed__message__type_8hpp" local="yes">conduit_types/fixed_message_type.hpp</includes>
+    <includes refid="header_8hpp" local="yes">conduit_types/header.hpp</includes>
+    <includes refid="vec3_8hpp" local="yes">conduit_types/primitives/vec3.hpp</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>packages/conduit_types/include/conduit_types/derived/imu.hpp</label>
+        <link refid="imu_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>conduit_types/derived/orientation.hpp</label>
+        <link refid="orientation_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>conduit_types/fixed_message_type.hpp</label>
+        <link refid="fixed__message__type_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>conduit_types/header.hpp</label>
+        <link refid="header_8hpp_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>conduit_types/primitives/vec3.hpp</label>
+        <link refid="vec3_8hpp_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cmath</label>
+      </node>
+      <node id="4">
+        <label>cstddef</label>
+      </node>
+      <node id="9">
+        <label>cstdint</label>
+      </node>
+      <node id="10">
+        <label>cstring</label>
+      </node>
+      <node id="5">
+        <label>type_traits</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structconduit_1_1Imu" prot="public">conduit::Imu</innerclass>
+    <innernamespace refid="namespaceconduit">conduit</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;conduit_types/derived/orientation.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fixed__message__type_8hpp" kindref="compound">conduit_types/fixed_message_type.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;conduit_types/header.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;conduit_types/primitives/vec3.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">conduit<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="structconduit_1_1Imu" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structconduit_1_1Imu" kindref="compound">Imu</ref><sp/>:<sp/><ref refid="structconduit_1_1FixedMessageType" kindref="compound">FixedMessageType</ref><sp/>{</highlight></codeline>
+<codeline lineno="12" refid="structconduit_1_1Imu_1ae793d3ddec3d5b3f98d3e996f8f7993e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structconduit_1_1Header" kindref="compound">Header</ref><sp/><ref refid="structconduit_1_1Imu_1ae793d3ddec3d5b3f98d3e996f8f7993e" kindref="member">header</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="13" refid="structconduit_1_1Imu_1a4d03e45b348189571dfa4bceb8a326f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structconduit_1_1Orientation" kindref="compound">Orientation</ref><sp/><ref refid="structconduit_1_1Imu_1a4d03e45b348189571dfa4bceb8a326f7" kindref="member">orientation</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="14" refid="structconduit_1_1Imu_1aa854aea4c8bd3ae755f8c2f0da3923f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structconduit_1_1Vec3" kindref="compound">Vec3</ref><sp/><ref refid="structconduit_1_1Imu_1aa854aea4c8bd3ae755f8c2f0da3923f1" kindref="member">angular_velocity</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="15" refid="structconduit_1_1Imu_1a16fa802133abe2f7fe53abdeddb37aee" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structconduit_1_1Vec3" kindref="compound">Vec3</ref><sp/><ref refid="structconduit_1_1Imu_1a16fa802133abe2f7fe53abdeddb37aee" kindref="member">linear_acceleration</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>conduit</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="packages/conduit_types/include/conduit_types/derived/imu.hpp"/>
+  </compounddef>
+</doxygen>

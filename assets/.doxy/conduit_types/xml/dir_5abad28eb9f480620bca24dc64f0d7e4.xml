@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_5abad28eb9f480620bca24dc64f0d7e4" kind="dir">
+    <compoundname>packages/conduit_types/include/conduit_types/primitives</compoundname>
+    <innerfile refid="bool_8hpp">bool.hpp</innerfile>
+    <innerfile refid="double_8hpp">double.hpp</innerfile>
+    <innerfile refid="int_8hpp">int.hpp</innerfile>
+    <innerfile refid="time_8hpp">time.hpp</innerfile>
+    <innerfile refid="uint_8hpp">uint.hpp</innerfile>
+    <innerfile refid="vec2_8hpp">vec2.hpp</innerfile>
+    <innerfile refid="vec3_8hpp">vec3.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_types/include/conduit_types/primitives/"/>
+  </compounddef>
+</doxygen>

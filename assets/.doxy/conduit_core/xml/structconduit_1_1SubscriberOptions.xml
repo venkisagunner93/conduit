@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1SubscriberOptions" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::SubscriberOptions</compoundname>
+    <includes refid="subscriber_8hpp" local="no">subscriber.hpp</includes>
+    <briefdescription>
+<para>Configuration for topic subscriber. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/subscriber.hpp" line="17" column="1" bodyfile="packages/conduit_core/include/conduit_core/subscriber.hpp" bodystart="17" bodyend="19"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

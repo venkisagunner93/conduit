@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_5c67974ec98d7ff0f95b9e09c6bc682d" kind="dir">
+    <compoundname>packages/conduit_types/include/conduit_types</compoundname>
+    <innerdir refid="dir_6c611f3cf964ed6f858fc2fcf2f339e5">packages/conduit_types/include/conduit_types/derived</innerdir>
+    <innerdir refid="dir_5abad28eb9f480620bca24dc64f0d7e4">packages/conduit_types/include/conduit_types/primitives</innerdir>
+    <innerfile refid="buffer_8hpp">buffer.hpp</innerfile>
+    <innerfile refid="fixed__message__type_8hpp">fixed_message_type.hpp</innerfile>
+    <innerfile refid="header_8hpp">header.hpp</innerfile>
+    <innerfile refid="variable__message__type_8hpp">variable_message_type.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="packages/conduit_types/include/conduit_types/"/>
+  </compounddef>
+</doxygen>

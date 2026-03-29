@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structconduit_1_1internal_1_1RingBufferHeader" kind="struct" language="C++" prot="public">
+    <compoundname>conduit::internal::RingBufferHeader</compoundname>
+    <includes refid="ring__buffer_8hpp" local="no">ring_buffer.hpp</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structconduit_1_1internal_1_1RingBufferHeader_1a0a799ca4cab2975d94c914198eac20a5" prot="public" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t conduit::internal::RingBufferHeader::slot_count</definition>
+        <argsstring></argsstring>
+        <name>slot_count</name>
+        <qualifiedname>conduit::internal::RingBufferHeader::slot_count</qualifiedname>
+        <briefdescription>
+<para>Number of slots. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="76" column="14" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1internal_1_1RingBufferHeader_1a0b023e4492dc5c1788c1c04b9c9d3709" prot="public" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t conduit::internal::RingBufferHeader::slot_size</definition>
+        <argsstring></argsstring>
+        <name>slot_size</name>
+        <qualifiedname>conduit::internal::RingBufferHeader::slot_size</qualifiedname>
+        <briefdescription>
+<para>Bytes per slot. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="77" column="14" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1internal_1_1RingBufferHeader_1a5bdf99ffc95d5724234a024f1ecb43fb" prot="public" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t conduit::internal::RingBufferHeader::max_subscribers</definition>
+        <argsstring></argsstring>
+        <name>max_subscribers</name>
+        <qualifiedname>conduit::internal::RingBufferHeader::max_subscribers</qualifiedname>
+        <briefdescription>
+<para>Maximum reader slots. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="78" column="14" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1internal_1_1RingBufferHeader_1a66243cada5757533c36876af6f94182a" prot="public" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t conduit::internal::RingBufferHeader::padding0</definition>
+        <argsstring></argsstring>
+        <name>padding0</name>
+        <qualifiedname>conduit::internal::RingBufferHeader::padding0</qualifiedname>
+        <briefdescription>
+<para>Padding for alignment. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="79" column="14" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1internal_1_1RingBufferHeader_1a38294cb4f2556dbe58e613d3449f71be" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint64_t</ref> &gt;</type>
+        <definition>std::atomic&lt;uint64_t&gt; conduit::internal::RingBufferHeader::write_idx</definition>
+        <argsstring></argsstring>
+        <name>write_idx</name>
+        <qualifiedname>conduit::internal::RingBufferHeader::write_idx</qualifiedname>
+        <briefdescription>
+<para>Writer&apos;s next write index (own cache line to avoid false sharing). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="82" column="25" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1internal_1_1RingBufferHeader_1ab9ec222a04c424e4259830c1596e37ed" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref> &gt;</type>
+        <definition>std::atomic&lt;uint32_t&gt; conduit::internal::RingBufferHeader::subscriber_mask</definition>
+        <argsstring></argsstring>
+        <name>subscriber_mask</name>
+        <qualifiedname>conduit::internal::RingBufferHeader::subscriber_mask</qualifiedname>
+        <briefdescription>
+<para>Bitmask of claimed subscriber slots (own cache line). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="85" column="25" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1internal_1_1RingBufferHeader_1a44ccf4d1d4718e0574aeed1f66eaf4da" prot="public" static="no" mutable="no">
+        <type>std::atomic&lt; <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref> &gt;</type>
+        <definition>std::atomic&lt;uint32_t&gt; conduit::internal::RingBufferHeader::futex_word</definition>
+        <argsstring></argsstring>
+        <name>futex_word</name>
+        <qualifiedname>conduit::internal::RingBufferHeader::futex_word</qualifiedname>
+        <briefdescription>
+<para>Futex word used for subscriber wake signaling. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="87" column="17" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structconduit_1_1internal_1_1RingBufferHeader_1aff671b5815d43a320beefcf10ba7988e" prot="public" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1internal_1_1AlignedAtomicU64" kindref="compound">AlignedAtomicU64</ref></type>
+        <definition>AlignedAtomicU64 conduit::internal::RingBufferHeader::read_idx[MAX_SUBSCRIBERS]</definition>
+        <argsstring>[MAX_SUBSCRIBERS]</argsstring>
+        <name>read_idx</name>
+        <qualifiedname>conduit::internal::RingBufferHeader::read_idx</qualifiedname>
+        <briefdescription>
+<para>Per-reader current read index (each on own cache line). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="90" column="30" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="90" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Shared memory layout for the ring buffer control structure. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Resides at the start of the shared memory region, followed by the slot data array. Each field group is cache-line-aligned to prevent false sharing between the writer and readers.</para>
+<para><programlisting><codeline><highlight class="normal">Shared<sp/>Memory<sp/>Layout:</highlight></codeline>
+<codeline><highlight class="normal">┌────────────────────────────────────────┐<sp/><sp/>offset<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>RingBufferHeader<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>┌──────────────────────────────────┐<sp/><sp/>│</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>│<sp/>config<sp/>(immutable<sp/>after<sp/>init)<sp/><sp/><sp/><sp/>│<sp/><sp/>│</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>│<sp/><sp/><ref refid="structconduit_1_1internal_1_1RingBufferHeader_1a0a799ca4cab2975d94c914198eac20a5" kindref="member">slot_count</ref>,<sp/><ref refid="structconduit_1_1internal_1_1RingBufferHeader_1a0b023e4492dc5c1788c1c04b9c9d3709" kindref="member">slot_size</ref>,<sp/>etc.<sp/><sp/><sp/><sp/><sp/>│<sp/><sp/>│</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>├──────────────────────────────────┤<sp/><sp/>│<sp/><sp/>aligned<sp/>64B</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>│<sp/><ref refid="structconduit_1_1internal_1_1RingBufferHeader_1a38294cb4f2556dbe58e613d3449f71be" kindref="member">write_idx</ref><sp/>(writer<sp/>only)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│<sp/><sp/>│</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>├──────────────────────────────────┤<sp/><sp/>│<sp/><sp/>aligned<sp/>64B</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>│<sp/><ref refid="structconduit_1_1internal_1_1RingBufferHeader_1ab9ec222a04c424e4259830c1596e37ed" kindref="member">subscriber_mask</ref><sp/>+<sp/><ref refid="structconduit_1_1internal_1_1RingBufferHeader_1a44ccf4d1d4718e0574aeed1f66eaf4da" kindref="member">futex_word</ref><sp/><sp/><sp/><sp/><sp/>│<sp/><sp/>│</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>├──────────────────────────────────┤<sp/><sp/>│<sp/><sp/>aligned<sp/>64B</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>│<sp/><ref refid="structconduit_1_1internal_1_1RingBufferHeader_1aff671b5815d43a320beefcf10ba7988e" kindref="member">read_idx</ref>[0..MAX_SUBSCRIBERS-1]<sp/><sp/><sp/>│<sp/><sp/>│<sp/><sp/>each<sp/>aligned<sp/>64B</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>└──────────────────────────────────┘<sp/><sp/>│</highlight></codeline>
+<codeline><highlight class="normal">├────────────────────────────────────────┤</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>Slot[0]:<sp/>[hdr<sp/>20B<sp/>|<sp/>payload<sp/>...]<sp/><sp/><sp/><sp/><sp/>│</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>Slot[1]:<sp/>[hdr<sp/>20B<sp/>|<sp/>payload<sp/>...]<sp/><sp/><sp/><sp/><sp/>│</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>...<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>│</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/>Slot[N-1]:<sp/>[hdr<sp/>20B<sp/>|<sp/>payload<sp/>...]<sp/><sp/><sp/>│</highlight></codeline>
+<codeline><highlight class="normal">└────────────────────────────────────────┘</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>conduit::internal::AlignedAtomicU64</label>
+        <link refid="structconduit_1_1internal_1_1AlignedAtomicU64"/>
+      </node>
+      <node id="1">
+        <label>conduit::internal::RingBufferHeader</label>
+        <link refid="structconduit_1_1internal_1_1RingBufferHeader"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>read_idx</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="74" column="1" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="74" bodyend="91"/>
+    <listofallmembers>
+      <member refid="structconduit_1_1internal_1_1RingBufferHeader_1a44ccf4d1d4718e0574aeed1f66eaf4da" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferHeader</scope><name>futex_word</name></member>
+      <member refid="structconduit_1_1internal_1_1RingBufferHeader_1a5bdf99ffc95d5724234a024f1ecb43fb" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferHeader</scope><name>max_subscribers</name></member>
+      <member refid="structconduit_1_1internal_1_1RingBufferHeader_1a66243cada5757533c36876af6f94182a" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferHeader</scope><name>padding0</name></member>
+      <member refid="structconduit_1_1internal_1_1RingBufferHeader_1aff671b5815d43a320beefcf10ba7988e" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferHeader</scope><name>read_idx</name></member>
+      <member refid="structconduit_1_1internal_1_1RingBufferHeader_1a0a799ca4cab2975d94c914198eac20a5" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferHeader</scope><name>slot_count</name></member>
+      <member refid="structconduit_1_1internal_1_1RingBufferHeader_1a0b023e4492dc5c1788c1c04b9c9d3709" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferHeader</scope><name>slot_size</name></member>
+      <member refid="structconduit_1_1internal_1_1RingBufferHeader_1ab9ec222a04c424e4259830c1596e37ed" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferHeader</scope><name>subscriber_mask</name></member>
+      <member refid="structconduit_1_1internal_1_1RingBufferHeader_1a38294cb4f2556dbe58e613d3449f71be" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferHeader</scope><name>write_idx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

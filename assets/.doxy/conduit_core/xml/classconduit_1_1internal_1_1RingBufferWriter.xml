@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classconduit_1_1internal_1_1RingBufferWriter" kind="class" language="C++" prot="public">
+    <compoundname>conduit::internal::RingBufferWriter</compoundname>
+    <includes refid="ring__buffer_8hpp" local="no">ring_buffer.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1RingBufferWriter_1aa2dc51d1e12842e21335e9c6e24648b5" prot="private" static="no" mutable="no">
+        <type><ref refid="structconduit_1_1internal_1_1RingBufferHeader" kindref="compound">RingBufferHeader</ref> *</type>
+        <definition>RingBufferHeader* conduit::internal::RingBufferWriter::header_</definition>
+        <argsstring></argsstring>
+        <name>header_</name>
+        <qualifiedname>conduit::internal::RingBufferWriter::header_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="140" column="22" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1RingBufferWriter_1afc11aa5351c2fc3748dc89bc43cca4f6" prot="private" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint8_t</ref> *</type>
+        <definition>uint8_t* conduit::internal::RingBufferWriter::slots_</definition>
+        <argsstring></argsstring>
+        <name>slots_</name>
+        <qualifiedname>conduit::internal::RingBufferWriter::slots_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="141" column="13" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1RingBufferWriter_1a5aed162aa75637da8d471f6d749f0783" prot="private" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t conduit::internal::RingBufferWriter::slot_size_</definition>
+        <argsstring></argsstring>
+        <name>slot_size_</name>
+        <qualifiedname>conduit::internal::RingBufferWriter::slot_size_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="142" column="14" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1RingBufferWriter_1a385ba3dc2ed0c06b38e81569e4432606" prot="private" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t conduit::internal::RingBufferWriter::slot_count_</definition>
+        <argsstring></argsstring>
+        <name>slot_count_</name>
+        <qualifiedname>conduit::internal::RingBufferWriter::slot_count_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="143" column="14" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classconduit_1_1internal_1_1RingBufferWriter_1ae3b54fb5bac36257092206b34f4980e6" prot="private" static="no" mutable="no">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">uint32_t</ref></type>
+        <definition>uint32_t conduit::internal::RingBufferWriter::slot_count_mask_</definition>
+        <argsstring></argsstring>
+        <name>slot_count_mask_</name>
+        <qualifiedname>conduit::internal::RingBufferWriter::slot_count_mask_</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="144" column="14" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="144" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classconduit_1_1internal_1_1RingBufferWriter_1a83a629b37ff7ed01a7fb28eb3281571b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>conduit::internal::RingBufferWriter::RingBufferWriter</definition>
+        <argsstring>(void *region, size_t region_size, const RingBufferConfig &amp;config)</argsstring>
+        <name>RingBufferWriter</name>
+        <qualifiedname>conduit::internal::RingBufferWriter::RingBufferWriter</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">void</ref> *</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">size_t</ref></type>
+          <declname>region_size</declname>
+        </param>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> <ref refid="structconduit_1_1internal_1_1RingBufferConfig" kindref="compound">RingBufferConfig</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Construct a writer over a shared memory region. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>region</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the shared memory region. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>region_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Total size of the region in bytes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ring buffer configuration (slot_count must be power of 2). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="120" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1RingBufferWriter_1a4a1ca5c05f841a9bd1b55694d466e48c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">void</ref></type>
+        <definition>void conduit::internal::RingBufferWriter::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <qualifiedname>conduit::internal::RingBufferWriter::initialize</qualifiedname>
+        <briefdescription>
+<para>Initialize the ring buffer header in shared memory. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="123" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1RingBufferWriter_1a87cd1893123414235ab38ee342ea2f10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">bool</ref></type>
+        <definition>bool conduit::internal::RingBufferWriter::try_write</definition>
+        <argsstring>(const void *data, size_t len)</argsstring>
+        <name>try_write</name>
+        <qualifiedname>conduit::internal::RingBufferWriter::try_write</qualifiedname>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">const</ref> <ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">void</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="classconduit_1_1internal_1_1Publisher" kindref="compound">size_t</ref></type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+<para>Write a message to the next slot in the ring buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Automatically timestamps the message with CLOCK_MONOTONIC_RAW, increments the sequence number, and wakes waiting subscribers.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the payload. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Payload size in bytes. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if written, false if len exceeds the slot&apos;s payload capacity. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="133" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classconduit_1_1internal_1_1RingBufferWriter_1a0c52e5f17f0466179479b707e816ba96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structconduit_1_1internal_1_1RingBufferHeader" kindref="compound">RingBufferHeader</ref> *</type>
+        <definition>RingBufferHeader * conduit::internal::RingBufferWriter::header</definition>
+        <argsstring>()</argsstring>
+        <name>header</name>
+        <qualifiedname>conduit::internal::RingBufferWriter::header</qualifiedname>
+        <briefdescription>
+<para>Access the ring buffer header. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the header in shared memory. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="137" column="22" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="137" bodyend="137"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Writer side of the lock-free SPMC ring buffer. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>There is exactly one writer per topic. The writer initializes the shared memory header, then writes messages into slots in a circular pattern. After each write, subscribers are woken via futex.</para>
+<para><simplesect kind="see"><para><ref refid="classconduit_1_1internal_1_1RingBufferReader" kindref="compound">RingBufferReader</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" line="114" column="1" bodyfile="packages/conduit_core/include/conduit_core/internal/ring_buffer.hpp" bodystart="114" bodyend="145"/>
+    <listofallmembers>
+      <member refid="classconduit_1_1internal_1_1RingBufferWriter_1a0c52e5f17f0466179479b707e816ba96" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferWriter</scope><name>header</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferWriter_1aa2dc51d1e12842e21335e9c6e24648b5" prot="private" virt="non-virtual"><scope>conduit::internal::RingBufferWriter</scope><name>header_</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferWriter_1a4a1ca5c05f841a9bd1b55694d466e48c" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferWriter</scope><name>initialize</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferWriter_1a83a629b37ff7ed01a7fb28eb3281571b" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferWriter</scope><name>RingBufferWriter</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferWriter_1a385ba3dc2ed0c06b38e81569e4432606" prot="private" virt="non-virtual"><scope>conduit::internal::RingBufferWriter</scope><name>slot_count_</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferWriter_1ae3b54fb5bac36257092206b34f4980e6" prot="private" virt="non-virtual"><scope>conduit::internal::RingBufferWriter</scope><name>slot_count_mask_</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferWriter_1a5aed162aa75637da8d471f6d749f0783" prot="private" virt="non-virtual"><scope>conduit::internal::RingBufferWriter</scope><name>slot_size_</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferWriter_1afc11aa5351c2fc3748dc89bc43cca4f6" prot="private" virt="non-virtual"><scope>conduit::internal::RingBufferWriter</scope><name>slots_</name></member>
+      <member refid="classconduit_1_1internal_1_1RingBufferWriter_1a87cd1893123414235ab38ee342ea2f10" prot="public" virt="non-virtual"><scope>conduit::internal::RingBufferWriter</scope><name>try_write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
