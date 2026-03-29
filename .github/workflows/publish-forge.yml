@@ -35,6 +35,21 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Auto-bump patch version if needed
+        run: |
+          LOCAL=$(grep -oP 'version = "\K[^"]+' tools/conduit-forge/pyproject.toml)
+          PYPI=$(pip index versions conduit-tools-forge 2>/dev/null | grep -oP '\(\K[^)]+' || echo "0.0.0")
+          LOCAL_MAJ_MIN="${LOCAL%.*}"
+          PYPI_MAJ_MIN="${PYPI%.*}"
+          PYPI_PATCH="${PYPI##*.}"
+          if [ "$LOCAL_MAJ_MIN" = "$PYPI_MAJ_MIN" ]; then
+            NEW_VERSION="${LOCAL_MAJ_MIN}.$((PYPI_PATCH + 1))"
+            sed -i "s/version = \"$LOCAL\"/version = \"$NEW_VERSION\"/" tools/conduit-forge/pyproject.toml
+            echo "Bumped version: $LOCAL -> $NEW_VERSION"
+          else
+            echo "Major/minor changed: using $LOCAL as-is"
+          fi
+
       - name: Install build tools
         run: pip install build
 
