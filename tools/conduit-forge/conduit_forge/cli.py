@@ -1,10 +1,12 @@
 import argparse
 from pathlib import Path
+from art import *
 
 from .commands import ALL_COMMANDS
 
 
 def main():
+    print(text2art("conduit-forge"))
     parser = argparse.ArgumentParser(prog="forge", description="Conduit build tool")
     subparsers = parser.add_subparsers(dest="command", required=True)
 

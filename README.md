@@ -1,6 +1,7 @@
 # Conduit
 
 [![Docs](https://img.shields.io/badge/docs-online-blue?style=flat-square)](https://venkisagunner93.github.io/conduit)
+[![PyPI - conduit-tools-forge](https://img.shields.io/pypi/v/conduit-tools-forge?style=flat-square&label=forge)](https://pypi.org/project/conduit-tools-forge/)
 
 Zero-copy pub/sub middleware for robotics.
 
@@ -23,9 +24,15 @@ cbuild            # Build Docker image
 crun              # Run container (interactive)
 
 # Inside container
-cforge            # Install forge build tool
 forge build       # Build all packages
 source install/setup.bash
+```
+
+To install `conduit-tools-forge` from source,
+
+```bash
+source conduit.sh
+cforge
 ```
 
 ## Docker Commands
@@ -35,7 +42,7 @@ source install/setup.bash
 | `cbuild` | Build Docker image from Dockerfile |
 | `crun` | Run container with workspace mounted |
 | `cexec` | Exec into running container |
-| `cforge` | Install forge build tool (inside container) |
+| `cforge` | Install forge build tool from source (inside container, for devlopment purposes) |
 
 ## Build
 
