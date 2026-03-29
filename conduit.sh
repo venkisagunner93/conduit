@@ -5,7 +5,7 @@ function cbuild() {
 function crun() {
     IMAGE_NAME="conduit-dev"
     CONTAINER_NAME="conduit-dev"
-    WORKSPACE_DIR="/home/venkat/repos/conduit"
+    WORKSPACE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
     mkdir -p ~/.claude
     touch ~/.claude.json
@@ -25,9 +25,22 @@ function cexec() {
 }
 
 function cforge() {
-    if [ -f /.dockerenv ]; then
-        pip3 install -e ~/workspace/tools/conduit-forge --break-system-packages
-    else
+    if [ ! -f /.dockerenv ]; then
         echo "This command must be run inside the conduit-dev container."
+        return 1
     fi
+
+    case "${1:-install}" in
+        install)
+            pip3 install -e ~/workspace/tools/conduit-forge --break-system-packages
+            ;;
+        test)
+            pip3 install -e "~/workspace/tools/conduit-forge[test]" --break-system-packages 2>/dev/null
+            pytest ~/workspace/tools/conduit-forge/tests/ -v
+            ;;
+        *)
+            echo "Usage: cforge [install|test]"
+            return 1
+            ;;
+    esac
 }

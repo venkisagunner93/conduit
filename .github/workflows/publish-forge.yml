@@ -8,10 +8,26 @@ on:
       - "tools/conduit-forge/**"
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install package with test dependencies
+        run: pip install -e "tools/conduit-forge[test]"
+
+      - name: Run tests
+        run: pytest tools/conduit-forge/tests/ -v
+
   publish:
+    needs: test
     runs-on: ubuntu-latest
     permissions:
-      id-token: write  # Required for trusted publishing
+      id-token: write
     steps:
       - uses: actions/checkout@v4
 

@@ -1,7 +1,7 @@
 # Conduit
 
 [![Docs](https://img.shields.io/badge/docs-online-blue?style=flat-square)](https://venkisagunner93.github.io/conduit)
-[![PyPI - conduit-tools-forge](https://img.shields.io/pypi/v/conduit-tools-forge?style=flat-square&label=forge)](https://pypi.org/project/conduit-tools-forge/)
+[![PyPI - conduit-tools-forge](https://img.shields.io/pypi/v/conduit-tools-forge?style=flat-square&label=conduit-tools-forge)](https://pypi.org/project/conduit-tools-forge/)
 
 Zero-copy pub/sub middleware for robotics.
 

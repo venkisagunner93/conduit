@@ -26,6 +26,9 @@ Issues = "https://github.com/venkisagunner93/conduit/issues"
 [project.scripts]
 forge = "conduit_forge.cli:main"
 
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
